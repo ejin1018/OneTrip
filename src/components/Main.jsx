@@ -2,10 +2,9 @@ import "./Main.scss"
 
 const Main = () => {
     return (
-        <>
-            <h2>Main</h2>
-            <button className="Button">Button</button>
-        </>
+        <div className="main">
+            <img src="/images/main.png" />
+        </div>
     )
 }
 

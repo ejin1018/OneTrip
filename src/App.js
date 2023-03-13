@@ -3,15 +3,23 @@ import Header from './common/Header';
 import Footer from './common/Footer';
 import Main from './components/Main';
 import './App.scss';
+import "antd/dist/reset.css"
+import { ConfigProvider } from 'antd';
 
 function App() {
   return (
     <div className="App">
-      <Header />
-      <Routes>
-        <Route path='/' element={<Main />} />
-      </Routes>
-      <Footer />
+      <ConfigProvider theme={{
+      token: {
+        colorPrimary: '#ff0000',
+      },
+    }}>
+        <Header />
+        <Routes>
+          <Route path='/' element={<Main />} />
+        </Routes>
+        <Footer />
+      </ConfigProvider>
     </div>
   );
 }
