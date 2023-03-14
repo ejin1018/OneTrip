@@ -1,3 +1,4 @@
+import { LikeOutlined, EyeOutlined } from "@ant-design/icons";
 import { Select } from "antd";
 import "./Main.scss";
 
@@ -154,7 +155,28 @@ const Main = () => {
         </div>
       </div>
 
-      <div className="review"></div>
+      <div className="review">
+        <h3>혼자라서 더 좋은, 원트립 후기</h3>
+        <div className="review-wrap">
+            <div className="review-user">
+                <div className="user">
+                    <img src="/images/main.png" alt="" />
+                    <p>사용자이름</p>
+                </div>
+                <div className="good">
+                    <p><span><LikeOutlined /></span>60</p>
+                    <p><span><EyeOutlined /></span>756+</p>
+                </div>
+            </div>
+            <div className="review-img">
+                <img src="/images/main.png" alt="" />
+            </div>
+            <div className="review-text">
+                <p className="title">나홀로 유유자적 바다와 물회</p>
+                <p>[특가] 제주도 3박 4일 월정리</p>
+            </div>
+        </div>
+      </div>
     </>
   );
 };
