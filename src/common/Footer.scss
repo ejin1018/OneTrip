@@ -1,0 +1,30 @@
+.footer{
+    
+    font-size: 20px;
+    & a{
+        text-decoration: none;
+        padding:45px;
+        color:black;
+        
+    }
+    
+}
+.footer-sns span{
+    // margin:30px;
+}
+.footer-info a{
+    text-decoration: none;
+   
+}
+.footer-info p{
+    text-align: left;
+    margin-left:-20px;
+    // margin-right:-50px;
+  
+}
+.footer-info p span{
+    padding:6px;
+}
+.boldtext{
+    font-weight:bold;
+}

@@ -1,5 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
 import Header from './common/Header';
+import Nav from './common/Nav';
 import Footer from './common/Footer';
 import Main from './components/Main';
 import './App.scss';
@@ -18,6 +19,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Main />} />
         </Routes>
+        <Nav/>
         <Footer />
       </ConfigProvider>
     </div>

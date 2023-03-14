@@ -1,0 +1,26 @@
+.nav{
+    font-size: 20px;
+    display:flex;
+    justify-content: space-around;
+    
+    & a{
+        text-decoration: none;
+        color:black;
+    }
+    
+}
+
+.nav-icons{
+    margin:10px;
+    padding:10px;
+
+    // & span{
+    //     font-size:20px;
+    // }
+   
+
+}
+
+.icontext{
+    font-size:20px;
+}
