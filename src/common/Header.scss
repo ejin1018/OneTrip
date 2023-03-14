@@ -22,6 +22,7 @@
                 margin-left: 8px;
                 border: 0 none;
                 box-shadow: none;
+                background-color: transparent;
                 &:first-child{
                     margin-left: 0;
                 }
@@ -43,6 +44,7 @@
         justify-content: space-between;
         text-align: left;
         background: #fff;
+        display: none;
         .user-menu{
             height: 60px;
             margin-bottom: 25px;
