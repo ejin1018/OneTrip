@@ -1,5 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Route, Routes } from 'react-router-dom';
+import Login from "./Login";
 
 function Menu(){
   return(
@@ -7,6 +8,9 @@ function Menu(){
       <div className='user-menu'>
         <Link to='/Login'>로그인</Link>
         <Link to='/Signin'>회원가입</Link>
+        <Routes>
+          <Route path='/login' element={<Login />}></Route>
+        </Routes>
       </div>
       <ul className='travel-menu'>
         <li className='travel-menu-title'>
