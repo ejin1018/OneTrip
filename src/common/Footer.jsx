@@ -1,7 +1,8 @@
 import {
     InstagramOutlined, FacebookOutlined, YoutubeOutlined,TwitterOutlined, SearchOutlined} from "@ant-design/icons";
     import { Button } from 'antd';
-import { Link } from "react-router-dom";
+    import { Link, Route, Routes } from 'react-router-dom';
+    import Login from "../components/Login";
 import "./Footer.scss"
 
 const Footer = () => {
@@ -9,6 +10,9 @@ const Footer = () => {
         <div className="footer">
             <hr/>
             <div className="footer-top">
+                <Routes>
+                    <Route path='/login' element={<Login />}></Route>
+                </Routes>
                 <Link to={'/Login'}>로그인</Link>
                 <Link to={'/Notice'}>공지사항</Link>
                 <Link to={'/Service'}>고객센터</Link>

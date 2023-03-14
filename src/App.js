@@ -6,6 +6,7 @@ import Main from './components/Main';
 import './App.scss';
 import "antd/dist/reset.css"
 import { ConfigProvider } from 'antd';
+// import Login from "./components/Login";
 
 function App() {
   return (

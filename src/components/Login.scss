@@ -1,0 +1,51 @@
+.login-form{
+    max-width: 500px;
+    width: 100%;
+    margin: auto !important;
+    &.name{
+        width: 100%;
+        max-width: 500px;
+        margin: auto;
+        margin-bottom: 15px;
+    }
+    &.password{
+        width: 100%;
+        max-width: 500px;
+        margin: auto;
+        margin-bottom: 15px;
+    }
+    .checkbox{
+        text-align: left;
+        margin-left: 10px;
+        .ant-checkbox-checked .ant-checkbox-inner {
+            background-color: #333;       
+            border-color: #333;
+        }
+        .ant-checkbox-inner {
+            border-color: black;  
+            border-radius: 50%;
+            :hover{
+                border-radius: 50%;
+            }
+        }
+        .ant-checkbox-checked::after{
+            border: none;
+            border-radius: 50%;
+        }
+        
+    }
+    .loginbt{
+        width: 100%;
+        background-color: #333;
+        height: 40px;
+        font-weight: bold;
+        font-size: 1.1rem;
+    }
+    .login-data span{
+        padding: 20px;
+    }
+    .bold{
+        font-weight: bold;
+        border-radius: 50%;
+    }
+}
