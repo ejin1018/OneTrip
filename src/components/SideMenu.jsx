@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-function Menu(){
+function SideMenu(){
   return(
     <div className='menu-wrap'>
       <div className='user-menu'>
@@ -10,7 +10,7 @@ function Menu(){
       </div>
       <ul className='travel-menu'>
         <li className='travel-menu-title'>
-          국내여행지
+          <p>국내여행지</p>
           <ul className='travel-where-list'>
             <li>
               <Link>서울</Link>
@@ -36,7 +36,7 @@ function Menu(){
           </ul>
         </li>
         <li className='travel-menu-title'>
-          해외여행지
+          <p>해외여행지</p>
           <ul className='travel-where-list'>
             <li>
               <Link>동아시아</Link>
@@ -80,4 +80,4 @@ function Menu(){
   )
 }
 
-export default Menu;
+export default SideMenu;

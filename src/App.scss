@@ -4,13 +4,15 @@
   font-weight: 400;
   font-style: normal;
 }
-*{
-  font-family: 'Pretendard-Regular';
-}
+@import './common/mixin';
+
+*{font-family: 'Pretendard-Regular';}
+ul,ol{list-style: none; margin: 0; padding: 0;}
+a{ @include aPlain; }
+
 .App {
   text-align: center;
   width: 100%;
   max-width: 768px;
   margin: 0 auto;
-  
 }
