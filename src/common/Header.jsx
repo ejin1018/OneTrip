@@ -1,5 +1,6 @@
 import { SearchOutlined } from "@ant-design/icons";
 import { MenuOutlined } from "@ant-design/icons/lib/icons";
+import Menu from '../components/Menu';
 import "./Header.scss"
 
 const Header = () => {
@@ -12,6 +13,7 @@ const Header = () => {
                     <span className="menu-icon"><MenuOutlined /></span>
                 </div>
             </div>
+            <Menu></Menu>
         </>
     )
 }
