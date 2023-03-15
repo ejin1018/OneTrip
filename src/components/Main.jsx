@@ -98,21 +98,7 @@ const Main = () => {
       </div>
       {/* 슬라이더...... */}
       <div className="recommends">
-        <h3>님을 위한 추천 여행</h3>
-        <div className="recom-wrap">
-          {recommend &&
-            recommend.map((value, idx) => {
-              return (
-                <div className="recom-box">
-                  <img src={recommend[idx].ImgUrl} alt="" />
-                  <div>
-                    <p>{recommend[idx].destination}</p>
-                    <p>{recommend[idx].price}</p>
-                  </div>
-                </div>
-              );
-            })}
-        </div>
+   
       </div>
 
       <div className="packages">
