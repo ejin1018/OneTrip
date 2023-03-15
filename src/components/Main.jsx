@@ -39,25 +39,25 @@ const country = [
 
 const recommend = [
   {
-    ImgUrl: "/images/main.png",
+    ImgUrl: "/images/countrys1.png",
     destination: "코타키나발루 7일",
     tag: "#하얏트 #5박 이상",
     price: 10000,
   },
   {
-    ImgUrl: "/images/main.png",
+    ImgUrl: "/images/countrys1.png",
     destination: "오키나와 2일",
     tag: "#온천 #1박 이상",
     price: 10000,
   },
   {
-    ImgUrl: "/images/main.png",
+    ImgUrl: "/images/countrys1.png",
     destination: "혜주마음속 2일",
     tag: "#온천 #1박 이상",
     price: 100,
   },
   {
-    ImgUrl: "/images/main.png",
+    ImgUrl: "/images/countrys1.png",
     destination: "혜주마음속 2일",
     tag: "#온천 #1박 이상",
     price: 100,
@@ -72,14 +72,13 @@ const Main = () => {
     <>
       <div className="main">
         <img src="/images/main.png" alt="" />
+        <h3><span>혼자</span>라서 <br/>충분한 여행</h3>
       </div>
       <div className="select">
         <h2>나는 요즘</h2>
         <Select
           defaultValue="하고싶어요"
-          style={{
-            width: 120,
-          }}
+          /* bordered={false} */
           onChange={handleChange}
           options={[
             {
@@ -99,21 +98,7 @@ const Main = () => {
       </div>
       {/* 슬라이더...... */}
       <div className="recommends">
-        <h3>님을 위한 추천 여행</h3>
-        <div className="recom-wrap">
-          {recommend &&
-            recommend.map((value, idx) => {
-              return (
-                <div className="recom-box">
-                  <img src={recommend[idx].ImgUrl} alt="" />
-                  <div>
-                    <p>{recommend[idx].destination}</p>
-                    <p>{recommend[idx].price}</p>
-                  </div>
-                </div>
-              );
-            })}
-        </div>
+   
       </div>
 
       <div className="packages">
@@ -142,6 +127,7 @@ const Main = () => {
       <div className="specials"></div>
 
       <div className="countrys">
+      <h3>국가별</h3>
         <div className="country-wrap">
           {country &&
             country.map((value, idx) => {
@@ -169,7 +155,7 @@ const Main = () => {
                 </div>
             </div>
             <div className="review-img">
-                <img src="/images/main.png" alt="" />
+                <img src="/images/review.png" alt="" />
             </div>
             <div className="review-text">
                 <p className="title">나홀로 유유자적 바다와 물회</p>

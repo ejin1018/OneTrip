@@ -1,0 +1,31 @@
+.footer {
+  font-size: 20px;
+}
+.footer a {
+  text-decoration: none;
+  padding: 45px;
+  color: black;
+}
+
+.footer-sns {
+  margin-left: 30px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.footer-info a {
+  text-decoration: none;
+}
+
+.footer-info p {
+  text-align: left;
+  margin-left: -20px;
+}
+
+.footer-info p span {
+  padding: 6px;
+}
+
+.boldtext {
+  font-weight: bold;
+}/*# sourceMappingURL=Footer.css.map */
