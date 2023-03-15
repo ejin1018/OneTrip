@@ -1,9 +1,9 @@
 import React from 'react';
+import { useState } from 'react';
 import { SearchOutlined,MenuOutlined } from "@ant-design/icons";
-import { Link, Route, Routes } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { Layout, Menu, Button } from 'antd';
-import Login from "../components/Login";
-import SideMenu from '../components/SideMenu';
+// import SideMenu from '../components/SideMenu';
 import "./Header.scss"
 
 function getItem(label, key, icon, children, type) {
@@ -18,11 +18,14 @@ function getItem(label, key, icon, children, type) {
 const items = [
     getItem('국내여행지', 'sub1', null, [
       getItem(null, 'g1', null, [
-        getItem('서울', '1'), getItem('경기', '2'),
-        getItem('강원', '3'), getItem('충청', '4'),
-        getItem('전라', '5'), getItem('경상', '6'),
+        getItem('서울', '1'),
+        getItem('경기', '2'),
+        getItem('강원', '3'), 
+        getItem('충청', '4'),
+        getItem('전라', '5'), 
+        getItem('경상', '6'),
         getItem('제주', '7')
-    ], 'group'),
+      ], 'group'),
     ]),
     getItem('해외여행지', 'sub2', null, [
       getItem('동아시아', '8'),
@@ -33,11 +36,22 @@ const items = [
       getItem('라틴아메리카', '13'),
       getItem('휴양지', '14'),
     ]),
-    getItem(null, 'grp', null, [getItem('이벤트', '15'), getItem('리뷰', '16'), getItem('마이페이지', '17'), getItem('고객센터', '18')], 'group'),
-  ];
+    // getItem(null, 'grp', null, [getItem('이벤트', '15'), getItem('리뷰', '16'), getItem('마이페이지', '17'), getItem('고객센터', '18')], 'group'),
+];
+const rootSubmenuKeys = ['sub1', 'sub2', 'sub4'];
 
 const { Sider } = Layout;
 const Header = () => {
+    
+    const [openKeys, setOpenKeys] = useState(['sub1']);
+    const onOpenChange = (keys) => {
+    const latestOpenKey = keys.find((key) => openKeys.indexOf(key) === -1);
+    if (rootSubmenuKeys.indexOf(latestOpenKey) === -1) {
+        setOpenKeys(keys);
+    } else {
+        setOpenKeys(latestOpenKey ? [latestOpenKey] : []);
+    }
+    };
     return (
         <>
             <div className="header">
@@ -47,7 +61,7 @@ const Header = () => {
                     </h1>
                     <div className="header-icon">
                         <Button className="search-icon" icon={<SearchOutlined />} />
-                        <Button className="menu-icon" icon={<MenuOutlined />} />
+                        {/* <Button className="menu-icon" icon={<MenuOutlined />} /> */}
                     </div>
                 </div>
                 <Layout className='sider-wrap'>
@@ -56,20 +70,34 @@ const Header = () => {
                         breakpoint="xxl"
                         collapsedWidth="0"
                         reverseArrow="true"
+                        trigger={<MenuOutlined />}
                     >
                         <div className='sider-top-menu'>
                             <Link to='/Login'>로그인</Link>
                             <Link to='/Signin'>회원가입</Link>
-                            <Routes>
-                            <Route path='/login' element={<Login />}></Route>
-                            </Routes>
                         </div>
                         <Menu
+                            openKeys={openKeys}
+                            onOpenChange={onOpenChange}
                             className='sider-menu'
                             defaultSelectedKeys={['1']}
                             mode="inline"
                             items={items}
                         />
+                        <ul className='sider-bottom-menu'>
+                            <li>
+                                <Link>이벤트</Link>
+                            </li>
+                            <li>
+                                <Link>리뷰</Link>
+                            </li>
+                            <li>
+                                <Link>마이페이지</Link>
+                            </li>
+                            <li>
+                                <Link>고객센터</Link>
+                            </li>
+                        </ul>
                     </Sider>
                 </Layout>
             </div>

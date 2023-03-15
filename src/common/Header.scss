@@ -19,13 +19,10 @@
         & .header-icon {
             > button{
                 padding: 0;
-                margin-left: 8px;
+                margin-right: 40px;
                 border: 0 none;
                 box-shadow: none;
                 background-color: transparent;
-                &:first-child{
-                    margin-left: 0;
-                }
                 > span{
                     transform: scale(1.8);
                 }
@@ -92,5 +89,56 @@
         position: fixed;
         top: 0;
         right: 0;
+        .sider-container{
+            min-height: 100vh;
+            max-height: 100vh;
+            padding: 12% 10%;
+            background: #fff;
+            span.ant-layout-sider-zero-width-trigger{
+                width: 32px;
+                height: 32px;
+                background: transparent;
+                color: #000;
+                top: 14px;
+            }
+            .ant-layout-sider-children{
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                .sider-top-menu{
+                    margin-bottom: 15px;
+                    padding: 8px 0;
+                    text-align: right;
+                    > a{
+                        display: inline-block;
+                        margin-left: 10px;
+                        font-size: 14px;
+                        font-weight: 400;
+                        &:first-child{
+                            margin-left: 0px;
+                        }
+                    }
+                }
+                .sider-menu{
+                    border: 0 none;
+                    text-align: left;
+                    overflow-y: scroll;
+                    max-height: 80%;
+                    > li > .ant-menu-submenu-title{
+                        margin: 0;
+                        padding: 0 !important;
+                    }
+                }
+                .sider-bottom-menu{
+                    margin: 0;
+                    text-align: left;
+                    > li > a{
+                        display: inline-block;
+                        font-weight: 400;
+                        padding: 8px 0;
+                    }
+                }
+            }
+        }
     }
 }
