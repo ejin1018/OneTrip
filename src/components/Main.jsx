@@ -1,6 +1,7 @@
 import { LikeOutlined, EyeOutlined } from "@ant-design/icons";
 import { Select } from "antd";
 import "./Main.scss";
+import RecomSlider from "./RecomSlider";
 
 const country = [
     {
@@ -76,7 +77,7 @@ const Main = () => {
       </div>
       <div className="select">
         <h2>나는 요즘</h2>
-        <Select
+        <Select 
           defaultValue="하고싶어요"
           /* bordered={false} */
           onChange={handleChange}
@@ -98,7 +99,8 @@ const Main = () => {
       </div>
       {/* 슬라이더...... */}
       <div className="recommends">
-   
+        <h3>님을 위한 추천 여행</h3>
+        <RecomSlider />
       </div>
 
       <div className="packages">
