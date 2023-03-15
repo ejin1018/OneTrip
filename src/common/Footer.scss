@@ -9,8 +9,11 @@
     }
     
 }
-.footer-sns span{
-    // margin:30px;
+.footer-sns{
+    margin-left:30px;
+    display:flex;
+    justify-content: space-evenly
+
 }
 .footer-info a{
     text-decoration: none;
