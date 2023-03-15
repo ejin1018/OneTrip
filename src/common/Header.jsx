@@ -1,9 +1,7 @@
-import React from 'react';
-import { useState } from 'react';
-import { SearchOutlined,MenuOutlined } from "@ant-design/icons";
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Layout, Menu, Button } from 'antd';
-// import SideMenu from '../components/SideMenu';
+import { SearchOutlined,MenuOutlined } from "@ant-design/icons";
 import "./Header.scss"
 
 function getItem(label, key, icon, children, type) {
@@ -61,7 +59,6 @@ const Header = () => {
                     </h1>
                     <div className="header-icon">
                         <Button className="search-icon" icon={<SearchOutlined />} />
-                        {/* <Button className="menu-icon" icon={<MenuOutlined />} /> */}
                     </div>
                 </div>
                 <Layout className='sider-wrap'>
