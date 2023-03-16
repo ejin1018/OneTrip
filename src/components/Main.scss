@@ -77,9 +77,9 @@ h3 {
         border-radius: 10px;
         margin-bottom: 8px;
       }
-      & div{
+      & div {
         text-align: left;
-        & p{
+        & p {
           margin: 0;
           margin-bottom: 8px;
         }
@@ -115,6 +115,74 @@ h3 {
     }
   }
 }
+
+.banner {
+  margin-bottom: 60px;
+
+  & img {
+    width: 100%;
+  }
+}
+
+.specials {
+  margin-bottom: 60px;
+
+  & div.specials-wrap {
+    display: flex;
+    align-items: flex-start;
+
+    & .specials-box {
+      position: relative;
+      width: calc(100% / 2.7) !important;
+      height: 470px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      & img {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        border-radius: 10px;
+        margin-bottom: 8px;
+        display: block;
+        z-index: -10;
+        margin: 0;
+      }
+      & .specials-text {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        flex-direction: column;
+        flex-direction: space-between;
+        justify-content: space-between;
+        color: #fff;
+        padding: 30px;
+        & div p {
+          margin-bottom: 8px;
+          font-size: 12px;
+          &.f16 {
+            font-size: 16px;
+          }
+          & span.f14 {
+            font-size: 14px;
+          }
+        }
+
+        & .specials-area {
+          & span {
+            margin: 0 4px;
+          }
+        }
+      }
+    }
+  }
+}
+
 .countrys {
   margin-bottom: 60px;
 
