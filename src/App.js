@@ -13,7 +13,7 @@ function App() {
     <div className="App">
       <ConfigProvider theme={{
       token: {
-        colorPrimary: '#ff0000',
+        colorPrimary: '#13608C',
       },
     }}>
         <Header />
