@@ -2,6 +2,7 @@ import { LikeOutlined, EyeOutlined } from "@ant-design/icons";
 import { Select } from "antd";
 import "./Main.scss";
 import RecomSlider from "./RecomSlider";
+import SpecialsSlider from "./SpecialsSlider";
 
 const country = [
     {
@@ -75,6 +76,7 @@ const Main = () => {
         <img src="/images/main.png" alt="" />
         <h3><span>혼자</span>라서 <br/>충분한 여행</h3>
       </div>
+
       <div className="select">
         <h2>나는 요즘</h2>
         <Select 
@@ -97,7 +99,7 @@ const Main = () => {
           ]}
         />
       </div>
-      {/* 슬라이더...... */}
+
       <div className="recommends">
         <h3>님을 위한 추천 여행</h3>
         <RecomSlider />
@@ -122,11 +124,13 @@ const Main = () => {
       </div>
 
       <div className="banner">
-        <img src="" alt="" />
+        <img src="/images/mainbanner.png" alt="마일리지 사용하고 항공권으로 돌려받자! 2023년 03월 01일 부터 31일까지 항공 포함 패키지 결제 고객대상 배너이미지" />
       </div>
 
-      {/* 슬라이드...... */}
-      <div className="specials"></div>
+      <div className="specials">
+        <h3>원트립 특가</h3>
+        <SpecialsSlider />
+      </div>
 
       <div className="countrys">
       <h3>국가별</h3>
