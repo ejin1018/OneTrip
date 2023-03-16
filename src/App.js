@@ -6,6 +6,7 @@ import Main from './components/Main';
 import './App.scss';
 import "antd/dist/reset.css"
 import { ConfigProvider } from 'antd';
+import Create from './components/Create';
 // import Login from "./components/Login";
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
         <Header />
         <Routes>
           <Route path='/' element={<Main />} />
+          <Route path='/create' element={<Create />} />
         </Routes>
         <Nav/>
         <Footer />
