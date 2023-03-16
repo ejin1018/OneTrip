@@ -12,10 +12,10 @@ function App() {
   return (
     <div className="App">
       <ConfigProvider theme={{
-      token: {
-        colorPrimary: '#13608C',
-      },
-    }}>
+          token: {
+            colorPrimary: '#13608C',
+          },
+        }}>
         <Header />
         <Routes>
           <Route path='/' element={<Main />} />
