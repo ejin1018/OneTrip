@@ -6,9 +6,6 @@ h3 {
 }
 
 .main {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   position: relative;
   height: 100vh;
   overflow: hidden;
@@ -20,6 +17,7 @@ h3 {
 .main h3 {
   position: absolute;
   top: 20%;
+  width: 100%;
   margin: 0;
   font-size: 2.8em;
   font-weight: 400;
@@ -29,6 +27,56 @@ h3 {
   line-height: 1.2;
 }
 .main h3 span {
+  font-weight: 600;
+}
+.main-card {
+  position: absolute;
+  bottom: 12%;
+  left: 50%;
+  width: 95%;
+  transform: translateX(-50%);
+  padding: 3%;
+  border-radius: 15px;
+  background: #fff;
+}
+.main-card-title {
+  width: 100%;
+  text-align: left;
+  margin-bottom: 12px;
+  color: #13608C;
+}
+.main-card-title .main-card-now {
+  font-size: 14px;
+  margin-left: 5px;
+}
+.main-card-travel {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+.main-card-travel .main-card-left {
+  min-width: 56%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.main-card-travel .main-card-left .main-info-where {
+  margin-bottom: 5px;
+  font-size: 21px;
+  font-weight: 600;
+}
+.main-card-travel .main-card-left .main-info-when {
+  margin-bottom: 0;
+  font-size: 13px;
+  line-height: 1.3;
+}
+.main-card-travel .main-card-right {
+  max-width: 40%;
+  font-size: 14px;
+}
+.main-card-travel .main-card-right > span {
+  margin-left: 3px;
+  font-size: 21px;
   font-weight: 600;
 }
 
@@ -44,7 +92,7 @@ h3 {
   margin-bottom: 6px;
 }
 .select .ant-select {
-  width: 50%;
+  width: 75%;
   height: 50px;
   text-align: center;
   font-size: 1.8em;

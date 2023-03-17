@@ -1,8 +1,9 @@
-import { LikeOutlined, EyeOutlined } from "@ant-design/icons";
+import { LikeOutlined, EyeOutlined,EnvironmentOutlined,SwapOutlined } from "@ant-design/icons";
 import { Select } from "antd";
-import "./Main.scss";
+import { Link } from "react-router-dom";
 import RecomSlider from "./RecomSlider";
 import SpecialsSlider from "./SpecialsSlider";
+import "./Main.scss";
 
 const country = [
     {
@@ -74,6 +75,27 @@ const Main = () => {
     <>
       <div className="main">
         <h3><span>혼자</span>라서<br/>충분한 여행</h3>
+        <Link className="main-card" to={'/'}>
+          <div className="main-card-title">
+            <EnvironmentOutlined /><span className="main-card-now">지금 떠나보세요!</span>
+          </div>
+          <div className="main-card-travel">
+            <div className="main-card-left">
+              <div className="main-info">
+                <p className="main-info-where">서울</p>
+                <p className="main-info-when">4월 4일 (화)<br />05:00</p>
+              </div>
+              <SwapOutlined className="main-icon-switch" />
+              <div className="main-info">
+                <p className="main-info-where">푸켓</p>
+                <p className="main-info-when">4월 10일 (월)<br />18:00</p>
+              </div>
+            </div>
+            <div className="main-card-right">
+              최저<span>594,000</span>원
+            </div>
+          </div>
+        </Link>
       </div>
 
       <div className="main-contents">
