@@ -1,58 +1,106 @@
+@import '../common/mixin';
 h3 {
   font-size: 20px;
   color: #333;
   text-align: left;
 }
 .main {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   position: relative;
   height: 100vh;
   overflow: hidden;
   margin-bottom: 60px;
-
-  & img {
-    z-index: -10;
-    width: 100%;
-  }
+  background: url('../../public/images/main.png') no-repeat;
+  background-size: 170%;
+  background-position: top center;
   & h3 {
     position: absolute;
-    font-size: 3.4em;
+    top: 20%;
+    width: 100%;
+    margin: 0;
+    font-size: 2.8em;
+    font-weight: 400;
     color: #fff;
     text-align: center;
     letter-spacing: 1px;
+    line-height: 1.2;
     & span {
-      font-weight: bold;
+      font-weight: 600;
     }
   }
+  &-card{
+    position: absolute;
+    bottom: 12%;
+    left: 50%;
+    width: 95%;
+    transform: translateX(-50%) ;
+    padding: 3%;
+    border-radius: 15px;
+    background: #fff;
+    &-title{
+      width: 100%;
+      text-align: left;
+      margin-bottom: 12px;
+      @include pointColorText;
+      .main-card-now{
+        font-size: 14px;
+        margin-left: 5px;
+      }
+    }
+    &-travel{
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      .main-card-left{
+        min-width: 56%;
+        @include flexCenter;
+        .main-info{
+          &-where{
+            margin-bottom: 5px;
+            font-size: 21px;
+            font-weight: 600;
+          }
+          &-when{
+            margin-bottom: 0;
+            font-size: 13px;
+            line-height: 1.3;
+          }
+        }
+      }
+      .main-card-right{
+        max-width: 40%;
+        font-size: 14px;
+        > span{
+          margin-left: 3px;
+          font-size: 21px;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+}
+
+.main-contents{
+  padding: 0 5%;
 }
 
 .select {
   margin-bottom: 40px;
 
-  & h2 {
-    font-size: 2em;
-    margin-bottom: 6px;
+  & h2, &-want{
+    font-size: 1.8em;
+    font-weight: 400;
+    margin-bottom: 0;
   }
 
   & .ant-select {
-    width: 50%;
-    height: 50px;
-    text-align: center;
-    font-size: 1.8em;
-
+    margin: 8px 0;
     & .ant-select-selector {
-      height: 100%;
       border: none;
       border-radius: 0;
-      border-bottom: 2px solid #000;
-      padding: 10px 12px 0 24px;
-
+      border-bottom: 2px solid #13608C;
       & .ant-select-selection-item {
-        display: block;
-        height: 100%;
         font-size: 32px;
+        overflow: visible;
       }
     }
     & .ant-select-arrow {

@@ -1,6 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
 import Header from './common/Header';
-import Nav from './common/Nav';
+import Bnav from './common/Bnav';
 import Footer from './common/Footer';
 import Main from './components/Main';
 import './App.scss';
@@ -13,16 +13,16 @@ function App() {
   return (
     <div className="App">
       <ConfigProvider theme={{
-      token: {
-        colorPrimary: '#13608C',
-      },
-    }}>
+          token: {
+            colorPrimary: '#13608C',
+          },
+        }}>
         <Header />
         <Routes>
           <Route path='/' element={<Main />} />
           <Route path='/create' element={<Create />} />
         </Routes>
-        <Nav/>
+        <Bnav/>
         <Footer />
       </ConfigProvider>
     </div>
