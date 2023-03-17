@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, Route, Routes } from 'react-router-dom';
 import Login from "./Login";
-
+1
 function SideMenu(){
   return(
     <div className='menu-wrap'>
