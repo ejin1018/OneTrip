@@ -87,27 +87,22 @@ h3 {
 .select {
   margin-bottom: 40px;
 }
-.select h2 {
-  font-size: 2em;
-  margin-bottom: 6px;
+.select h2, .select-want {
+  font-size: 1.8em;
+  font-weight: 400;
+  margin-bottom: 0;
 }
 .select .ant-select {
-  width: 75%;
-  height: 50px;
-  text-align: center;
-  font-size: 1.8em;
+  margin: 8px 0;
 }
 .select .ant-select .ant-select-selector {
-  height: 100%;
   border: none;
   border-radius: 0;
-  border-bottom: 2px solid #000;
-  padding: 10px 12px 0 24px;
+  border-bottom: 2px solid #13608C;
 }
 .select .ant-select .ant-select-selector .ant-select-selection-item {
-  display: block;
-  height: 100%;
   font-size: 32px;
+  overflow: visible;
 }
 .select .ant-select .ant-select-arrow {
   color: #000;

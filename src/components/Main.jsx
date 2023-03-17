@@ -67,6 +67,14 @@ const recommend = [
   },
 ];
 
+const tripTheme = [
+  "🛍️ 쇼핑하고 ",
+  "🍽️ 맛있는걸 먹고 ",
+  "🖼 문화 생활을 즐기고 ",
+  "🏄‍♂️ 액티비티를 즐기고 ",
+  "🌿 조용히 휴식하고 ",
+]
+
 const Main = () => {
   const handleChange = (value) => {
     console.log(`selected ${value}`);
@@ -102,24 +110,15 @@ const Main = () => {
         <div className="select">
           <h2>나는 요즘</h2>
           <Select 
-            defaultValue="하고싶어요"
+            defaultValue={tripTheme[0]}
             /* bordered={false} */
             onChange={handleChange}
-            options={[
-              {
-                value: "쇼핑하고싶어요",
-                label: "쇼핑하고싶어요",
-              },
-              {
-                value: "휴식하고싶어요",
-                label: "휴식하고싶어요",
-              },
-              {
-                value: "맛있는걸 먹고싶어요",
-                label: "맛있는걸 먹고싶어요",
-              },
-            ]}
+            options={tripTheme.map((theme)=>({
+              label: theme,
+              value: theme,
+            }))}
           />
+          <p className="select-want">싶어요</p>
         </div>
 
         <div className="recommends">
