@@ -1,7 +1,39 @@
-.FormWrap{
-    margin-top: 100px;
-    padding: 0 100px;
-}
-.ant-input-number, .ant-input-number-in-form-item {
+.FormWrap {
+  margin-top: 100px;
+  padding: 0 100px;
+  & .airWrap {
+    position: relative;
+    & .airline {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    & .positionA {
+      position: absolute;
+      left: 50%;
+      top: 40%;
+      margin: -10px;
+      font-size: 20px;
+    }
+  }
+
+  & .submit {
+    display: flex;
+    justify-content: center;
+
+    & button {
+      padding: 0 24px;
+      margin: 0 8px;
+    }
+  }
+
+  .ant-input-number,
+  .ant-picker,
+  .ant-input-number-input {
     width: 100%;
+  }
+  .ant-form-item-control-input {
+    border-bottom: 1px solid #999999;
+    border-radius: 0;
+  }
 }
