@@ -78,7 +78,7 @@ const Main = () => {
   return (
     <>
       <div className="main">
-        <h3><span>혼자</span>라서<br/>충분한 여행</h3>
+        <h3 className="section-title"><span>혼자</span>라서<br/>충분한 여행</h3>
         <Link className="main-card" to={'/'}>
           <div className="main-card-title">
             <EnvironmentOutlined /><span className="main-card-now">지금 떠나보세요!</span>
@@ -118,12 +118,12 @@ const Main = () => {
         </div>
 
         <div className="recommends">
-          <h3>님을 위한 추천 여행</h3>
+          <h3 className="section-title">님을 위한 추천 여행</h3>
           <RecomSlider />
         </div>
 
         <div className="packages">
-          <h3>원트립 패키지</h3>
+          <h3 className="section-title">원트립 패키지</h3>
           <div className="package-wrap">
             {recommend &&
               recommend.map((value, idx) => {
@@ -131,9 +131,9 @@ const Main = () => {
                 return (
                   <div className="package-box">
                     <div className="recom-img" style={recomBack}></div>
-                    <div>
-                      <p>{recommend[idx].title}</p>
-                      <p>{recommend[idx].price}</p>
+                    <div className="info-box">
+                      <p className="info-title">{recommend[idx].title}</p>
+                      <p className="info-price"><span>{recommend[idx].price}</span> 원 ~</p>
                     </div>
                   </div>
                 );
@@ -146,12 +146,12 @@ const Main = () => {
         </div>
 
         <div className="specials">
-          <h3>원트립 특가</h3>
+          <h3 className="section-title">원트립 특가</h3>
           <SpecialsSlider />
         </div>
 
         <div className="countrys">
-        <h3>국가별</h3>
+        <h3 className="section-title">국가별</h3>
           <div className="country-wrap">
             {country &&
               country.map((value, idx) => {
@@ -166,7 +166,7 @@ const Main = () => {
         </div>
 
         <div className="review">
-          <h3>혼자라서 더 좋은, 원트립 후기</h3>
+          <h3 className="section-title">혼자라서 더 좋은, 원트립 후기</h3>
           <div className="review-wrap">
               <div className="review-user">
                   <div className="user">

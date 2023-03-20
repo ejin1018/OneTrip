@@ -1,15 +1,16 @@
-@charset "UTF-8";
-.packages .package-wrap .package-box .recom-img, .recommends div.recom-wrap .recom-box .recom-img {
+.specials div.specials-wrap .specials-box .specials-text .specials-area, .packages .package-wrap .package-box .recom-img, .recommends div.recom-wrap .recom-box .recom-img {
   width: 100%;
   height: 120px;
   margin-bottom: 8px;
   border-radius: 12px;
 }
 
-h3 {
+.section-title {
   font-size: 20px;
+  font-weight: 600;
   color: #333;
   text-align: left;
+  margin-bottom: 12px;
 }
 
 .main {
@@ -123,12 +124,19 @@ h3 {
   display: flex;
   align-items: flex-start;
 }
-.recommends div.recom-wrap .recom-box div {
+.info-box {
   text-align: left;
 }
-.recommends div.recom-wrap .recom-box div p {
+.info-box .info-title {
   margin: 0;
-  margin-bottom: 8px;
+  margin-bottom: 5px;
+}
+.info-box .info-price {
+  font-size: 14px;
+  font-weight: 400;
+}
+.info-box .info-price span {
+  font-weight: 600;
 }
 
 .packages {
@@ -162,51 +170,15 @@ h3 {
   align-items: flex-start;
 }
 .specials div.specials-wrap .specials-box {
-  position: relative;
-  width: 37.037037037% !important;
-  height: 470px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.specials div.specials-wrap .specials-box img {
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  border-radius: 10px;
-  margin-bottom: 8px;
-  display: block;
-  z-index: -10;
-  margin: 0;
+  padding: 12px;
+  border-radius: 12px;
 }
 .specials div.specials-wrap .specials-box .specials-text {
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  flex-direction: column;
-  flex-direction: space-between;
-  justify-content: space-between;
   color: #fff;
-  padding: 30px;
 }
 .specials div.specials-wrap .specials-box .specials-text div p {
-  margin-bottom: 8px;
   font-size: 12px;
 }
-.specials div.specials-wrap .specials-box .specials-text div p.f16 {
-  font-size: 16px;
-}
-.specials div.specials-wrap .specials-box .specials-text div p span.f14 {
-  font-size: 14px;
-}
-.specials div.specials-wrap .specials-box .specials-text .specials-area span {
-  margin: 0 4px;
-}
-
 .countrys {
   margin-bottom: 60px;
 }
@@ -215,19 +187,18 @@ h3 {
   flex-wrap: wrap;
   overflow: hidden;
   align-items: center;
+  justify-content: space-between;
 }
 .countrys .country-wrap .country {
   width: calc(25% - 15px);
-  margin-right: 20px;
-  margin-bottom: 20px;
 }
 .countrys .country-wrap .country:nth-child(4n) {
   margin-right: 0;
 }
 .countrys .country-wrap .country > img {
   overflow: hidden;
-  width: 100%;
-  height: 160px; /* height는 지울거임 */
+  width: 70px;
+  height: 70px;
   border-radius: 50%;
   margin-bottom: 8px;
 }
@@ -237,7 +208,7 @@ h3 {
 
 .review .review-wrap {
   width: 100%;
-  background-color: #999;
+  background-color: #ECF6FC;
   border-radius: 10px;
   padding: 14px 24px 30px;
 }
@@ -272,10 +243,13 @@ h3 {
 .review .review-wrap .review-user .good p:first-child {
   margin-right: 10px;
 }
+.review .review-wrap .review-img {
+  border-radius: 12px;
+  overflow: hidden;
+  margin: 15px 0 10px;
+}
 .review .review-wrap .review-img img {
   width: 100%;
-  height: 300px;
-  margin: 15px 0 10px;
 }
 .review .review-wrap .review-text p {
   text-align: left;
