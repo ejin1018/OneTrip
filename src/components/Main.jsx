@@ -48,13 +48,13 @@ const recommend = [
     price: 10000,
   },
   {
-    ImgUrl: "/images/countrys1.png",
+    ImgUrl: "/images/countrys2.png",
     destination: "오키나와 2일",
     tag: "#온천 #1박 이상",
     price: 10000,
   },
   {
-    ImgUrl: "/images/countrys1.png",
+    ImgUrl: "/images/countrys3.png",
     destination: "혜주마음속 2일",
     tag: "#온천 #1박 이상",
     price: 100,
@@ -131,9 +131,11 @@ const Main = () => {
           <div className="package-wrap">
             {recommend &&
               recommend.map((value, idx) => {
+                const recomBack = {background:`no-repeat center/cover url(${recommend[idx].ImgUrl})`}
                 return (
                   <div className="package-box">
-                    <img src={recommend[idx].ImgUrl} alt="" />
+                    {/* <img src={recommend[idx].ImgUrl} alt="" /> */}
+                    <div className="recom-img" style={recomBack}></div>
                     <div>
                       <p>{recommend[idx].destination}</p>
                       <p>{recommend[idx].price}</p>
