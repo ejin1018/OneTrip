@@ -1,10 +1,9 @@
-import { PlusOutlined } from "@ant-design/icons";
-import { Button, Cascader, DatePicker, Form, Input, InputNumber, Select, Switch, TreeSelect, Upload } from "antd";
+import { ArrowRightOutlined, PlusOutlined } from "@ant-design/icons";
+import { Button, Cascader, DatePicker, Form, Input, InputNumber, Upload } from "antd";
 import "./Create.scss";
 
 const Create = () => {
   const { RangePicker } = DatePicker;
-  const { TextArea } = Input;
 
   return (
     <>
@@ -24,13 +23,15 @@ const Create = () => {
           </Upload>
         </Form.Item>
         <Form.Item>
-          <Input placeholder="여행 이름" />
+          <Input size="large" bordered={false} placeholder="여행 이름" />
         </Form.Item>
         <Form.Item>
-          <InputNumber placeholder="￦ 가격을 입력하세요" />
+          <InputNumber size="large" bordered={false} placeholder="￦ 가격을 입력하세요" />
         </Form.Item>
         <Form.Item>
           <Cascader
+            size="large"
+            bordered={false}
             placeholder="여행지를 선택해주세요"
             style={{ textAlign: "left" }}
             options={[
@@ -73,19 +74,39 @@ const Create = () => {
             ]}
           />
         </Form.Item>
-
+        <div className="airWrap">
+          <div className="airline">
+            <Form.Item>
+              <Input size="large" bordered={false} placeholder="출발 공항 - 항공사" />
+            </Form.Item>
+            <Form.Item>
+              <Input size="large" bordered={false} placeholder="도착 공항 - 항공사" />
+            </Form.Item>
+          </div>
+          <ArrowRightOutlined className="positionA" />
+          <div className="airline">
+            <Form.Item>
+              <Input size="large" bordered={false} placeholder="비행편명" />
+            </Form.Item>
+            <Form.Item>
+              <Input size="large" bordered={false} placeholder="비행편명" />
+            </Form.Item>
+          </div>
+        </div>
         <Form.Item>
-          <InputNumber placeholder="총 수량을 입력하세요" />
+          <RangePicker showTime size="large" bordered={false} />
+        </Form.Item>
+        <Form.Item>
+          <InputNumber size="large" bordered={false} placeholder="총 수량을 입력하세요" />
         </Form.Item>
 
-
         <div className="submit">
-          <Form.Item>
-            <Button>패키지 등록하기</Button>
-          </Form.Item>
-          <Form.Item>
-            <Button>패키지 등록하기</Button>
-          </Form.Item>
+          <Button type="primary" size="large">
+            패키지 등록하기
+          </Button>
+          <Button size="large">
+            취소
+          </Button>
         </div>
       </Form>
     </>
