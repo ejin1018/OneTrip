@@ -3,27 +3,23 @@ import "swiper/css";
 
 const recommend = [
   {
-    ImgUrl: "/images/countrys3.png",
-    destination: "코타키나발루 7일",
-    tag: "#하얏트 #5박 이상",
-    price: 10000,
-  },
-  {
     ImgUrl: "/images/countrys1.png",
-    destination: "오키나와 2일",
-    tag: "#온천 #1박 이상",
+    title:"코타키나발루 7일 #하얏트 #5박 이상",
     price: 10000,
   },
   {
     ImgUrl: "/images/countrys2.png",
-    destination: "혜주마음속 2일",
-    tag: "#온천 #1박 이상",
+    title: "오키나와 2일 #온천 #1박 이상",
+    price: 10000,
+  },
+  {
+    ImgUrl: "/images/countrys3.png",
+    title: "혜주마음속 2일 #온천 #1박 이상",
     price: 100,
   },
   {
-    ImgUrl: "/images/countrys2.png",
-    destination: "혜주마음속 2일",
-    tag: "#온천 #1박 이상",
+    ImgUrl: "/images/countrys1.png",
+    title: "혜주마음속 2일 #온천 #1박 이상",
     price: 100,
   },
 ];
@@ -38,8 +34,7 @@ const RecomSlider = () => {
             <SwiperSlide className="recom-box">
               <div className="recom-img" style={recomBack}></div>
               <div>
-                <p>{recommend[idx].destination}</p>
-                <p>{recommend[idx].tag}</p>
+                <p>{recommend[idx].title}</p>
                 <p>{recommend[idx].price}</p>
               </div>
             </SwiperSlide>
