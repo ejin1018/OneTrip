@@ -20,7 +20,7 @@
   font-weight: 600;
 }
 .header-inner .logo > a {
-  color: #fff;
+  color: #13608C;
 }
 .header-inner .header-icon > button {
   padding: 0;
@@ -28,7 +28,7 @@
   border: 0 none;
   box-shadow: none;
   background-color: transparent;
-  color: #fff;
+  color: #13608C;
 }
 .header-inner .header-icon > button > span {
   transform: scale(1.8);
@@ -48,7 +48,7 @@
   width: 32px;
   height: 32px;
   background: transparent;
-  color: #fff;
+  color: #13608C;
   top: 14px;
 }
 .header .sider-wrap .sider-container .ant-layout-sider-children {
