@@ -1,5 +1,8 @@
+import React, { useState, useEffect } from "react";
 import { LikeOutlined, EyeOutlined,EnvironmentOutlined,SwapOutlined } from "@ant-design/icons";
 import { Select } from "antd";
+import { API_URL } from "./config/constants";
+import axios from "axios";
 import { Link } from "react-router-dom";
 import RecomSlider from "./RecomSlider";
 import SpecialsSlider from "./SpecialsSlider";
@@ -40,9 +43,20 @@ const tripTheme = [
 ]
 
 const Main = () => {
+  const [products, setProducts] = useState([]);
   const handleChange = (value) => {
     console.log(`selected ${value}`);
   };
+  useEffect(()=>{
+    let url = `${API_URL}/products`;
+    axios.get(url).then((result)=>{
+      console.log(result);
+      const products = result.data.product;
+      setProducts(products);
+    }).catch((error)=>{
+      console.log(error);
+    });
+  },[]);
   return (
     <>
       <div className="main">
@@ -93,16 +107,20 @@ const Main = () => {
         <div className="packages">
           <h3 className="section-title">원트립 최신 패키지</h3>
           <div className="package-wrap">
-            {recommend &&
-              recommend.map((value, idx) => {
-                const recomBack = {background:`no-repeat center/cover url(${recommend[idx].ImgUrl})`}
+            {products &&
+              products.map((data, idx) => {
+                console.log(data,"datadatadatadatadatadata")
+             
+                const recomBack = {background:`no-repeat center/cover url(${data.ImgUrl})`}
                 return (
-                  <div className="package-box">
+                  <div className="package-box" key={idx}>
+                    <Link className="product-link" to={`/packages/${data.id}`}>
                     <div className="recom-img" style={recomBack}></div>
                     <div className="info-box">
-                      <p className="info-title">{recommend[idx].title}</p>
-                      <p className="info-price"><span>{recommend[idx].price}</span> 원 ~</p>
+                      <p className="info-title">{data.p_name}</p>
+                      <p className="info-price"><span>{data.price}</span> 원 ~</p>
                     </div>
+                    </Link>
                   </div>
                 );
               })}

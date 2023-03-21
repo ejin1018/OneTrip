@@ -1,25 +1,62 @@
-import { ArrowRightOutlined, PlusOutlined } from "@ant-design/icons";
-import { Button, Cascader, DatePicker, Form, Input, InputNumber, Upload } from "antd";
+import { API_URL } from "./config/constants";
+import { ArrowRightOutlined, PictureOutlined } from "@ant-design/icons";
+import { Button, Cascader, DatePicker, Form, Input, InputNumber, message, Radio, Upload } from "antd";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 import "./Create.scss";
+import { useState } from "react";
 
 const Create = () => {
   const { RangePicker } = DatePicker;
+  const [imageUrl, setImageUrl] = useState(null);
+  const navigate = useNavigate();
+
+  const onFinish = (val) => {
+    axios
+      .post(`${API_URL}/products`, {
+        name: val.name,
+        description: val.description,
+        price: val.price,
+        seller: val.seller,
+        imageUrl: imageUrl,
+      })
+      .then((result) => {
+        navigate("/", { replace: true });
+      })
+      .catch((error) => {
+        console.error(error);
+        message.error();
+      });
+  };
+
+  const onChangeImage = (info) => {
+    if (info.file.status === "uploading") {
+      return;
+    }
+    if (info.file.status === "done") {
+      const response = info.file.response;
+      const imageUrl = response.imageUrl;
+      setImageUrl(imageUrl);
+    } else if (info.file.status === "error") {
+      alert("파일 전송에 실패했습니다.");
+    }
+  };
 
   return (
     <>
-      <Form className="FormWrap">
-        <Form.Item valuePropName="fileList">
-          <Upload action="/upload.do" listType="picture-card">
-            <div>
-              <PlusOutlined />
-              <div
-                style={{
-                  marginTop: 8,
-                }}
-              >
-                이미지
-              </div>
-            </div>
+      <Form className="FormWrap" onFinish={onFinish}>
+        <Form.Item name="upload" valuePropName="fileList">
+          <Upload name="image" action={`${API_URL}/image`} listType="picture" showUploadList={false} onChange={onChangeImage}>
+            {imageUrl ? (
+              <img id="upload-img" src={`${API_URL}/${imageUrl}`} alt="" />
+            ) : (
+              <>
+                <div id="upload-img-placeholder">
+                  <PictureOutlined />
+                </div>
+                <p>이미지를 업로드 해주세요</p>
+              </>
+            )}
           </Upload>
         </Form.Item>
         <Form.Item>
@@ -99,14 +136,19 @@ const Create = () => {
         <Form.Item>
           <InputNumber size="large" bordered={false} placeholder="총 수량을 입력하세요" />
         </Form.Item>
+        <Radio.Group defaultValue="쇼핑" buttonStyle="solid" className="radio">
+          <Radio.Button className="radio-btn"  value="쇼핑">쇼핑</Radio.Button>
+          <Radio.Button className="radio-btn"  value="맛집탐방">맛집탐방</Radio.Button>
+          <Radio.Button className="radio-btn"  value="문화생활">문화생활</Radio.Button>
+          <Radio.Button className="radio-btn"  value="엑티비티">엑티비티</Radio.Button>
+          <Radio.Button className="radio-btn"  value="조용휴식">조용휴식</Radio.Button>
+        </Radio.Group>
 
         <div className="submit">
           <Button type="primary" size="large">
             패키지 등록하기
           </Button>
-          <Button size="large">
-            취소
-          </Button>
+          <Button size="large">취소</Button>
         </div>
       </Form>
     </>
