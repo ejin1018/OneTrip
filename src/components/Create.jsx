@@ -139,16 +139,16 @@ const Create = () => {
             <Form.Item
               name="name"
               rules={[
-                { required: true, message: "상품명은 필수 입력 사항입니다." },
+                { required: true, message: "출발지는 필수 입력 사항입니다." },
               ]}>
-              <Input size="large" bordered={false} placeholder="출발 공항 - 항공사" />
+              <Input size="large" bordered={false} placeholder="출발지" />
             </Form.Item>
             <Form.Item
               name="name"
               rules={[
-                { required: true, message: "상품명은 필수 입력 사항입니다." },
+                { required: true, message: "도착지는 필수 입력 사항입니다." },
               ]}>
-              <Input size="large" bordered={false} placeholder="도착 공항 - 항공사" />
+              <Input size="large" bordered={false} placeholder="도착지" />
             </Form.Item>
           </div>
           <ArrowRightOutlined className="positionA" />
@@ -156,23 +156,23 @@ const Create = () => {
             <Form.Item
               name="name"
               rules={[
-                { required: true, message: "상품명은 필수 입력 사항입니다." },
+                { required: true, message: "교통수단은 필수 입력 사항입니다." },
               ]}>
-              <Input size="large" bordered={false} placeholder="비행편명" />
+              <Input size="large" bordered={false} placeholder="출발-교통수단" />
             </Form.Item>
             <Form.Item
               name="name"
               rules={[
-                { required: true, message: "상품명은 필수 입력 사항입니다." },
+                { required: true, message: "교통수단은 필수 입력 사항입니다." },
               ]}>
-              <Input size="large" bordered={false} placeholder="비행편명" />
+              <Input size="large" bordered={false} placeholder="도착-교통수단" />
             </Form.Item>
           </div>
         </div>
         <Form.Item
           name="name"
           rules={[
-            { required: true, message: "상품명은 필수 입력 사항입니다." },
+            { required: true, message: "날짜는 필수 입력 사항입니다." },
           ]}>
           <RangePicker showTime size="large" bordered={false} />
         </Form.Item>
