@@ -10,7 +10,7 @@
   font-weight: 600;
   color: #333;
   text-align: left;
-  margin-bottom: 12px;
+  margin-bottom: 16px;
 }
 
 .main {
@@ -213,20 +213,17 @@
   justify-content: space-between;
 }
 .countrys .country-wrap .country {
-  width: calc(25% - 15px);
+  width: 25%;
 }
-.countrys .country-wrap .country:nth-child(4n) {
-  margin-right: 0;
-}
-.countrys .country-wrap .country > img {
-  overflow: hidden;
+.countrys .country-wrap .country .country-img {
   width: 70px;
   height: 70px;
   border-radius: 50%;
-  margin-bottom: 8px;
+  margin: 0 auto 8px;
 }
 .countrys .country-wrap .country p {
-  margin-bottom: 6px;
+  font-size: 15px;
+  margin-bottom: 10px;
 }
 
 .review {
