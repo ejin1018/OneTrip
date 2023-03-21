@@ -55,14 +55,14 @@ const SpecialsSlider = () => {
             <SwiperSlide className="specials-box" style={recomBack}>
               <div className="specials-text">
                 <div className="specials-area">
-                  <p>
+                  <p className="specials-where">
                     {recommend[idx].start}
                     <span>
                       <SwapOutlined />
                     </span>
                     {recommend[idx].end}
                   </p>
-                  <p>최저 <span>{recommend[idx].price} 원</span></p>
+                  <p className="specials-price">최저 <span>{recommend[idx].price} 원</span></p>
                 </div>
                 <div className="specials-date">
                   <p>{recommend[idx].sdate}</p>

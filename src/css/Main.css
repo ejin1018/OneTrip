@@ -132,6 +132,7 @@
   margin-bottom: 5px;
 }
 .info-box .info-price {
+  margin-bottom: 0;
   font-size: 14px;
   font-weight: 400;
 }
@@ -150,10 +151,13 @@
 }
 .packages .package-wrap .package-box {
   width: calc(50% - 10px);
-  margin-bottom: 20px;
+  margin-bottom: 0px;
 }
 .packages .package-wrap .package-box:nth-child(2n) {
   margin-right: 0;
+}
+.packages .package-wrap .package-box:first-child, .packages .package-wrap .package-box:nth-child(2) {
+  margin-bottom: 20px;
 }
 .banner {
   margin-bottom: 60px;
@@ -170,15 +174,34 @@
   align-items: flex-start;
 }
 .specials div.specials-wrap .specials-box {
-  padding: 12px;
   border-radius: 12px;
+  overflow: hidden;
 }
 .specials div.specials-wrap .specials-box .specials-text {
+  padding: 12px;
   color: #fff;
+  background: rgba(0, 0, 0, 0.4);
 }
-.specials div.specials-wrap .specials-box .specials-text div p {
-  font-size: 12px;
+.specials div.specials-wrap .specials-box .specials-text .specials-area .specials-where {
+  margin-bottom: 5px;
+  font-size: 18px;
+  font-weight: 500;
 }
+.specials div.specials-wrap .specials-box .specials-text .specials-area .specials-where span {
+  margin: 0 3px;
+}
+.specials div.specials-wrap .specials-box .specials-text .specials-area .specials-price {
+  font-size: 14px;
+}
+.specials div.specials-wrap .specials-box .specials-text .specials-area .specials-price span {
+  font-size: 16px;
+  font-weight: 600;
+}
+.specials div.specials-wrap .specials-box .specials-text .specials-date p {
+  font-size: 16px;
+  margin-bottom: 3px;
+}
+
 .countrys {
   margin-bottom: 60px;
 }
@@ -206,11 +229,14 @@
   margin-bottom: 6px;
 }
 
+.review {
+  margin-bottom: 60px;
+}
 .review .review-wrap {
   width: 100%;
   background-color: #ECF6FC;
   border-radius: 10px;
-  padding: 14px 24px 30px;
+  padding: 20px 26px 25px;
 }
 .review .review-wrap .review-user {
   display: flex;
@@ -221,8 +247,8 @@
   align-items: center;
 }
 .review .review-wrap .review-user .user img {
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
 }
 .review .review-wrap .review-user .user p {
@@ -244,9 +270,12 @@
   margin-right: 10px;
 }
 .review .review-wrap .review-img {
+  width: 100%;
+  height: 180px;
+  background: #fff;
   border-radius: 12px;
   overflow: hidden;
-  margin: 15px 0 10px;
+  margin: 15px 0 15px;
 }
 .review .review-wrap .review-img img {
   width: 100%;

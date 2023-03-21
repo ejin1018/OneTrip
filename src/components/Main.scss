@@ -132,6 +132,7 @@
     margin-bottom: 5px;
   }
   .info-price{
+    margin-bottom: 0;
     font-size: 14px;
     font-weight: 400;
     span{
@@ -149,9 +150,12 @@
     justify-content: space-between;
     & .package-box {
       width: calc(100% / 2 - 10px);
-      margin-bottom: 20px;
+      margin-bottom: 0px;
       &:nth-child(2n) {
         margin-right: 0;
+      }
+      &:first-child ,&:nth-child(2){
+        margin-bottom: 20px;
       }
       .recom-img{
         @extend %imgBackUrl;
@@ -176,16 +180,35 @@
     align-items: flex-start;
 
     & .specials-box {
-      padding: 12px;
       border-radius: 12px;
+      overflow: hidden;
       & .specials-text {
+        padding: 12px;
         color: #fff;
-        & div p {
-          font-size: 12px;
-        }
-
+        background: rgba(0,0,0,0.4);
         & .specials-area {
           @extend %imgBackUrl;
+          .specials-where{
+            margin-bottom: 5px;
+            font-size: 18px;
+            font-weight: 500;
+            span{
+              margin: 0 3px;
+            }
+          }
+          .specials-price{
+            font-size: 14px;
+            span{
+              font-size: 16px;
+              font-weight: 600;
+            }
+          }
+        }
+        & .specials-date{
+          p{
+            font-size: 16px;
+            margin-bottom: 3px;
+          }
         }
       }
     }
@@ -223,11 +246,12 @@
 }
 
 .review {
+  margin-bottom: 60px;
   & .review-wrap {
     width: 100%;
     background-color: #ECF6FC;
     border-radius: 10px;
-    padding: 14px 24px 30px;
+    padding: 20px 26px 25px;
 
     & .review-user {
       display: flex;
@@ -237,8 +261,8 @@
         display: flex;
         align-items: center;
         & img {
-          width: 50px;
-          height: 50px;
+          width: 40px;
+          height: 40px;
           border-radius: 50%;
         }
         & p {
@@ -262,9 +286,12 @@
       }
     }
     & .review-img{
+      width: 100%;
+      height: 180px;
+      background: #fff;
       border-radius: 12px;
       overflow: hidden;
-      margin: 15px 0 10px;
+      margin: 15px 0 15px;
       img {
         width: 100%;
       }

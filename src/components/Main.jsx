@@ -123,7 +123,7 @@ const Main = () => {
         </div>
 
         <div className="packages">
-          <h3 className="section-title">원트립 패키지</h3>
+          <h3 className="section-title">원트립 최신 패키지</h3>
           <div className="package-wrap">
             {recommend &&
               recommend.map((value, idx) => {
@@ -179,7 +179,7 @@ const Main = () => {
                   </div>
               </div>
               <div className="review-img">
-                  <img src="/images/review.png" alt="" />
+                  {/* <img src="/images/review.png" alt="" /> */}
               </div>
               <div className="review-text">
                   <p className="title">나홀로 유유자적 바다와 물회</p>
