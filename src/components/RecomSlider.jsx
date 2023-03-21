@@ -26,16 +26,16 @@ const recommend = [
 
 const RecomSlider = () => {
   return (
-    <Swiper className="recom-wrap" spaceBetween={30} slidesPerView={2.5} onSlideChange={() => console.log("slide change")} onSwiper={(swiper) => console.log(swiper)}>
+    <Swiper className="recom-wrap" spaceBetween={20} slidesPerView={2.5} onSlideChange={() => console.log("slide change")} onSwiper={(swiper) => console.log(swiper)}>
       {recommend &&
         recommend.map((value, idx) => {
           const recomBack = {background:`no-repeat center/cover url(${recommend[idx].ImgUrl})`}
           return (
             <SwiperSlide className="recom-box">
               <div className="recom-img" style={recomBack}></div>
-              <div>
-                <p>{recommend[idx].title}</p>
-                <p>{recommend[idx].price}</p>
+              <div className="info-box">
+                <p className="info-title">{recommend[idx].title}</p>
+                <p className="info-price"><span>{recommend[idx].price}</span> 원 ~</p>
               </div>
             </SwiperSlide>
           );
