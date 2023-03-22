@@ -1,18 +1,10 @@
 import React from 'react';
 import { Button } from 'antd';
 import { ArrowRightOutlined } from "@ant-design/icons";
-
-// Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
-
-// Import Swiper styles
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
-import "./CheckPackage.scss";
-
-// import required modules
 import { Pagination } from "swiper";
+import "swiper/css/pagination";
+import "./CheckPackage.scss";
 
 function CheckPackage(){
   return(
@@ -34,7 +26,7 @@ function CheckPackage(){
       </div>
       <div className='packinfo'>
         <div className='packinfo-title'>
-          <p className='packinfo-title-area'>[국가명]</p>
+          <p className='packinfo-title-area'>[국가명]!</p>
           <p className='packinfo-title-name'>패키지명</p>
         </div>
         <div className='packinfo-theme'>휴식</div>
