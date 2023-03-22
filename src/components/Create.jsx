@@ -7,20 +7,15 @@ import "./Create.scss";
 import { useState } from "react";
 
 const Create = () => {
-  const { RangePicker } = DatePicker;
   const [imageUrl, setImageUrl] = useState(null);
-  // const [messageApi, contextHolder] = message.useMessage();
-  // const info = () => {
-  //   messageApi.info("등록되었습니다");
-  // };
 
   const navigate = useNavigate();
 
   const onFinish = (val) => {
-    console.log(val);
+    // console.log(val);
     axios
       .post(`${API_URL}/products`, {
-        // image: imageUrl,
+        imageUrl: imageUrl,
         p_name: val.p_name,
         price: val.price,
         p_country:val.p_area[0],
@@ -34,9 +29,6 @@ const Create = () => {
         p_edate: val.p_edate,
         count: val.count,
         theme: val.theme,
-        // p_snum: val.p_snum,
-        // p_enum: val.p_enum,
-        // p_country: val.p_country,
       })
       .then((result) => {
         console.log(result);
@@ -57,15 +49,16 @@ const Create = () => {
       const response = info.file.response;
       const imageUrl = response.imageUrl;
       setImageUrl(imageUrl);
-    } else if (info.file.status === "error") {
-      alert("파일 전송에 실패했습니다.");
-    }
+    } 
+    // else if (info.file.status === "error") {
+    //   alert("파일 전송에 실패했습니다.");
+    // }
   };
 
   return (
     <>
       <Form className="FormWrap" onFinish={onFinish}>
-        {/* <Form.Item name="upload" valuePropName="fileList">
+        <Form.Item name="files" valuePropName="image">
           <Upload name="image" action={`${API_URL}/image`} listType="picture" showUploadList={false} onChange={onChangeImage}>
             {imageUrl ? (
               <img id="upload-img" src={`${API_URL}/${imageUrl}`} alt="" />
@@ -78,7 +71,7 @@ const Create = () => {
               </>
             )}
           </Upload>
-        </Form.Item> */}
+        </Form.Item>
         <Form.Item
           name="p_name"
           rules={[
