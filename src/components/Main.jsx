@@ -48,7 +48,7 @@ const Main = () => {
     console.log(`selected ${value}`);
   };
   useEffect(()=>{
-    let url = `${API_URL}/products`;
+    let url = `${API_URL}/product`;
     axios.get(url).then((result)=>{
       console.log(result);
       const products = result.data.product;
