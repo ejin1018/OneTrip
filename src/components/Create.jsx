@@ -9,27 +9,34 @@ import { useState } from "react";
 const Create = () => {
   const { RangePicker } = DatePicker;
   const [imageUrl, setImageUrl] = useState(null);
+  // const [messageApi, contextHolder] = message.useMessage();
+  // const info = () => {
+  //   messageApi.info("등록되었습니다");
+  // };
+
   const navigate = useNavigate();
 
   const onFinish = (val) => {
+    console.log(val);
     axios
       .post(`${API_URL}/products`, {
-        image: imageUrl,
+        // image: imageUrl,
         p_name: val.p_name,
         price: val.price,
-        p_country: val.p_country,
-        p_area: val.p_area,
-        trans: val.trans,
+        p_country:val.p_area[0],
+        p_area: val.p_area[1],
+        hotel: val.hotel,
         departure: val.departure,
-        retrans: val.retrans,
         redeparture: val.redeparture,
-        p_snum: val.p_snum,
-        p_enum: val.p_enum,
+        trans: val.trans,
+        retrans: val.retrans,
         p_sdate: val.p_sdate,
         p_edate: val.p_edate,
         count: val.count,
         theme: val.theme,
-        hotel: val.hotel,
+        // p_snum: val.p_snum,
+        // p_enum: val.p_enum,
+        // p_country: val.p_country,
       })
       .then((result) => {
         console.log(result);
@@ -37,11 +44,12 @@ const Create = () => {
       })
       .catch((error) => {
         console.error(error);
-        message.error();
+        message.error(`에러가 발생하였습니다`);
       });
   };
 
   const onChangeImage = (info) => {
+    // console.log(info);
     if (info.file.status === "uploading") {
       return;
     }
@@ -57,7 +65,7 @@ const Create = () => {
   return (
     <>
       <Form className="FormWrap" onFinish={onFinish}>
-        <Form.Item name="upload" valuePropName="fileList">
+        {/* <Form.Item name="upload" valuePropName="fileList">
           <Upload name="image" action={`${API_URL}/image`} listType="picture" showUploadList={false} onChange={onChangeImage}>
             {imageUrl ? (
               <img id="upload-img" src={`${API_URL}/${imageUrl}`} alt="" />
@@ -70,7 +78,7 @@ const Create = () => {
               </>
             )}
           </Upload>
-        </Form.Item>
+        </Form.Item> */}
         <Form.Item
           name="p_name"
           rules={[
@@ -82,8 +90,10 @@ const Create = () => {
           name="price"
           rules={[
             { required: true, message: "가격은 필수 입력 사항입니다." },
-          ]}>
-          <InputNumber size="large" bordered={false} placeholder="￦ 가격을 입력하세요" />
+          ]}
+          initialValue={0}
+         >
+          <InputNumber size="large" bordered={false} placeholder="￦ 가격을 입력하세요" min={0} />
         </Form.Item>
         <Form.Item
           name="p_area"
@@ -206,7 +216,7 @@ const Create = () => {
           <InputNumber size="large" bordered={false} min={0} placeholder="총 수량을 입력하세요" />
         </Form.Item>
         <Form.Item name="theme"
-        className="borderNone"
+          className="borderNone"
           rules={[
             { required: true, message: "테마는 필수 입력 사항입니다." },
           ]}>
@@ -220,9 +230,12 @@ const Create = () => {
         </Form.Item>
 
         <div className="submit">
-          <Button type="primary" size="large">
-            패키지 등록하기
-          </Button>
+          <Form.Item>
+            {/* {contextHolder} */}
+            <Button type="primary" size="large" htmlType="submit">
+              패키지 등록하기
+            </Button>
+          </Form.Item>
           <Button size="large">취소</Button>
         </div>
       </Form>
