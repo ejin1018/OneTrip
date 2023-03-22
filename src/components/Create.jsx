@@ -9,26 +9,34 @@ import { useState } from "react";
 const Create = () => {
   const { RangePicker } = DatePicker;
   const [imageUrl, setImageUrl] = useState(null);
+  // const [messageApi, contextHolder] = message.useMessage();
+  // const info = () => {
+  //   messageApi.info("등록되었습니다");
+  // };
+
   const navigate = useNavigate();
 
   const onFinish = (val) => {
+    console.log(val);
     axios
       .post(`${API_URL}/products`, {
-        image: imageUrl,
+        // image: imageUrl,
         p_name: val.p_name,
         price: val.price,
-        p_country: val.p_country,
-        p_area: val.p_area,
-        trans: val.trans,
+        p_country:val.p_area[0],
+        p_area: val.p_area[1],
+        hotel: val.hotel,
         departure: val.departure,
-        retrans: val.retrans,
         redeparture: val.redeparture,
-        p_snum: val.p_snum,
-        p_enum: val.p_enum,
+        trans: val.trans,
+        retrans: val.retrans,
         p_sdate: val.p_sdate,
         p_edate: val.p_edate,
         count: val.count,
         theme: val.theme,
+        // p_snum: val.p_snum,
+        // p_enum: val.p_enum,
+        // p_country: val.p_country,
       })
       .then((result) => {
         console.log(result);
@@ -36,11 +44,12 @@ const Create = () => {
       })
       .catch((error) => {
         console.error(error);
-        message.error();
+        message.error(`에러가 발생하였습니다`);
       });
   };
 
   const onChangeImage = (info) => {
+    // console.log(info);
     if (info.file.status === "uploading") {
       return;
     }
@@ -56,7 +65,7 @@ const Create = () => {
   return (
     <>
       <Form className="FormWrap" onFinish={onFinish}>
-        <Form.Item name="upload" valuePropName="fileList">
+        {/* <Form.Item name="upload" valuePropName="fileList">
           <Upload name="image" action={`${API_URL}/image`} listType="picture" showUploadList={false} onChange={onChangeImage}>
             {imageUrl ? (
               <img id="upload-img" src={`${API_URL}/${imageUrl}`} alt="" />
@@ -69,7 +78,7 @@ const Create = () => {
               </>
             )}
           </Upload>
-        </Form.Item>
+        </Form.Item> */}
         <Form.Item
           name="p_name"
           rules={[
@@ -81,8 +90,10 @@ const Create = () => {
           name="price"
           rules={[
             { required: true, message: "가격은 필수 입력 사항입니다." },
-          ]}>
-          <InputNumber size="large" bordered={false} placeholder="￦ 가격을 입력하세요" />
+          ]}
+          initialValue={0}
+         >
+          <InputNumber size="large" bordered={false} placeholder="￦ 가격을 입력하세요" min={0} />
         </Form.Item>
         <Form.Item
           name="p_area"
@@ -134,17 +145,21 @@ const Create = () => {
             ]}
           />
         </Form.Item>
+        <Form.Item
+          name="hotel">
+          <Input size="large" bordered={false} placeholder="숙소" />
+        </Form.Item>
         <div className="airWrap">
           <div className="airline">
             <Form.Item
-              name="name"
+              name="departure"
               rules={[
                 { required: true, message: "출발지는 필수 입력 사항입니다." },
               ]}>
               <Input size="large" bordered={false} placeholder="출발지" />
             </Form.Item>
             <Form.Item
-              name="name"
+              name="redeparture"
               rules={[
                 { required: true, message: "도착지는 필수 입력 사항입니다." },
               ]}>
@@ -154,47 +169,73 @@ const Create = () => {
           <ArrowRightOutlined className="positionA" />
           <div className="airline">
             <Form.Item
-              name="name"
+              name="trans"
               rules={[
                 { required: true, message: "교통수단은 필수 입력 사항입니다." },
               ]}>
               <Input size="large" bordered={false} placeholder="출발-교통수단" />
             </Form.Item>
             <Form.Item
-              name="name"
+              name="retrans"
               rules={[
                 { required: true, message: "교통수단은 필수 입력 사항입니다." },
               ]}>
               <Input size="large" bordered={false} placeholder="도착-교통수단" />
             </Form.Item>
           </div>
+          <div className="airline">
+            <Form.Item
+              name="p_sdate"
+              rules={[
+                { required: true, message: "출발 날짜는 필수 입력 사항입니다." },
+              ]}>
+              <DatePicker showTime={{
+                format: 'HH:mm',
+              }}
+                format="YYYY-MM-DD HH:mm" size="large" bordered={false} />
+            </Form.Item>
+            <Form.Item
+              name="p_edate"
+              rules={[
+                { required: true, message: "도착 날짜는 필수 입력 사항입니다." },
+              ]}>
+              <DatePicker showTime={{
+                format: 'HH:mm',
+              }}
+                format="YYYY-MM-DD HH:mm" size="large" bordered={false} />
+            </Form.Item>
+          </div>
         </div>
+
         <Form.Item
-          name="name"
+          name="count"
           rules={[
-            { required: true, message: "날짜는 필수 입력 사항입니다." },
-          ]}>
-          <RangePicker showTime size="large" bordered={false} />
+            { required: true, message: "수량은 필수 입력 사항입니다." },
+          ]}
+          initialValue={0}>
+          <InputNumber size="large" bordered={false} min={0} placeholder="총 수량을 입력하세요" />
         </Form.Item>
-        <Form.Item
-          name="name"
+        <Form.Item name="theme"
+          className="borderNone"
           rules={[
-            { required: true, message: "상품명은 필수 입력 사항입니다." },
+            { required: true, message: "테마는 필수 입력 사항입니다." },
           ]}>
-          <InputNumber size="large" bordered={false} placeholder="총 수량을 입력하세요" />
+          <Radio.Group defaultValue="쇼핑" buttonStyle="solid" className="radio">
+            <Radio.Button className="radio-btn" value="쇼핑">쇼핑</Radio.Button>
+            <Radio.Button className="radio-btn" value="맛집탐방">맛집탐방</Radio.Button>
+            <Radio.Button className="radio-btn" value="문화생활">문화생활</Radio.Button>
+            <Radio.Button className="radio-btn" value="엑티비티">엑티비티</Radio.Button>
+            <Radio.Button className="radio-btn" value="조용휴식">조용휴식</Radio.Button>
+          </Radio.Group>
         </Form.Item>
-        <Radio.Group defaultValue="쇼핑" buttonStyle="solid" className="radio">
-          <Radio.Button className="radio-btn" value="쇼핑">쇼핑</Radio.Button>
-          <Radio.Button className="radio-btn" value="맛집탐방">맛집탐방</Radio.Button>
-          <Radio.Button className="radio-btn" value="문화생활">문화생활</Radio.Button>
-          <Radio.Button className="radio-btn" value="엑티비티">엑티비티</Radio.Button>
-          <Radio.Button className="radio-btn" value="조용휴식">조용휴식</Radio.Button>
-        </Radio.Group>
 
         <div className="submit">
-          <Button type="primary" size="large">
-            패키지 등록하기
-          </Button>
+          <Form.Item>
+            {/* {contextHolder} */}
+            <Button type="primary" size="large" htmlType="submit">
+              패키지 등록하기
+            </Button>
+          </Form.Item>
           <Button size="large">취소</Button>
         </div>
       </Form>
