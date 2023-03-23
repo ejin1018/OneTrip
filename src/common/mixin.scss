@@ -1,3 +1,15 @@
+@mixin positionRlt(){
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+@mixin positionAbs(){
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
 @mixin flexCenter(){
   display: flex;
   align-items: center;

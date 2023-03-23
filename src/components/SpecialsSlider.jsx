@@ -52,6 +52,7 @@ const SpecialsSlider = () => {
         recommend.map((value, idx) => {
           return (
             <SwiperSlide className="specials-box">
+              {/* <div className="soldout">예약마감</div> */}
               <img src={recommend[idx].ImgUrl} alt="" className="specials-img" />
               <div className="specials-text">
                 <div className="specials-area">

@@ -26,7 +26,7 @@ const recommend = [
 
 const RecomSlider = () => {
   return (
-    <Swiper className="recom-wrap" spaceBetween={20} slidesPerView={2.5} onSlideChange={() => console.log("slide change")} onSwiper={(swiper) => console.log(swiper)}>
+    <Swiper className="recom-wrap" spaceBetween={20} slidesPerView={2.5} >
       {recommend &&
         recommend.map((value, idx) => {
           return (
