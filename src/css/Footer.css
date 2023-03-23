@@ -1,29 +1,51 @@
 .footer {
-  font-size: 20px;
+  border-top: 1px solid #ECF6FC;
+  padding: 15px 0 80px;
 }
-.footer a {
-  text-decoration: none;
-  padding: 45px;
-  color: black;
+.footer-top {
+  width: 80%;
+  margin: 0 auto 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer-top > a {
+  display: block;
+  padding: 10px;
+  font-size: 16px;
 }
 
 .footer-sns {
-  margin-left: 30px;
+  width: 80%;
+  margin: 0 auto 20px;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
 }
 
-.footer-info a {
-  text-decoration: none;
-}
-
-.footer-info p {
+.footer-info {
+  padding: 0 5%;
   text-align: left;
-  margin-left: -20px;
 }
-
-.footer-info p span {
-  padding: 6px;
+.footer-info .footer-assign {
+  margin-bottom: 10px;
+}
+.footer-info .footer-team > p {
+  margin-bottom: 0;
+}
+.footer-info .footer-team-member {
+  margin-top: 6px;
+  font-size: 15px;
+  line-height: 1.25;
+}
+.footer-info .footer-team-member span {
+  font-weight: 300;
+  color: #666;
+}
+.footer-info .footer-copyright {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #666;
+  word-break: keep-all;
 }
 
 .boldtext {

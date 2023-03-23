@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { LikeOutlined, EyeOutlined,EnvironmentOutlined,SwapOutlined } from "@ant-design/icons";
+import { LikeOutlined, EyeOutlined, EnvironmentOutlined, SwapOutlined } from "@ant-design/icons";
 import { Select } from "antd";
 import { API_URL } from "./config/constants";
 import axios from "axios";
@@ -8,31 +8,6 @@ import RecomSlider from "./RecomSlider";
 import SpecialsSlider from "./SpecialsSlider";
 import Country from './Country';
 import "./Main.scss";
-
-
-
-const recommend = [
-  {
-    ImgUrl: "/images/countrys1.png",
-    title:"코타키나발루 7일 #하얏트 #5박 이상",
-    price: 10000,
-  },
-  {
-    ImgUrl: "/images/countrys2.png",
-    title: "오키나와 2일 #온천 #1박 이상",
-    price: 10000,
-  },
-  {
-    ImgUrl: "/images/countrys3.png",
-    title: "혜주마음속 2일 #온천 #1박 이상",
-    price: 100,
-  },
-  {
-    ImgUrl: "/images/countrys1.png",
-    title: "혜주마음속 2일 #온천 #1박 이상",
-    price: 100,
-  },
-];
 
 const tripTheme = [
   "🛍️ 쇼핑하고 ",
@@ -47,20 +22,20 @@ const Main = () => {
   const handleChange = (value) => {
     console.log(`selected ${value}`);
   };
-  useEffect(()=>{
+  useEffect(() => {
     let url = `${API_URL}/product`;
-    axios.get(url).then((result)=>{
+    axios.get(url).then((result) => {
       console.log(result);
       const products = result.data.product;
       setProducts(products);
-    }).catch((error)=>{
+    }).catch((error) => {
       console.log(error);
     });
-  },[]);
+  }, []);
   return (
     <>
       <div className="main">
-        <h3 className="section-title"><span>혼자</span>라서<br/>충분한 여행</h3>
+        <h3 className="section-title"><span>혼자</span>라서<br />충분한 여행</h3>
         <Link className="main-card" to={'/'}>
           <div className="main-card-title">
             <EnvironmentOutlined /><span className="main-card-now">지금 떠나보세요!</span>
@@ -87,11 +62,12 @@ const Main = () => {
       <div className="main-contents">
         <div className="select">
           <h2>나는 요즘</h2>
-          <Select 
+          <Select
             defaultValue={tripTheme[0]}
             /* bordered={false} */
             onChange={handleChange}
-            options={tripTheme.map((theme)=>({
+            options={tripTheme.map((theme, idx) => ({
+              key: idx,
               label: theme,
               value: theme,
             }))}
@@ -109,17 +85,17 @@ const Main = () => {
           <div className="package-wrap">
             {products &&
               products.map((data, idx) => {
-                console.log(data,"datadatadatadatadatadata")
-             
-                const recomBack = {background:`no-repeat center/cover url(${data.ImgUrl})`}
+                console.log(data);
+                // const recomBack = { background: `no-repeat center/cover url(${API_URL}/${data.imageUrl})` }
                 return (
                   <div className="package-box" key={idx}>
                     <Link className="product-link" to={`/packages/${data.id}`}>
-                    <div className="recom-img" style={recomBack}></div>
-                    <div className="info-box">
-                      <p className="info-title">{data.p_name}</p>
-                      <p className="info-price"><span>{data.price}</span> 원 ~</p>
-                    </div>
+                    <img src={`${API_URL}/${data.imageUrl}`} alt="" />
+                      <div className="recom-img" ></div>
+                      <div className="info-box">
+                        <p className="info-title">{data.p_name}</p>
+                        <p className="info-price"><span>{data.price}</span> 원 ~</p>
+                      </div>
                     </Link>
                   </div>
                 );
@@ -141,23 +117,23 @@ const Main = () => {
         <div className="review">
           <h3 className="section-title">혼자라서 더 좋은, 원트립 후기</h3>
           <div className="review-wrap">
-              <div className="review-user">
-                  <div className="user">
-                      <img src="/images/main.png" alt="" />
-                      <p>사용자이름</p>
-                  </div>
-                  <div className="good">
-                      <p><span><LikeOutlined /></span>60</p>
-                      <p><span><EyeOutlined /></span>756+</p>
-                  </div>
+            <div className="review-user">
+              <div className="user">
+                <img src="/images/main.png" alt="" />
+                <p>사용자이름</p>
               </div>
-              <div className="review-img">
-                  {/* <img src="/images/review.png" alt="" /> */}
+              <div className="good">
+                <p><span><LikeOutlined /></span>60</p>
+                <p><span><EyeOutlined /></span>756+</p>
               </div>
-              <div className="review-text">
-                  <p className="title">나홀로 유유자적 바다와 물회</p>
-                  <p>[특가] 제주도 3박 4일 월정리</p>
-              </div>
+            </div>
+            <div className="review-img">
+              {/* <img src="/images/review.png" alt="" /> */}
+            </div>
+            <div className="review-text">
+              <p className="title">나홀로 유유자적 바다와 물회</p>
+              <p>[특가] 제주도 3박 4일 월정리</p>
+            </div>
           </div>
         </div>
       </div>
