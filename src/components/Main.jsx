@@ -88,8 +88,9 @@ const Main = () => {
                 console.log(data);
                 return (
                   <div className="package-box" key={idx}>
-                    {/* <div className="soldout">예약 마감</div> */}
-                    <Link className="product-link" to={`/packages/${data.id}`}>
+                    
+                    {/* <Link className="product-link" to={`/packages/${data.id}`}> */}
+                    <Link className="product-link">
                       <div className="info-box">
                       <div className="new-img imgfit-wrap" ><img src={`${API_URL}/${data.imageUrl}`} alt="" /></div>
                         <p className="info-title">{data.p_name}</p>
