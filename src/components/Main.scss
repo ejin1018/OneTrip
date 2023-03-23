@@ -6,6 +6,23 @@
   text-align: left;
   margin-bottom: 16px;
 }
+.imgfit-wrap{
+  @extend %imgBackUrl;
+  & img{
+    @include imgFit;
+  }
+}
+.soldout{
+  @include positionAbs;
+  @include pointColorText;
+  width: 100%;
+  height: 100%;
+  pointer-events: 0 none;
+  background: rgba(255,255,255,0.8);
+  font-size: 18px;
+  font-weight: 600;
+  z-index: 9;
+}
 .main {
   position: relative;
   height: 100vh;
@@ -121,6 +138,7 @@
     & .recom-box {
       .recom-img{
         @extend %imgBackUrl;
+        height: 130px;
       }
     }
   }
@@ -146,26 +164,23 @@
   & .package-wrap {
     display: flex;
     flex-wrap: wrap;
-    overflow: hidden;
     justify-content: space-between;
+    overflow: hidden;
     & .package-box {
       width: calc(100% / 2 - 10px);
       margin-bottom: 0px;
+      @include positionRlt;
       &:nth-child(2n) {
         margin-right: 0;
       }
       &:first-child ,&:nth-child(2){
         margin-bottom: 20px;
       }
-      .recom-img{
-        @extend %imgBackUrl;
-        overflow: hidden;
-        width: 100%;
-        height: 200px;
-        & img{
-          width: 100%;
-          height: 100%;
-        }
+      .new-img{
+        height: 120px;
+      }
+      .soldout{
+        padding-top: 30%;
       }
     }
   }
@@ -187,16 +202,33 @@
     align-items: flex-start;
 
     & .specials-box {
+      position: relative;
+      top: 0;
+      left: 0;
+      height: 210px;
       border-radius: 12px;
       overflow: hidden;
+      & .specials-img{
+        position: absolute;
+        top: 0;
+        left: 0;
+        @include imgFit;
+      }
       & .specials-text {
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 100%;
+        height: 100%;
         padding: 12px;
         color: #fff;
         background: rgba(0,0,0,0.4);
         & .specials-area {
-          @extend %imgBackUrl;
           .specials-where{
-            margin-bottom: 5px;
+            margin-bottom: 4px;
             font-size: 18px;
             font-weight: 500;
             span{
