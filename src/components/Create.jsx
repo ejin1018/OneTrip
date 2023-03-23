@@ -70,13 +70,7 @@ const Create = () => {
         <Form.Item name="p_name" rules={[{ required: true, message: "여행 이름은 필수 입력 사항입니다." }]}>
           <Input size="large" bordered={false} placeholder="여행 이름" />
         </Form.Item>
-        <Form.Item
-          name="price"
-          rules={[
-            { required: true, message: "가격은 필수 입력 사항입니다." },
-          ]}
-          initialValue={0}
-         >
+        <Form.Item name="price" rules={[{ required: true, message: "가격은 필수 입력 사항입니다." }]}>
           <InputNumber size="large" bordered={false} placeholder="￦ 가격을 입력하세요" min={0} />
         </Form.Item>
         <Form.Item name="p_area" rules={[{ required: true, message: "여행지는 필수 입력 사항입니다." }]}>
@@ -169,13 +163,7 @@ const Create = () => {
             </Form.Item>
           </div>
         </div>
-
-        <Form.Item
-          name="count"
-          rules={[
-            { required: true, message: "수량은 필수 입력 사항입니다." },
-          ]}
-          initialValue={0}>
+        <Form.Item name="count" rules={[{ required: true, message: "수량은 필수 입력 사항입니다." }]}>
           <InputNumber size="large" bordered={false} min={0} placeholder="총 수량을 입력하세요" />
         </Form.Item>
         <Form.Item name="theme" className="borderNone" rules={[{ required: true, message: "테마는 필수 선택 사항입니다." }]}>

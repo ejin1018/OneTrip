@@ -90,8 +90,8 @@ const Main = () => {
                 return (
                   <div className="package-box" key={idx}>
                     
-                    {/* <Link className="product-link" to={`/packages/${data.id}`}> */}
-                    <Link className="product-link">
+                    {/* <Link className="product-link"> */}
+                    <Link className="product-link" to={`/packages/${data.id}`}>
                       <div className="info-box">
                       <div className="recom-img" ><img src={`${API_URL}/${data.imageUrl}`} alt="" /></div>
                         <p className="info-title">{data.p_name}</p>
