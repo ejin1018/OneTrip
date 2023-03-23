@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { Navigate, useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 import { API_URL } from "./config/constants";
-import { Button } from "antd";
+import { Button, message } from "antd";
 import { ArrowRightOutlined } from "@ant-design/icons";
 import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
@@ -16,7 +16,7 @@ dayjs.extend(relativeTime);
 function Packages() {
   const { id } = useParams();
   const [trip, setTrip] = useState(null);
-
+  const navigate = useNavigate();
 
   const getPackage = () => {
     axios
@@ -33,6 +33,20 @@ function Packages() {
     getPackage();
   }, []);
 
+  const onClickPurchase = () => {
+    axios
+      .post(`${API_URL}/purchase/${id}`)
+      .then((result) => {
+        message.info("결제가 완료되었습니다.");
+        getPackage();
+        navigate("/", { replace: true });
+      })
+      .catch((error) => {
+        message.de("결제가 실패하였습니다.");
+        console.danger(error);
+      });
+  };
+
   if (trip == null) {
     return <p>...</p>;
   }
@@ -47,7 +61,9 @@ function Packages() {
           modules={[Pagination]}
           className="packimg-swiper"
         >
-          <SwiperSlide><img src={`${API_URL}/${trip.imageUrl}`} alt="관광상품이미지" /></SwiperSlide>
+          <SwiperSlide>
+            <img src={`${API_URL}/${trip.imageUrl}`} alt="관광상품이미지" />
+          </SwiperSlide>
           <SwiperSlide>Slide 2</SwiperSlide>
           <SwiperSlide>Slide 3</SwiperSlide>
           <SwiperSlide>Slide 4</SwiperSlide>
@@ -81,7 +97,7 @@ function Packages() {
             <span>{trip.price}</span> 원
           </p>
         </div>
-        <Button type="primary" className="package-payment">
+        <Button type="primary" className="package-payment" onClick={onClickPurchase} disabled={trip.soldout === 1}>
           결제하기
         </Button>
       </div>
