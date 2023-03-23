@@ -84,7 +84,7 @@ const Create = () => {
           rules={[
             { required: true, message: "가격은 필수 입력 사항입니다." },
           ]}
-          initialValue={0}
+          
          >
           <InputNumber size="large" bordered={false} placeholder="￦ 가격을 입력하세요" min={0} />
         </Form.Item>
@@ -205,7 +205,7 @@ const Create = () => {
           rules={[
             { required: true, message: "수량은 필수 입력 사항입니다." },
           ]}
-          initialValue={0}>
+          >
           <InputNumber size="large" bordered={false} min={0} placeholder="총 수량을 입력하세요" />
         </Form.Item>
         <Form.Item name="theme"

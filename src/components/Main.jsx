@@ -89,10 +89,11 @@ const Main = () => {
                 // const recomBack = { background: `no-repeat center/cover url(${API_URL}/${data.imageUrl})` }
                 return (
                   <div className="package-box" key={idx}>
-                    <Link className="product-link" to={`/packages/${data.id}`}>
-                    <img src={`${API_URL}/${data.imageUrl}`} alt="" />
-                      <div className="recom-img" ></div>
+                    
+                    {/* <Link className="product-link" to={`/packages/${data.id}`}> */}
+                    <Link className="product-link">
                       <div className="info-box">
+                      <div className="recom-img" ><img src={`${API_URL}/${data.imageUrl}`} alt="" /></div>
                         <p className="info-title">{data.p_name}</p>
                         <p className="info-price"><span>{data.price}</span> 원 ~</p>
                       </div>
