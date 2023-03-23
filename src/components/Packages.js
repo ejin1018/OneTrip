@@ -4,9 +4,9 @@ import { ArrowRightOutlined } from "@ant-design/icons";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper";
 import "swiper/css/pagination";
-import "./CheckPackage.scss";
+import "./Packages.scss";
 
-function CheckPackage(){
+function Packages(){
   return(
     <div className='check-package-wrap'>
       <div className='packimg'>
@@ -55,4 +55,4 @@ function CheckPackage(){
   )
 }
 
-export default CheckPackage;
+export default Packages;

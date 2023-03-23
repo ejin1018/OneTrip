@@ -7,7 +7,7 @@ import './App.scss';
 import "antd/dist/reset.css"
 import { ConfigProvider } from 'antd';
 import Create from './components/Create';
-import CheckPackage from './components/CheckPackage';
+import Packages from './components/Packages';
 // import Login from "./components/Login";
 
 function App() {
@@ -22,7 +22,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Main />} />
           <Route path='/create' element={<Create />} />
-          <Route path='/CheckPackage' element={<CheckPackage />} />
+          <Route path='/Packages' element={<Packages />} />
         </Routes>
         <Bnav/>
         <Footer />
