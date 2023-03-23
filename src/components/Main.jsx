@@ -88,7 +88,7 @@ const Main = () => {
                 console.log(data);
                 return (
                   <div className="package-box" key={idx}>
-                    {/* <div className="soldout">예약 마감</div> */}
+                    {data.soldout === 1?<div className="soldout">예약 마감</div>:null}
                     <Link className="product-link" to={`/packages/${data.id}`}>
                       <div className="info-box">
                       <div className="new-img imgfit-wrap" ><img src={`${API_URL}/${data.imageUrl}`} alt="" /></div>

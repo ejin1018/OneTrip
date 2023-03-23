@@ -216,6 +216,11 @@
   border-radius: 12px;
   overflow: hidden;
 }
+.specials div.specials-wrap .specials-box .soldout {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 .specials div.specials-wrap .specials-box .specials-img {
   position: absolute;
   top: 0;

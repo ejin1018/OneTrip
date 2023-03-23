@@ -208,6 +208,11 @@
       height: 210px;
       border-radius: 12px;
       overflow: hidden;
+      & .soldout{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
       & .specials-img{
         position: absolute;
         top: 0;
