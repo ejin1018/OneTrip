@@ -86,14 +86,12 @@ const Main = () => {
             {products &&
               products.map((data, idx) => {
                 console.log(data);
-                // const recomBack = { background: `no-repeat center/cover url(${API_URL}/${data.imageUrl})` }
                 return (
                   <div className="package-box" key={idx}>
-                    
-                    {/* <Link className="product-link"> */}
+                    {/* <div className="soldout">예약 마감</div> */}
                     <Link className="product-link" to={`/packages/${data.id}`}>
                       <div className="info-box">
-                      <div className="recom-img" ><img src={`${API_URL}/${data.imageUrl}`} alt="" /></div>
+                      <div className="new-img imgfit-wrap" ><img src={`${API_URL}/${data.imageUrl}`} alt="" /></div>
                         <p className="info-title">{data.p_name}</p>
                         <p className="info-price"><span>{data.price}</span> 원 ~</p>
                       </div>

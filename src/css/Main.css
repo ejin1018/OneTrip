@@ -1,8 +1,8 @@
-.specials div.specials-wrap .specials-box .specials-text .specials-area, .packages .package-wrap .package-box .recom-img, .recommends div.recom-wrap .recom-box .recom-img {
+.recommends div.recom-wrap .recom-box .recom-img, .imgfit-wrap {
   width: 100%;
-  height: 120px;
   margin-bottom: 8px;
   border-radius: 12px;
+  overflow: hidden;
 }
 
 .section-title {
@@ -11,6 +11,27 @@
   color: #333;
   text-align: left;
   margin-bottom: 16px;
+}
+
+.imgfit-wrap img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.soldout {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #13608C;
+  width: 100%;
+  height: 100%;
+  pointer-events: 0 none;
+  background: rgba(255, 255, 255, 0.8);
+  font-size: 18px;
+  font-weight: 600;
+  z-index: 9;
 }
 
 .main {
@@ -124,6 +145,10 @@
   display: flex;
   align-items: flex-start;
 }
+.recommends div.recom-wrap .recom-box .recom-img {
+  height: 130px;
+}
+
 .info-box {
   text-align: left;
 }
@@ -146,12 +171,15 @@
 .packages .package-wrap {
   display: flex;
   flex-wrap: wrap;
-  overflow: hidden;
   justify-content: space-between;
+  overflow: hidden;
 }
 .packages .package-wrap .package-box {
   width: calc(50% - 10px);
   margin-bottom: 0px;
+  position: relative;
+  top: 0;
+  left: 0;
 }
 .packages .package-wrap .package-box:nth-child(2n) {
   margin-right: 0;
@@ -159,6 +187,13 @@
 .packages .package-wrap .package-box:first-child, .packages .package-wrap .package-box:nth-child(2) {
   margin-bottom: 20px;
 }
+.packages .package-wrap .package-box .new-img {
+  height: 120px;
+}
+.packages .package-wrap .package-box .soldout {
+  padding-top: 30%;
+}
+
 .banner {
   margin-bottom: 60px;
 }
@@ -174,16 +209,37 @@
   align-items: flex-start;
 }
 .specials div.specials-wrap .specials-box {
+  position: relative;
+  top: 0;
+  left: 0;
+  height: 210px;
   border-radius: 12px;
   overflow: hidden;
 }
+.specials div.specials-wrap .specials-box .specials-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
 .specials div.specials-wrap .specials-box .specials-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
   padding: 12px;
   color: #fff;
   background: rgba(0, 0, 0, 0.4);
 }
 .specials div.specials-wrap .specials-box .specials-text .specials-area .specials-where {
-  margin-bottom: 5px;
+  margin-bottom: 4px;
   font-size: 18px;
   font-weight: 500;
 }

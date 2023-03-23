@@ -1,3 +1,15 @@
+@mixin positionRlt(){
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+@mixin positionAbs(){
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
 @mixin flexCenter(){
   display: flex;
   align-items: center;
@@ -15,7 +27,12 @@
 
 %imgBackUrl{
   width: 100%;
-  height: 120px;
   margin-bottom: 8px;
   border-radius: 12px;
+  overflow: hidden;
+}
+@mixin imgFit(){
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }

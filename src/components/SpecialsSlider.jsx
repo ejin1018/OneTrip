@@ -47,12 +47,13 @@ const recommend = [
 
 const SpecialsSlider = () => {
   return (
-    <Swiper className="specials-wrap" spaceBetween={20} slidesPerView={2}>
+    <Swiper className="specials-wrap" spaceBetween={20} slidesPerView={2.3}>
       {recommend &&
         recommend.map((value, idx) => {
-          const recomBack = {background:`no-repeat center/cover url(${recommend[idx].ImgUrl})`}
           return (
-            <SwiperSlide className="specials-box" style={recomBack}>
+            <SwiperSlide className="specials-box">
+              {/* <div className="soldout">예약마감</div> */}
+              <img src={recommend[idx].ImgUrl} alt="" className="specials-img" />
               <div className="specials-text">
                 <div className="specials-area">
                   <p className="specials-where">
