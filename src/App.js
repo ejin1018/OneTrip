@@ -22,7 +22,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Main />} />
           <Route path='/create' element={<Create />} />
-          <Route path='/Packages' element={<Packages />} />
+          <Route path='/Packages/:id' element={<Packages />} />
         </Routes>
         <Bnav/>
         <Footer />
