@@ -3,11 +3,12 @@ import Header from './common/Header';
 import Bnav from './common/Bnav';
 import Footer from './common/Footer';
 import Main from './components/Main';
-import './App.scss';
-import "antd/dist/reset.css"
-import { ConfigProvider } from 'antd';
 import Create from './components/Create';
 import Packages from './components/Packages';
+import SearchPage from './components/SearchPage';
+import { ConfigProvider } from 'antd';
+import './App.scss';
+import "antd/dist/reset.css"
 // import Login from "./components/Login";
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Main />} />
           <Route path='/create' element={<Create />} />
+          <Route path='/searchpage' element={<SearchPage />} />
           <Route path='/Packages/:id' element={<Packages />} />
         </Routes>
         <Bnav/>
