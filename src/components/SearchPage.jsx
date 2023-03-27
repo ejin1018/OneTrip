@@ -1,5 +1,4 @@
 import React,{useEffect,useState} from 'react';
-import { Link } from 'react-router-dom';
 import axios from "axios";
 import { Input } from 'antd';
 import Country from './Country';
@@ -15,15 +14,16 @@ function SearchPage(){
     axios
       .get(`${API_URL}/products`)
       .then((result) => {
+        console.log('get')
         setTrip(result.data.product);
       })
       .catch((error) => {
         console.error(error);
       });
   };
-
-  showPackage();
+  
   function showPackage(){
+    console.log(trip)
     const resultHere = document.querySelector('.search-result');
     trip.forEach((item)=>{
       resultHere.innerHTML += `
@@ -66,8 +66,11 @@ function SearchPage(){
   useEffect(()=>{
     getPackage();
     const searchBar = document.querySelector('.search-bar');
-    searchBar.addEventListener('input',searchPackage)
+    searchBar.addEventListener('input',searchPackage);
   },[]);
+  useEffect(()=>{
+    showPackage();
+  })
 
   return(
     <div className='search-wrap'>
