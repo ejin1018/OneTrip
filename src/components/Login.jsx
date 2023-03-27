@@ -1,4 +1,5 @@
 import React from "react";
+import { LockOutlined, UserOutlined } from '@ant-design/icons';
 import { Button, Checkbox, Form, Input } from "antd";
 import "./Login.scss";
 
@@ -6,12 +7,12 @@ const Login = () => {
     return (
         <div className="login-wrap">
             <Form className="login-form">
-                <h2 className="bold">로그인</h2>
+                <h2 className="login-title">OneTrip</h2>
                 <Form.Item name="name" className="name" rules={[{ required: true, message: "아이디를 입력하세요" }]}>
-                    <Input className="upload-name" size="large" placeholder="아이디를 입력하세요" />
+                    <Input className="upload-name" size="large" prefix={<UserOutlined className="site-form-item-icon" />} placeholder="아이디를 입력하세요" />
                 </Form.Item>
                 <Form.Item name="password" className="password" rules={[{ required: true, message: "비밀번호를 입력하세요" }]}  >
-                    <Input.Password className="upload-password" size="large" placeholder="비밀번호를 입력하세요" />
+                    <Input.Password className="upload-password" size="large" prefix={<LockOutlined className="site-form-item-icon" />} placeholder="비밀번호를 입력하세요" />
                 </Form.Item>
                 <Form.Item
                     name="rememberid"
@@ -27,9 +28,8 @@ const Login = () => {
                     </Button>
                 </Form.Item>
                 <div className="login-data">            
-                    <span>아이디 찾기</span>
-                    <span>비밀번호 찾기</span>
-                    <span className="bold">회원가입</span>
+                    <p>임시 아이디: user</p>
+                    <p>임시 비밀번호: test</p>
                 </div>
             </Form>
         </div>
