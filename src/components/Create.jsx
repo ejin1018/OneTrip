@@ -2,14 +2,13 @@ import { API_URL } from "./config/constants";
 import { ArrowRightOutlined, PictureOutlined } from "@ant-design/icons";
 import { Button, Cascader, DatePicker, Form, Input, InputNumber, message, Radio, Upload } from "antd";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { useNavigate,Link } from "react-router-dom";
 import "./Create.scss";
 import { useState } from "react";
 const Create = () => {
   const [imageUrl, setImageUrl] = useState(null);
   const navigate = useNavigate();
   const onFinish = (val) => {
-    // console.log(val);
     axios
       .post(`${API_URL}/products`, {
         imageUrl: imageUrl,
@@ -37,7 +36,6 @@ const Create = () => {
       });
   };
   const onChangeImage = (info) => {
-    // console.log(info);
     if (info.file.status === "uploading") {
       return;
     }
@@ -67,17 +65,17 @@ const Create = () => {
             )}
           </Upload>
         </Form.Item>
-        <Form.Item name="p_name" rules={[{ required: true, message: "여행 이름은 필수 입력 사항입니다." }]}>
-          <Input size="large" bordered={false} placeholder="여행 이름" />
+        <Form.Item name="p_name" rules={[{ required: true, message: "패키지명은 필수 입력 사항입니다." }]}>
+          <Input size="large" bordered={false} prefix="패키지명" placeholder="등록하실 패키지명을 입력하세요" />
         </Form.Item>
         <Form.Item
           name="price"
           rules={[
             { required: true, message: "가격은 필수 입력 사항입니다." },
           ]}
-          initialValue={0}
+          className="upload-price"
          >
-          <InputNumber size="large" bordered={false} placeholder="￦ 가격을 입력하세요" min={0} />
+          <InputNumber size="large" bordered={false} prefix="￦" placeholder="가격을 입력하세요" min={0} />
         </Form.Item>
         <Form.Item name="p_area" rules={[{ required: true, message: "여행지는 필수 입력 사항입니다." }]}>
           <Cascader
@@ -126,27 +124,27 @@ const Create = () => {
           />
         </Form.Item>
         <Form.Item name="hotel">
-          <Input size="large" bordered={false} placeholder="숙소" />
+          <Input size="large" bordered={false} prefix="숙소" placeholder="숙소명을 입력해주세요" />
         </Form.Item>
         <div className="airWrap">
           <div className="airline">
-            <Form.Item name="departure" rules={[{ required: true, message: "출발지는 필수 입력 사항입니다." }]}>
-              <Input size="large" bordered={false} placeholder="출발지" />
+            <Form.Item name="departure" rules={[{ required: true, message: "출발지는 필수 입력 사항입니다." }]} className="airline-half">
+              <Input size="large" bordered={false} prefix="출발지" placeholder="출발지" />
             </Form.Item>
-            <Form.Item name="redeparture" rules={[{ required: true, message: "도착지는 필수 입력 사항입니다." }]}>
-              <Input size="large" bordered={false} placeholder="도착지" />
+            <Form.Item name="redeparture" rules={[{ required: true, message: "도착지는 필수 입력 사항입니다." }]} className="airline-half">
+              <Input size="large" bordered={false} prefix="도착지" placeholder="도착지" />
             </Form.Item>
           </div>
           <ArrowRightOutlined className="positionA" />
           <div className="airline">
-            <Form.Item name="trans" rules={[{ required: true, message: "교통수단은 필수 입력 사항입니다." }]}>
-              <Input size="large" bordered={false} placeholder="출발-교통수단" />
+            <Form.Item name="trans" rules={[{ required: true, message: "교통수단은 필수 입력 사항입니다." }]} className="airline-half">
+              <Input size="large" bordered={false} prefix="교통수단" placeholder="출발시 교통수단" />
             </Form.Item>
-            <Form.Item name="retrans" rules={[{ required: true, message: "교통수단은 필수 입력 사항입니다." }]}>
-              <Input size="large" bordered={false} placeholder="도착-교통수단" />
+            <Form.Item name="retrans" rules={[{ required: true, message: "교통수단은 필수 입력 사항입니다." }]} className="airline-half">
+              <Input size="large" bordered={false} prefix="교통수단" placeholder="도착시 교통수단" />
             </Form.Item>
           </div>
-          <div className="airline">
+          <div className="airline-date">
             <Form.Item name="p_sdate" rules={[{ required: true, message: "출발 날짜는 필수 입력 사항입니다." }]}>
               <DatePicker
                 showTime={{
@@ -155,7 +153,8 @@ const Create = () => {
                 format="YYYY-MM-DD HH:mm"
                 size="large"
                 bordered={false}
-              />
+                placeholder="출발일"
+                />
             </Form.Item>
             <Form.Item name="p_edate" rules={[{ required: true, message: "도착 날짜는 필수 입력 사항입니다." }]}>
               <DatePicker
@@ -165,6 +164,7 @@ const Create = () => {
                 format="YYYY-MM-DD HH:mm"
                 size="large"
                 bordered={false}
+                placeholder="도착일"
               />
             </Form.Item>
           </div>
@@ -175,8 +175,8 @@ const Create = () => {
           rules={[
             { required: true, message: "수량은 필수 입력 사항입니다." },
           ]}
-          initialValue={0}>
-          <InputNumber size="large" bordered={false} min={0} placeholder="총 수량을 입력하세요" />
+        >
+          <InputNumber size="large" bordered={false} min={0} max={100} prefix="수량" placeholder="총 판매 수량을 입력하세요" />
         </Form.Item>
         <Form.Item name="theme" className="borderNone" rules={[{ required: true, message: "테마는 필수 선택 사항입니다." }]}>
           <Radio.Group buttonStyle="solid" className="radio">
@@ -204,7 +204,7 @@ const Create = () => {
               패키지 등록하기
             </Button>
           </Form.Item>
-          <Button size="large">취소</Button>
+          <Link size="large" to={"/"} className="cancel">취소</Link>
         </div>
       </Form>
     </>
