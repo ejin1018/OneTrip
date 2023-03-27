@@ -1,4 +1,5 @@
 import { Route, Routes } from "react-router-dom";
+import { ConfigProvider } from "antd";
 import Header from "./common/Header";
 import Bnav from "./common/Bnav";
 import Footer from "./common/Footer";
@@ -6,10 +7,9 @@ import Main from "./components/Main";
 import Create from "./components/Create";
 import Packages from "./components/Packages";
 import SearchPage from "./components/SearchPage";
-import { ConfigProvider } from "antd";
+import Login from './components/Login'
 import "./App.scss";
 import "antd/dist/reset.css";
-// import Login from "./components/Login";
 
 function App() {
   return (
@@ -27,6 +27,7 @@ function App() {
           <Route path="/create" element={<Create />} />
           <Route path="/searchpage" element={<SearchPage />} />
           <Route path="/Packages/:id" element={<Packages />} />
+          <Route path='/login' element={<Login />}></Route>
         </Routes>
         <Bnav />
         <Footer />

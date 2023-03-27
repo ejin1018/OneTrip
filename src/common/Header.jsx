@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Layout, Menu, Button } from 'antd';
-import { SearchOutlined, MenuOutlined } from "@ant-design/icons";
+import { Layout, Menu } from 'antd';
+import { MenuOutlined } from "@ant-design/icons";
 import "./Header.scss"
 
 function getItem(label, key, icon, children, type) {
@@ -57,9 +57,6 @@ const Header = () => {
                     <h1 className="logo">
                         <Link to='/'>OneTrip</Link>
                     </h1>
-                    <div className="header-icon">
-                        <Link to='/searchpage' className="search-icon"><SearchOutlined /></Link>
-                    </div>
                 </div>
                 <Layout className='sider-wrap'>
                     <Sider
