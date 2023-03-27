@@ -180,7 +180,12 @@
         height: 120px;
       }
       .soldout{
-        padding-top: 30%;
+        > p{
+          width: 100%;
+          height: 120px;
+          border-radius: 12px;
+          line-height: 120px;
+        }
       }
     }
   }
