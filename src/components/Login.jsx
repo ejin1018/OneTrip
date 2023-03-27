@@ -1,6 +1,7 @@
 import React from "react";
 import { Button, Checkbox, Form, Input } from "antd";
 import "./Login.scss";
+import { Link } from "react-router-dom";
 
 const Login = () => {
     return (
@@ -10,7 +11,7 @@ const Login = () => {
                 <Input className="upload-name" size="large" placeholder="아이디를 입력하세요" />
             </Form.Item>
             <Form.Item name="password" className="password" rules={[{ required: true, message: "비밀번호를 입력하세요" }]}  >
-                <Input.Password className="upload-password" size="large" placeholder="비밀번호를 입력하세요" />
+                <Input.Password classN  ame="upload-password" size="large" placeholder="비밀번호를 입력하세요" />
             </Form.Item>
             <Form.Item
                 name="rememberid"
@@ -26,8 +27,8 @@ const Login = () => {
                 </Button>
             </Form.Item>
             <div className="login-data">            
-                <span>아이디 찾기</span>
-                <span>비밀번호 찾기</span>
+                <span><Link to={"/"}>아이디 찾기</Link></span>
+                <span><Link to={"/"}>비밀번호 찾기</Link></span>
                 <span className="bold">회원가입</span>
             </div>
         </Form>
