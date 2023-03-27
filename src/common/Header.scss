@@ -21,7 +21,10 @@
             }
         }
         & .header-icon {
-            > button{
+            > .search-icon{
+                display: block;
+                width: 32px;
+                height: 32px;
                 padding: 0;
                 margin-right: 40px;
                 border: 0 none;

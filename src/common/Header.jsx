@@ -58,7 +58,7 @@ const Header = () => {
                         <Link to='/'>OneTrip</Link>
                     </h1>
                     <div className="header-icon">
-                        <Button className="search-icon" icon={<SearchOutlined />} />
+                        <Link to='/searchpage' className="search-icon"><SearchOutlined /></Link>
                     </div>
                 </div>
                 <Layout className='sider-wrap'>

@@ -1,43 +1,42 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import axios from "axios";
+import { Select } from "antd";
 import { API_URL } from "./config/constants";
 import "swiper/css";
 
-/* const recommend = [
-  {
-    ImgUrl: "/images/countrys1.png",
-    title:"코타키나발루 7일 #하얏트 #5박 이상",
-    price: 10000,
-  },
-  {
-    ImgUrl: "/images/countrys2.png",
-    title: "오키나와 2일 #온천 #1박 이상",
-    price: 10000,
-  },
-  {
-    ImgUrl: "/images/countrys3.png",
-    title: "혜주마음속 2일 #온천 #1박 이상",
-    price: 100,
-  },
-  {
-    ImgUrl: "/images/countrys1.png",
-    title: "혜주마음속 2일 #온천 #1박 이상",
-    price: 100,
-  },
-]; */
+const theme = [
+  "쇼핑",
+  "음식",
+  "문화생활",
+  "액티비티",
+  "휴식",
+]
 
 const RecomSlider = () => {
 
   const [products, setProducts] = useState([]);
-  const handleChange = (value) => {
+  const [theme0, setTheme] = useState([]);
+  function handleChange(value){
     console.log(`selected ${value}`);
+    let result = products.filter((theme,idx)=>{
+      // console.log("V",theme,"idx",idx);
+      if(theme.theme==value){
+        // console.log(theme0,"theme0 여기봐라");
+        const theme0 = theme;
+        setTheme(theme0)
+        return true;
+      }
+    });
+    for(let i=0; i<result.length; i++){
+      console.log(result);
+      
+    }
   };
+  console.log(theme0,"ㅁㄻㄹ");
   useEffect(() => {
     let url = `${API_URL}/producttheme`;
     axios.get(url).then((result) => {
-      console.log(result);
       const products = result.data.product;
       setProducts(products);
     }).catch((error) => {
@@ -46,22 +45,42 @@ const RecomSlider = () => {
   }, []);
   
   return (
+    <div className="main-contents">
+    <div className="select">
+      <h2>나는 요즘</h2>
+      <Select
+        defaultValue={theme[0]}
+        /* bordered={false} */
+        onChange={handleChange}
+        options={theme.map((theme, idx) => ({
+          key: idx,
+          label: theme,
+          value: theme,
+        }))}
+      />
+      <p className="select-want">싶어요</p>
+    </div>
+
+    <div className="recommends">
+      <h3 className="section-title">님을 위한 추천 여행</h3>
+          
     <Swiper className="recom-wrap" spaceBetween={20} slidesPerView={2.5} >
-      {products &&
-        products.map((data, idx) => {
+      {products.map((data, idx) => {
           return (
             <SwiperSlide className="recom-box">
               <div className="imgfit-wrap recom-img">
-                <img src={`${API_URL}/${data.imageUrl}`} alt="" />
+                <img src={`${API_URL}/${theme0.imageUrl}`} alt="" />
               </div>
               <div className="info-box">
-                <p className="info-title">{data.p_name}</p>
-                <p className="info-price"><span>{data.price}</span> 원 ~</p>
+                <p className="info-title">{theme0.p_name} / <span>{theme0.theme}</span></p>
+                <p className="info-price"><span>{theme0.price}</span> 원 ~</p>
               </div>
             </SwiperSlide>
           );
         })}
     </Swiper>
+    </div>
+    </div>
   );
 };
 

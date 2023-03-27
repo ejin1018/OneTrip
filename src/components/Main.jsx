@@ -17,11 +17,12 @@ const tripTheme = [
   "🌿 조용히 휴식하고 ",
 ]
 
+/* const result= theme.fillter(function(theme){
+  return theme = theme;
+}); */
+
 const Main = () => {
   const [products, setProducts] = useState([]);
-  const handleChange = (value) => {
-    console.log(`selected ${value}`);
-  };
   useEffect(() => {
     let url = `${API_URL}/product`;
     axios.get(url).then((result) => {
@@ -60,13 +61,12 @@ const Main = () => {
       </div>
 
       <div className="main-contents">
-        <div className="select">
+{/*         <div className="select">
           <h2>나는 요즘</h2>
           <Select
-            defaultValue={tripTheme[0]}
-            /* bordered={false} */
+            defaultValue={theme[0]}
             onChange={handleChange}
-            options={tripTheme.map((theme, idx) => ({
+            options={theme.map((theme, idx) => ({
               key: idx,
               label: theme,
               value: theme,
@@ -77,8 +77,8 @@ const Main = () => {
 
         <div className="recommends">
           <h3 className="section-title">님을 위한 추천 여행</h3>
-          <RecomSlider />
-        </div>
+        </div> */}
+        <RecomSlider />
 
         <div className="packages">
           <h3 className="section-title">원트립 최신 패키지</h3>
@@ -87,8 +87,8 @@ const Main = () => {
               products.map((data, idx) => {
                 // console.log("data",data);
                 return (
-                  <div className="package-box" key={idx}>         
-                    {data.soldout === 1?<div className="soldout">예약 마감</div>:null}
+                  <div className="package-box" key={idx}>
+                    {data.soldout === 1?<div className="soldout"><p>예약 마감</p></div>:null}
                     <Link className="product-link" to={`/packages/${data.id}`}>
                       <div className="info-box">
                       <div className="new-img imgfit-wrap" ><img src={`${API_URL}/${data.imageUrl}`} alt="" /></div>
@@ -140,5 +140,4 @@ const Main = () => {
     </>
   );
 };
-
 export default Main;
