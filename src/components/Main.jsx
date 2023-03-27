@@ -17,10 +17,6 @@ const tripTheme = [
   "🌿 조용히 휴식하고 ",
 ]
 
-/* const result= theme.fillter(function(theme){
-  return theme = theme;
-}); */
-
 const Main = () => {
   const [products, setProducts] = useState([]);
   useEffect(() => {
@@ -61,25 +57,7 @@ const Main = () => {
       </div>
 
       <div className="main-contents">
-{/*         <div className="select">
-          <h2>나는 요즘</h2>
-          <Select
-            defaultValue={theme[0]}
-            onChange={handleChange}
-            options={theme.map((theme, idx) => ({
-              key: idx,
-              label: theme,
-              value: theme,
-            }))}
-          />
-          <p className="select-want">싶어요</p>
-        </div>
-
-        <div className="recommends">
-          <h3 className="section-title">님을 위한 추천 여행</h3>
-        </div> */}
         <RecomSlider />
-
         <div className="packages">
           <h3 className="section-title">원트립 최신 패키지</h3>
           <div className="package-wrap">
