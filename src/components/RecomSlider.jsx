@@ -46,7 +46,6 @@ const RecomSlider = () => {
       // console.log(result);
     }
   }
-  // console.log(theme1);
   return (
     <div className="main-contents">
       <div className="select">
