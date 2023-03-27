@@ -32,7 +32,15 @@
                 background-color: transparent;
                 color: #13608C;
                 > span{
-                    transform: scale(1.8);
+                    width: 20px;
+                    height: 20px;
+                    margin: 6px auto;
+                    line-height: 20px;
+                    display: inline-block;
+                    >svg{
+                        width: 100%;
+                        height: 100%;
+                    }
                 }
             }
         }
