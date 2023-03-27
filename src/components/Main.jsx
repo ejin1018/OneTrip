@@ -19,13 +19,10 @@ const tripTheme = [
 
 const Main = () => {
   const [products, setProducts] = useState([]);
-  const handleChange = (value) => {
-    console.log(`selected ${value}`);
-  };
   useEffect(() => {
     let url = `${API_URL}/product`;
     axios.get(url).then((result) => {
-      console.log(result);
+      // console.log(result);
       const products = result.data.product;
       setProducts(products);
     }).catch((error) => {
@@ -60,32 +57,13 @@ const Main = () => {
       </div>
 
       <div className="main-contents">
-        <div className="select">
-          <h2>나는 요즘</h2>
-          <Select
-            defaultValue={tripTheme[0]}
-            /* bordered={false} */
-            onChange={handleChange}
-            options={tripTheme.map((theme, idx) => ({
-              key: idx,
-              label: theme,
-              value: theme,
-            }))}
-          />
-          <p className="select-want">싶어요</p>
-        </div>
-
-        <div className="recommends">
-          <h3 className="section-title">님을 위한 추천 여행</h3>
-          <RecomSlider />
-        </div>
-
+        <RecomSlider />
         <div className="packages">
           <h3 className="section-title">원트립 최신 패키지</h3>
           <div className="package-wrap">
             {products &&
               products.map((data, idx) => {
-                console.log("data",data);
+                // console.log("data",data);
                 return (
                   <div className="package-box" key={idx}>
                     {data.soldout === 1?<div className="soldout">예약 마감</div>:null}
@@ -140,5 +118,4 @@ const Main = () => {
     </>
   );
 };
-
 export default Main;
