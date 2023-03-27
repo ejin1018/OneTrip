@@ -26,6 +26,7 @@ function SearchPage(){
     console.log(trip)
     const resultHere = document.querySelector('.search-result');
     trip.forEach((item)=>{
+      console.log(item);
       resultHere.innerHTML += `
         <div class='search-box'>
           <a href="/packages/${item.id}" class='search-box-inner'>
