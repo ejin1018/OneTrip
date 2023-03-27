@@ -1,6 +1,9 @@
+@import '../common/mixin.scss';
+
 .FormWrap {
+  width: 90%;
+  margin: 0 auto;
   margin-top: 100px;
-  padding: 0 100px;
 
   & #upload-img {
     width: 200px;
@@ -23,20 +26,32 @@
     justify-content: center;
     border: 1px solid rgb(230, 230, 230);
     background: rgb(250, 250, 253);
-    margin-left: 16px;
     font-size: 40px;
     & p.img-text {
-      font-size: 16px;
+      font-size: 15px;
+      margin: 5px 0 0;
     }
   }
 
   & .airWrap {
-    position: relative;
+    @include positionRlt;
 
     & .airline {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+      @include flexCenter;
+
+      &-half{
+        width: 45%;
+      }
+    }
+
+    & .airline-date{
+      @include flexCenter;
+      & .ant-form-item{
+        width: 45%;
+        .ant-picker{
+          padding: 6.5px 0;
+        }
+      }
     }
 
     & .positionA {
@@ -51,11 +66,17 @@
   & .submit {
     display: flex;
     justify-content: center;
-    margin-top: 60px;
+    margin: 60px auto 30px;
 
-    & button {
+    & button, & .cancel {
       padding: 0 24px;
       margin: 0 8px;
+    }
+    & .cancel{
+      height: 40px;
+      line-height: 40px;
+      border-radius: 8px;
+      background: #ebebeb;
     }
     & .ant-form-item-control-input {
       border: none;
@@ -65,8 +86,8 @@
   & .radio {
     & .radio-btn {
       border-radius: 10px;
-      border: 1px solid #c9c9c9;
       margin: 0 4px 4px;
+      border: 1px solid $pointColor;
     }
 
     & .radio-btn::before {
@@ -81,7 +102,7 @@
   }
 
   .ant-form-item-control-input {
-    border-bottom: 1px solid #999999;
+    border-bottom: 1px solid #999;
     border-radius: 0;
   }
 
@@ -90,4 +111,22 @@
       border: none;
     }
   }
+
+  .ant-input-affix-wrapper,
+  .ant-input-number-affix-wrapper{
+    width: 100%;
+    padding: 7px 11px 7px 0px;
+    .ant-input-prefix{
+      margin-inline-end: 8px;
+    }
+  }
+
+.ant-form-item{
+  .ant-select{
+    .ant-select-selector{
+      padding: 0;
+    }
+  }
+}
+  
 }

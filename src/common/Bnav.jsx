@@ -1,5 +1,4 @@
-import {HomeOutlined,CalendarOutlined,UserOutlined,HeartOutlined
-} from "@ant-design/icons";
+import {HomeOutlined,UserOutlined,HeartOutlined,SearchOutlined} from "@ant-design/icons";
 import { Link } from "react-router-dom";
 import "./Bnav.scss"
 
@@ -10,9 +9,9 @@ return (
             <HomeOutlined />
             <p class="icontext">홈</p>
         </Link>
-       <Link to={'/Schedule'} className="bottom-nav-btn">
-            <CalendarOutlined />
-            <p class="icontext">일정</p>
+       <Link to={'/searchpage'} className="bottom-nav-btn">
+            <SearchOutlined />
+            <p class="icontext">검색</p>
         </Link>
        <Link to={'/Mypage'} className="bottom-nav-btn">
             <UserOutlined />
