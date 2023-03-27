@@ -25,7 +25,7 @@ const Main = () => {
   useEffect(() => {
     let url = `${API_URL}/product`;
     axios.get(url).then((result) => {
-      console.log(result);
+      // console.log(result);
       const products = result.data.product;
       setProducts(products);
     }).catch((error) => {
@@ -85,10 +85,10 @@ const Main = () => {
           <div className="package-wrap">
             {products &&
               products.map((data, idx) => {
-                console.log(data);
+                // console.log("data",data);
                 return (
-                  <div className="package-box" key={idx}>
-                    
+                  <div className="package-box" key={idx}>         
+                    {data.soldout === 1?<div className="soldout">예약 마감</div>:null}
                     <Link className="product-link" to={`/packages/${data.id}`}>
                       <div className="info-box">
                       <div className="new-img imgfit-wrap" ><img src={`${API_URL}/${data.imageUrl}`} alt="" /></div>
