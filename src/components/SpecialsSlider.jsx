@@ -22,7 +22,7 @@ const SpecialsSlider = () => {
       });
   }, []);
   return (
-    <Swiper className="specials-wrap" spaceBetween={20} slidesPerView={2.3}>
+    <Swiper className="specials-wrap" spaceBetween={20} breakpoints={{578:{slidesPerView:3.5}}} slidesPerView={2.5} >
       {products.map((value, idx) => {
           return (
             <SwiperSlide className="specials-box" key={idx}>

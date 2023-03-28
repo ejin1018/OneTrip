@@ -15,6 +15,7 @@ import "antd/dist/reset.css";
 import ReviewCreate from "./components/ReviewCreate";
 import ReviewSlider from "./components/ReviewSlider";
 import Productt from './components/Productt'
+import HeaderPc from "./components/HeaderPc";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
         }}
       >
         <Header />
+        <HeaderPc />
         <Routes>
           <Route path="/" element={<Main />} />
           <Route path="/create" element={<Create />} />
