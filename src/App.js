@@ -4,7 +4,7 @@ import Header from "./common/Header";
 import Bnav from "./common/Bnav";
 import Footer from "./common/Footer";
 import Main from "./components/Main";
-import Search from "./components/search";
+// import Search from "./components/search";
 import Create from "./components/Create";
 import Packages from "./components/Packages";
 import SearchPage from "./components/SearchPage";
@@ -26,7 +26,7 @@ function App() {
       >
 
         <Header />
-        <Search/>
+        {/* <Search/> */}
         <Routes>
           <Route path="/" element={<Main />} />
           <Route path="/create" element={<Create />} />
