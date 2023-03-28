@@ -54,12 +54,12 @@ const RecomSlider1 = () => {
   };
 
   return (
-    <div className="main-contents" /* style={{ marginTop: 300 }} */>
+    <div /* style={{ marginTop: 300 }} */>
       <div className="select">
         <h2>나는 요즘</h2>
         <select
           onChange={(e) => filterItem(e.target.value)}
-          className="font-bold uppercase"
+          className="font-bold uppercase pointFont"
         >
           {CatValues.map((el, index) => {
             return (
@@ -79,7 +79,7 @@ const RecomSlider1 = () => {
         <Swiper className="recom-wrap" spaceBetween={20} slidesPerView={2.5}>
           {items.map((data, idx) => (
               <SwiperSlide className="recom-box" key={idx}>
-              {data.soldout === 1?<div className="soldout">예약 마감</div>:null}
+              {data.soldout === 1?<div className="soldout"><p>예약 마감</p></div>:null}
               <Link className="specials-link" to={`/packages/${data.id}`}>
                 <div className="imgfit-wrap recom-img">
                   <img src={`${API_URL}/${data?.imageUrl}`} alt="" />

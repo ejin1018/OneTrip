@@ -8,8 +8,15 @@
       }
     }
   }
+  .section-title{
+    font-size: 26px;
+  }
+  .recommends,.packages,.banner,.specials,.countrys,.review-wrap{
+    margin-bottom: 100px;
+  }
   .main{
-    background: url('../../../public/images/main-landscape01.png') no-repeat;
+    margin-bottom: 100px;
+    background: url('../../../public/images/main-landscape01.png') no-repeat fixed;
     background-size: cover;
     background-position: center bottom;
     h3{
@@ -20,24 +27,12 @@
     background: rgba(255,255,255,0.8);
   }
   .bottom-nav{
-    width: auto;
-    height: 60px;
-    top: 0;
-    left: auto;
-    right: 55px;
-    // background: transparent;
-    z-index: 999;
-    &-btn:first-child{
-      display: none;
-    }
-    &-btn{
-      padding: 0;
-      margin-top: 14px;
-      font-size: 25px;
-      color: $pointColor;
-      .icontext{
-        display: none;
-      }
+    display: none;
+  }
+  .select{
+    margin-bottom: 60px;
+    h2,.select-want{
+      font-size: 2em;
     }
   }
 }
@@ -52,5 +47,17 @@
 }
 @media screen and (max-width:578px) {
 
-  
+  .header{
+    .sider-wrap{
+      .sider-container{
+        .ant-layout-sider-children{
+          .sider-menu{
+            > li:last-child{
+              display: none;
+            }
+          }
+        } 
+      } 
+    } 
+  } 
 }

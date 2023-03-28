@@ -34,7 +34,7 @@ const items = [
         getItem('라틴아메리카', '13'),
         getItem('휴양지', '14'),
     ]),
-    // getItem(null, 'grp', null, [getItem('이벤트', '15'), getItem('리뷰', '16'), getItem('마이페이지', '17'), getItem('고객센터', '18')], 'group'),
+    getItem(null, 'grp', null, [getItem('검색', '15'), getItem('리뷰', '16'), getItem('찜', '17')], 'group'),
 ];
 const rootSubmenuKeys = ['sub1', 'sub2', 'sub4'];
 
