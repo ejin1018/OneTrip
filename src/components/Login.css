@@ -1,6 +1,5 @@
 .login-wrap {
   width: 85%;
-  max-width: 500px;
   margin: 0 auto;
   height: 80vh;
   display: flex;
@@ -15,11 +14,13 @@
 }
 .login-wrap .login-form .name {
   width: 100%;
-  margin: 0 auto 10px;
+  max-width: 500px;
+  margin-bottom: 10px;
 }
 .login-wrap .login-form .password {
   width: 100%;
-  margin: 0 auto 10px;
+  max-width: 500px;
+  margin-bottom: 10px;
 }
 .login-wrap .login-form .name .ant-input-prefix,
 .login-wrap .login-form .password .ant-input-prefix {
