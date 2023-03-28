@@ -8,11 +8,12 @@ import Main from "./components/Main";
 import Create from "./components/Create";
 import Packages from "./components/Packages";
 import SearchPage from "./components/SearchPage";
-import Login from './components/Login';
-import ReviewBlock from './components/ReviewBlock';
-import PareaPage from './components/PareaPage';
+import Login from './components/Login'
+import ReviewBlock from './components/ReviewBlock'
 import "./App.scss";
 import "antd/dist/reset.css";
+import ReviewCreate from "./components/ReviewCreate";
+import ReviewSlider from "./components/ReviewSlider";
 
 function App() {
   return (
@@ -24,9 +25,7 @@ function App() {
           },
         }}
       >
-
         <Header />
-        {/* <Search/> */}
         <Routes>
           <Route path="/" element={<Main />} />
           <Route path="/create" element={<Create />} />
@@ -34,8 +33,6 @@ function App() {
           <Route path="/Packages/:id" element={<Packages />} />
           <Route path='/login' element={<Login />} />
           <Route path='/notice' element={<ReviewBlock />} />
-          {/* <Route path='/productt/:p_area' element={<Productt />} /> */}
-          <Route path='/productt/:p_area' element={<PareaPage />} />
         </Routes>
         <Bnav />
         <Footer />
