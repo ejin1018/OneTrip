@@ -10,7 +10,7 @@ import Packages from "./components/Packages";
 import SearchPage from "./components/SearchPage";
 import Login from './components/Login';
 import ReviewBlock from './components/ReviewBlock';
-import PareaPage from './components/PareaPage';
+import Productt from './components/Productt';
 import "./App.scss";
 import "antd/dist/reset.css";
 
@@ -34,8 +34,8 @@ function App() {
           <Route path="/Packages/:id" element={<Packages />} />
           <Route path='/login' element={<Login />} />
           <Route path='/notice' element={<ReviewBlock />} />
-          {/* <Route path='/productt/:p_area' element={<Productt />} /> */}
-          <Route path='/productt/:p_area' element={<PareaPage />} />
+          <Route path='/productt/:p_area' element={<Productt />} />
+          {/* <Route path='/productt/:p_area' element={<PareaPage />} /> */}
         </Routes>
         <Bnav />
         <Footer />
