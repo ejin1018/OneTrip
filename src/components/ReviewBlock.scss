@@ -17,8 +17,8 @@
     }
     .review-mark{
       position: absolute;
-      top: 5%;
-      right: 5%;
+      top: 8%;
+      right: 8%;
       background: #fff;
       padding: 3%;
       border-radius: 5px;
@@ -33,11 +33,37 @@
         font-weight: 700;
       }
     }
-    .review-text{
+    .review-info{
       position: absolute;
       left: 0;
       bottom: 0;
-      // background: linear-gradient();
+      width: 100%;
+      text-align: left;
+      color: #fff;
+      padding: 8%;
+      background: linear-gradient(0deg, #13608C 80%, transparent);
+      .review-fix{
+        font-size: 26px;
+        margin-bottom: 15px;
+        line-height: 0.7;
+      }
+      .review-title{
+        font-size: 21px;
+        font-weight: 600;
+        margin-bottom: 10px;
+      }
+      .review-text{
+        margin-bottom: 8px;
+        font-size: 15px;
+        line-height: 1.5;
+        opacity: 0.8;
+      }
+      .review-user{
+        font-size: 14px;
+        > span{
+          font-weight: 600;
+        }
+      }
     }
   }
 }
