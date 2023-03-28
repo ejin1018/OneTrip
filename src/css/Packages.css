@@ -4,6 +4,12 @@
 .check-package-wrap .packimg .packimg-swiper .swiper-slide {
   background: #eee;
 }
+.check-package-wrap .packimg .packimg-swiper .swiper-slide img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
 .check-package-wrap .packimg .packimg-swiper .swiper-pagination {
   bottom: 50px;
   left: auto;

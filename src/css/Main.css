@@ -190,8 +190,11 @@
 .packages .package-wrap .package-box .new-img {
   height: 120px;
 }
-.packages .package-wrap .package-box .soldout {
-  padding-top: 30%;
+.packages .package-wrap .package-box .soldout > p {
+  width: 100%;
+  height: 120px;
+  border-radius: 12px;
+  line-height: 120px;
 }
 
 .banner {

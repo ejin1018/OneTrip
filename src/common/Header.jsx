@@ -68,7 +68,6 @@ const Header = () => {
                     >
                         <div className='sider-top-menu'>
                             <Link to='/Login'>로그인</Link>
-                            <Link to='/Signin'>회원가입</Link>
                         </div>
 
                         <Menu
