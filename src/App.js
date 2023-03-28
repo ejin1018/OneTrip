@@ -35,7 +35,6 @@ function App() {
           <Route path='/login' element={<Login />} />
           <Route path='/notice' element={<ReviewBlock />} />
           <Route path='/productt/:p_area' element={<Productt />} />
-          {/* <Route path='/productt/:p_area' element={<PareaPage />} /> */}
         </Routes>
         <Bnav />
         <Footer />
