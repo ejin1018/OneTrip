@@ -22,17 +22,6 @@
 .header-inner .logo > a {
   color: #13608C;
 }
-.header-inner .header-icon > button {
-  padding: 0;
-  margin-right: 40px;
-  border: 0 none;
-  box-shadow: none;
-  background-color: transparent;
-  color: #13608C;
-}
-.header-inner .header-icon > button > span {
-  transform: scale(1.8);
-}
 .header .sider-wrap {
   position: fixed;
   top: 0;

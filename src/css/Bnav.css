@@ -8,6 +8,7 @@
   background: #fff;
   border-radius: 13px 13px 0 0;
   z-index: 99;
+  transition: all 0.4s;
 }
 .bottom-nav-btn {
   padding: 0.7rem 1rem 1.3rem;
