@@ -1,0 +1,51 @@
+@font-face {
+  font-family: "twayair";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_tway@1.0/twayair.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+.pointFont {
+  font-family: "twayair";
+}
+
+@media screen and (min-width: 769px) {
+  .header-inner .logo > a {
+    color: red;
+  }
+  .main {
+    background: url("../../../public/images/main-landscape01.png") no-repeat;
+    background-size: cover;
+    background-position: center bottom;
+  }
+  .main h3 {
+    color: #333;
+  }
+  .main-card {
+    background: rgba(255, 255, 255, 0.8);
+  }
+  .bottom-nav {
+    width: auto;
+    height: 60px;
+    top: 0;
+    left: auto;
+    right: 55px;
+    z-index: 999;
+  }
+  .bottom-nav-btn:first-child {
+    display: none;
+  }
+  .bottom-nav-btn {
+    padding: 0;
+    margin-top: 14px;
+    font-size: 25px;
+    color: #13608C;
+  }
+  .bottom-nav-btn .icontext {
+    display: none;
+  }
+}
+@media screen and (min-width: 579px) and (max-width: 768px) {
+  .header-inner .logo > a {
+    color: orange;
+  }
+}/*# sourceMappingURL=mediascreen.css.map */

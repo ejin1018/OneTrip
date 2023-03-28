@@ -1,4 +1,14 @@
 @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/variable/pretendardvariable-dynamic-subset.css");
+@font-face {
+  font-family: "twayair";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_tway@1.0/twayair.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+.pointFont {
+  font-family: "twayair";
+}
+
 * {
   font-family: "Pretendard Variable";
 }
@@ -17,6 +27,5 @@ a {
 .App {
   text-align: center;
   width: 100%;
-  max-width: 768px;
   margin: 0 auto;
 }/*# sourceMappingURL=App.css.map */

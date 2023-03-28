@@ -1,0 +1,56 @@
+@import "../../common/mixin.scss";
+
+@media screen and (min-width:769px) {
+  .header-inner{
+    .logo{
+      > a{
+        color: red;
+      }
+    }
+  }
+  .main{
+    background: url('../../../public/images/main-landscape01.png') no-repeat;
+    background-size: cover;
+    background-position: center bottom;
+    h3{
+      color: #333;
+    }
+  }
+  .main-card{
+    background: rgba(255,255,255,0.8);
+  }
+  .bottom-nav{
+    width: auto;
+    height: 60px;
+    top: 0;
+    left: auto;
+    right: 55px;
+    // background: transparent;
+    z-index: 999;
+    &-btn:first-child{
+      display: none;
+    }
+    &-btn{
+      padding: 0;
+      margin-top: 14px;
+      font-size: 25px;
+      color: $pointColor;
+      .icontext{
+        display: none;
+      }
+    }
+  }
+}
+@media screen and (min-width:579px) and (max-width:768px) {
+  .header-inner{
+    .logo{
+      > a{
+        color: orange;
+      }
+    }
+  }
+}
+@media screen and (max-width:578px) {
+
+  
+}
