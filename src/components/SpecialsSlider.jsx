@@ -26,17 +26,17 @@ const SpecialsSlider = () => {
       {products.map((value, idx) => {
           return (
             <SwiperSlide className="specials-box" key={idx}>
-              {/* <div className="soldout">예약마감</div> */}
+              {value.soldout === 1?<div className="soldout">예약 마감</div>:null}
               <Link className="specials-link" to={`/packages/${value.id}`}>
                 <img src={`${API_URL}/${value.imageUrl}`} alt="" className="specials-img" />
                 <div className="specials-text">
                   <div className="specials-area">
                     <p className="specials-where">
-                      {value.departure}
+                      {value.start}
                       <span>
                         <SwapOutlined />
                       </span>
-                      {value.redeparture}
+                      {value.end}
                     </p>
                     <p className="specials-price">최저 <span>{value.price} 원</span></p>
                   </div>

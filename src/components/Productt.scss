@@ -1,0 +1,112 @@
+@import '../common/mixin';
+.check-package-wrap{
+  .packimg{
+    .packimg-swiper{
+      height: 45vh;
+      .swiper-slide{
+        background:#eee;
+        img{
+          object-fit: cover;
+          width: 100%;
+          height: 100%;
+        }
+      }
+      .swiper-pagination{
+        bottom: 50px;
+        left: auto;
+        right: 10px;
+        width: 70px;
+        height: 25px;
+        line-height: 25px;
+        border-radius: 15px;
+        font-size: 14px;
+        font-weight: 400;
+        color: #fff;
+        background: #13608c96;
+      }
+    }
+  }
+  .packinfo{
+    position: relative;
+    padding: 12% 5%;
+    margin-top: -30px;
+    border-radius: 30px;
+    text-align: left;
+    background-color: #fff;
+    z-index: 9;
+    p{
+      margin-bottom: 0;
+    }
+    .packinfo-title{
+      margin-bottom: 15px;
+      &-area{
+        font-size: 16px;
+        font-weight: 600;
+        margin-bottom: 8px;
+      }
+      &-name{
+        font-size: 21px;
+        font-weight: 600;
+      }
+    }
+    .packinfo-theme{
+      margin-bottom: 30px;
+      display: inline-block;
+      border: solid 1px #13608C;
+      border-radius: 15px;
+      padding: 3px 10px;
+      font-size: 15px;
+      @include pointColorText;
+    }
+    .packinfo-airline{
+      @include flexCenter;
+      border-radius: 15px;
+      padding: 7%;
+      margin-bottom: 30px;
+      background: #F1F6F9;
+      &-box{
+        width: 35%;
+        .airline-state{
+          font-size: 13px;
+          font-weight: 600;
+          color: #b5b5b5;
+          margin-bottom: 5px ;
+        }
+        .airline-date{
+          font-size: 18px;
+          font-weight: 800;
+          color: #000;
+          margin-bottom: 5px ;
+        }
+        .airline-trans{
+          font-size: 14px;
+          color: #585858;
+          margin-top: 5px;
+        }
+      }
+      &-arrow{
+        font-size: 25px;
+        @include pointColorText;
+      }
+    }
+    .packinfo-total{
+      margin-bottom: 15px;
+      @include flexCenter;
+      .total-price{
+        font-size: 21px;
+        span{
+          font-weight: 800;
+        }
+      }
+    }
+  }
+  .package-payment{
+    width: 100%;
+    height: auto;
+    padding: 2% 0;
+    span{
+      font-size: 16px;
+      font-weight: 500;
+    }
+  }
+}
