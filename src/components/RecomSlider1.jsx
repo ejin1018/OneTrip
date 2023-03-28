@@ -48,7 +48,7 @@ const RecomSlider1 = () => {
   };
 
   return (
-    <div className="main-contents" style={{ marginTop: 300 }}>
+    <div className="nowadays" /* style={{ marginTop: 300 }} */>
       <div className="select">
         <h2>나는 요즘</h2>
         <select
@@ -71,9 +71,7 @@ const RecomSlider1 = () => {
       </div>
       <div className="recommends">
         <h3 className="section-title">님을 위한 추천 여행</h3>
-        {/* {console.log(items)}; */}
         <Swiper className="recom-wrap" spaceBetween={20} slidesPerView={2.5}>
-          {/* {console.log(items)}; */}
           {items.map((data, idx) => (
               <SwiperSlide className="recom-box" key={idx}>
                 <div className="imgfit-wrap recom-img">

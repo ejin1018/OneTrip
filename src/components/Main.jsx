@@ -71,9 +71,11 @@ const Main = () => {
                     {data.soldout === 1?<div className="soldout"><p>예약 마감</p></div>:null}
                     <Link className="product-link" to={`/packages/${data.id}`}>
                       <div className="info-box">
-                      <div className="new-img imgfit-wrap" ><img src={`${API_URL}/${data.imageUrl}`} alt="" /></div>
-                        <p className="info-title">{data.p_name}</p>
-                        <p className="info-price"><span>{data.price}</span> 원 ~</p>
+                        <div className="new-img imgfit-wrap" ><img src={`${API_URL}/${data.imageUrl}`} alt="" /></div>
+                        <div className="package-infos">
+                          <p className="info-title">&#91;{data.p_name}&#93;</p>
+                          <p className="info-price">최저 <span>{data.price}</span> 원</p>
+                        </div>
                       </div>
                     </Link>
                   </div>

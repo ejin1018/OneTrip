@@ -13,6 +13,7 @@ import "./App.scss";
 import "antd/dist/reset.css";
 import ReviewCreate from "./components/ReviewCreate";
 import ReviewPage from "./components/ReviewPage";
+import Productt from "./components/Productt";
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
           <Route path="/Packages/:id" element={<Packages />} />
           <Route path="/login" element={<Login />} />
           <Route path="/notice" element={<ReviewBlock />} />
+          <Route path='/productt/:p_area' element={<Productt />} />
           <Route path="/review" element={<ReviewPage />} />
           <Route path="/reviewcreate" element={<ReviewCreate />} />
         </Routes>
