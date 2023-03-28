@@ -1,0 +1,57 @@
+.login-wrap {
+  width: 85%;
+  margin: 0 auto;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.login-wrap .login-form .login-title {
+  margin-bottom: 25px;
+  font-size: 32px;
+  font-weight: 700;
+  color: #13608C;
+}
+.login-wrap .login-form .name {
+  width: 100%;
+  max-width: 500px;
+  margin-bottom: 10px;
+}
+.login-wrap .login-form .password {
+  width: 100%;
+  max-width: 500px;
+  margin-bottom: 10px;
+}
+.login-wrap .login-form .name .ant-input-prefix,
+.login-wrap .login-form .password .ant-input-prefix {
+  color: #13608C;
+}
+.login-wrap .login-form .checkbox {
+  text-align: left;
+  margin-bottom: 20px;
+}
+.login-wrap .login-form .checkbox .ant-checkbox-checked .ant-checkbox-inner {
+  background-color: #13608C;
+  border-color: #13608C;
+}
+.login-wrap .login-form .checkbox .ant-checkbox-inner {
+  border-color: #a5a5a5;
+  border-radius: 50%;
+}
+.login-wrap .login-form .checkbox .ant-checkbox-inner :hover {
+  border-radius: 50%;
+}
+.login-wrap .login-form .checkbox .ant-checkbox-checked::after {
+  border: none;
+  border-radius: 50%;
+}
+.login-wrap .login-form .loginbt {
+  width: 100%;
+  background-color: #13608C;
+  height: 40px;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+.login-wrap .login-form .login-data > p {
+  margin-bottom: 0;
+}/*# sourceMappingURL=Login.css.map */

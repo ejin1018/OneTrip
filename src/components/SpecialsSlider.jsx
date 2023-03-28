@@ -4,6 +4,7 @@ import axios from "axios";
 import "swiper/css";
 import { API_URL } from "./config/constants";
 import { SwapOutlined } from "@ant-design/icons";
+import { Link } from "react-router-dom";
 
 /* const recommend = [
   {
@@ -66,25 +67,27 @@ const SpecialsSlider = () => {
     <Swiper className="specials-wrap" spaceBetween={20} slidesPerView={2.3}>
       {products.map((value, idx) => {
           return (
-            <SwiperSlide className="specials-box">
+            <SwiperSlide className="specials-box" key={idx}>
               {/* <div className="soldout">예약마감</div> */}
-              <img src={`${API_URL}/${value.imageUrl}`} alt="" className="specials-img" />
-              <div className="specials-text">
-                <div className="specials-area">
-                  <p className="specials-where">
-                    {value.departure}
-                    <span>
-                      <SwapOutlined />
-                    </span>
-                    {value.redeparture}
-                  </p>
-                  <p className="specials-price">최저 <span>{value.price} 원</span></p>
+              <Link className="specials-link" to={`/packages/${value.id}`}>
+                <img src={`${API_URL}/${value.imageUrl}`} alt="" className="specials-img" />
+                <div className="specials-text">
+                  <div className="specials-area">
+                    <p className="specials-where">
+                      {value.departure}
+                      <span>
+                        <SwapOutlined />
+                      </span>
+                      {value.redeparture}
+                    </p>
+                    <p className="specials-price">최저 <span>{value.price} 원</span></p>
+                  </div>
+                  <div className="specials-date">
+                    <p>{value.p_sdate}</p>
+                    <p>{value.p_edate}</p>
+                  </div>
                 </div>
-                <div className="specials-date">
-                  <p>{value.p_sdate}</p>
-                  <p>{value.p_edate}</p>
-                </div>
-              </div>
+              </Link>
             </SwiperSlide>
           );
         })}
