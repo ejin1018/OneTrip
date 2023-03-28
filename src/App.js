@@ -33,6 +33,10 @@ function App() {
           <Route path="/Packages/:id" element={<Packages />} />
           <Route path='/login' element={<Login />} />
           <Route path='/notice' element={<ReviewBlock />} />
+<<<<<<< HEAD
+          <Route path='/productt/:p_area' element={<Productt />} />
+=======
+>>>>>>> fd831890d5a5ed6f3b1fb5f55ca8732eb3bdd964
         </Routes>
         <Bnav />
         <Footer />

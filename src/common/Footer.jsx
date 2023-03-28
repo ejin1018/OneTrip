@@ -12,11 +12,11 @@ const Footer = () => {
                 <Link to={'/Service'}>고객센터</Link>
             </div>
             <div className="footer-sns">
-                <Button size="large" shape="circle" icon={<GithubOutlined />} />
-                <Button size="large" shape="circle" icon={<FacebookOutlined />} />
-                <Button size="large" shape="circle" icon={<InstagramOutlined />} />
-                <Button size="large" shape="circle" icon={<YoutubeOutlined />} />
-                <Button size="large" shape="circle" icon={<TwitterOutlined />} />
+            <Button size="large" shape="circle" icon={<a href="https://github.com"> <GithubOutlined /> </a>} />
+            <Button size="large" shape="circle" icon={<a href="https://facebook.com"> <FacebookOutlined /> </a>} />
+            <Button size="large" shape="circle" icon={<a href="https://instagram.com"> <InstagramOutlined /> </a>} />
+            <Button size="large" shape="circle" icon={<a href="https://youtube.com"> <YoutubeOutlined /> </a>} />
+            <Button size="large" shape="circle" icon={<a href="https://twitter.com"> <TwitterOutlined /> </a>} /> 
             </div>
             <div className="footer-info">
                 <div className="footer-assign">
