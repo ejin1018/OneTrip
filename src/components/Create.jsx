@@ -25,6 +25,8 @@ const Create = () => {
         p_edate: val.p_edate,
         count: val.count,
         theme: val.theme,
+        start: val.start,
+        end: val.end,
       })
       .then((result) => {
         console.log(result);
@@ -89,16 +91,32 @@ const Create = () => {
                 label: "국내",
                 children: [
                   {
-                    value: "부산",
-                    label: "부산",
-                  },
-                  {
                     value: "서울",
                     label: "서울",
                   },
                   {
+                    value: "경기",
+                    label: "경기",
+                  },
+                  {
                     value: "인천",
                     label: "인천",
+                  },
+                  {
+                    value: "경상",
+                    label: "경상",
+                  },
+                  {
+                    value: "전라",
+                    label: "전라",
+                  },
+                  {
+                    value: "충청",
+                    label: "충청",
+                  },
+                  {
+                    value: "제주",
+                    label: "제주",
                   },
                 ],
               },
@@ -107,16 +125,36 @@ const Create = () => {
                 label: "해외",
                 children: [
                   {
-                    value: "일본",
-                    label: "일본",
+                    value: "동아시아",
+                    label: "동아시아",
                   },
                   {
-                    value: "중국",
-                    label: "중국",
+                    value: "동남아시아",
+                    label: "동남아시아",
                   },
                   {
-                    value: "미국",
-                    label: "미국",
+                    value: "서유럽",
+                    label: "서유럽",
+                  },
+                  {
+                    value: "동유럽",
+                    label: "동유럽",
+                  },
+                  {
+                    value: "북아메리카",
+                    label: "북아메리카",
+                  },
+                  {
+                    value: "서아메리카",
+                    label: "서아메리카",
+                  },
+                  {
+                    value: "오세아니아",
+                    label: "오세아니아",
+                  },
+                  {
+                    value: "휴양지",
+                    label: "휴양지",
                   },
                 ],
               },
@@ -128,11 +166,19 @@ const Create = () => {
         </Form.Item>
         <div className="airWrap">
           <div className="airline">
-            <Form.Item name="departure" rules={[{ required: true, message: "출발지는 필수 입력 사항입니다." }]} className="airline-half">
+            <Form.Item name="start" rules={[{ required: true, message: "출발지는 필수 입력 사항입니다." }]} className="airline-half">
               <Input size="large" bordered={false} prefix="출발지" placeholder="출발지" />
             </Form.Item>
-            <Form.Item name="redeparture" rules={[{ required: true, message: "도착지는 필수 입력 사항입니다." }]} className="airline-half">
+            <Form.Item name="end" rules={[{ required: true, message: "도착지는 필수 입력 사항입니다." }]} className="airline-half">
               <Input size="large" bordered={false} prefix="도착지" placeholder="도착지" />
+            </Form.Item>
+          </div>
+          <div className="airline">
+            <Form.Item name="departure" rules={[{ required: true, message: "출발공항(역)은 필수 입력 사항입니다." }]} className="airline-half">
+              <Input size="large" bordered={false} prefix="출발공항(역)" placeholder="출발공항(역)" />
+            </Form.Item>
+            <Form.Item name="redeparture" rules={[{ required: true, message: "도착공항(역)은 필수 입력 사항입니다." }]} className="airline-half">
+              <Input size="large" bordered={false} prefix="도착공항(역)" placeholder="도착공항(역)" />
             </Form.Item>
           </div>
           <ArrowRightOutlined className="positionA" />

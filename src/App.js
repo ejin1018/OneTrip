@@ -4,12 +4,12 @@ import Header from "./common/Header";
 import Bnav from "./common/Bnav";
 import Footer from "./common/Footer";
 import Main from "./components/Main";
-import Search from "./components/search";
+// import Search from "./components/search";
 import Create from "./components/Create";
 import Packages from "./components/Packages";
 import SearchPage from "./components/SearchPage";
-import Login from "./components/Login";
-import ReviewBlock from "./components/ReviewBlock";
+import Login from './components/Login'
+import ReviewBlock from './components/ReviewBlock'
 import "./App.scss";
 import "antd/dist/reset.css";
 import ReviewCreate from "./components/ReviewCreate";
@@ -31,10 +31,8 @@ function App() {
           <Route path="/create" element={<Create />} />
           <Route path="/searchpage" element={<SearchPage />} />
           <Route path="/Packages/:id" element={<Packages />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/notice" element={<ReviewBlock />} />
-          <Route path="/reviewcreate" element={<ReviewCreate />} />
-          <Route path="/review" element={<ReviewSlider />} />
+          <Route path='/login' element={<Login />} />
+          <Route path='/notice' element={<ReviewBlock />} />
         </Routes>
         <Bnav />
         <Footer />

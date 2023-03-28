@@ -2,10 +2,15 @@ import React, { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import axios from "axios";
 import { API_URL } from "./config/constants";
+import { Link } from "react-router-dom";
 import "swiper/css";
+
+const theme = ["모두", "쇼핑", "음식", "문화생활", "액티비티", "휴식"];
 
 const RecomSlider = () => {
   const [products, setProducts] = useState([]);
+  const [theme0, setTheme] = useState("모두");
+  const [theme1, setTheme1] = useState([]);
   useEffect(() => {
     let url = `${API_URL}/producttheme`;
     axios
@@ -30,13 +35,15 @@ const RecomSlider = () => {
 
   const [items, setItems] = useState(products);
 
-  const filterItem = (catItem) => {
-    if (catItem === "아무거나") {
-      setItems(products);
-      return;
-    }
-    const updateItems = products.filter((curElem) => {
-      return curElem.theme == catItem;
+      if (theme.theme == value) {
+        if (theme.theme == "모두") {
+          setProducts(products);
+        }
+        // console.log(theme0,"theme0 여기봐라");
+        const theme0 = theme.theme;
+        setTheme(theme0);
+        return setTheme;
+      }
     });
     setItems(updateItems);
   };
@@ -66,6 +73,8 @@ const RecomSlider = () => {
           {items &&
             items.map((data, idx) => (
               <SwiperSlide className="recom-box" key={idx}>
+                 {data.soldout === 1?<div className="soldout">예약 마감</div>:null}
+                  <Link className="product-link" to={`/packages/${data.id}`}>
                 <div className="imgfit-wrap recom-img">
                   <img src={`${API_URL}/${data.imageUrl}`} alt="" />
                 </div>
@@ -77,6 +86,7 @@ const RecomSlider = () => {
                     <span>{data.price}</span> 원 ~
                   </p>
                 </div>
+                </Link>
               </SwiperSlide>
             ))}
         </Swiper>
