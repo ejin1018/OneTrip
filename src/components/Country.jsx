@@ -1,44 +1,60 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { API_URL } from "./config/constants";
+import axios from "axios";
 import "./Main.scss";
 
 const country = [
   {
       ImgUrl:"/images/anywhere-jeju.png",
-      text:"제주"
+      p_area:"제주"
   },
   {
       ImgUrl:"/images/anywhere-gangwon.png",
-      text:"강원"
+      p_area:"강원"
   },
   {
       ImgUrl:"/images/anywhere-busan.png",
-      text:"경상"
+      p_area:"경상"
   },
   {
       ImgUrl:"/images/anywhere-jeonju.png",
-      text:"전라"
+      p_area:"전라"
   },
   {
       ImgUrl:"/images/anywhere-singapore.png",
-      text:"동남아시아"
+      p_area:"동남아시아"
   },
   {
       ImgUrl:"/images/anywhere-paris.png",
-      text:"유럽"
+      p_area:"서유럽"
   },
   {
       ImgUrl:"/images/anywhere-america.png",
-      text:"아메리카"
+      p_area:"아메리카"
   },
   {
       ImgUrl:"/images/anywhere-vacation.png",
-      text:"휴양지"
+      p_area:"휴양지"
   },
 ] 
 
 
 function Country(){
+  const [products, setProducts] = useState([]);
+  useEffect(() => {
+    let url = `${API_URL}/products`;
+    axios
+      .get(url)
+      .then((result) => {
+        const products = result.data.product;
+        setProducts(products);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+  
   return(
       <div className="countrys">
         <h3 className="section-title">어디든, 원트립</h3>
@@ -47,9 +63,9 @@ function Country(){
               country.map((value, idx) => {
                 const countryBack = {background:`no-repeat center bottom /cover url(${country[idx].ImgUrl})`}
                 return (
-                  <Link className="country" to={"/"}>
+                  <Link key={idx} className="country" to={`/productt/${value.p_area}`}>
                     <div className='country-img' style={countryBack}></div>
-                    <p>{country[idx].text}</p>
+                    <p>{country[idx].p_area}</p>
                   </Link>
                 );
               })

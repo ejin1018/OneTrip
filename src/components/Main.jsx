@@ -4,7 +4,7 @@ import { Select } from "antd";
 import { API_URL } from "./config/constants";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import RecomSlider from "./RecomSlider";
+import RecomSlider1 from "./RecomSlider1";
 import SpecialsSlider from "./SpecialsSlider";
 import Country from './Country';
 import "./Main.scss";
@@ -57,7 +57,7 @@ const Main = () => {
       </div>
 
       <div className="main-contents">
-        <RecomSlider />
+        <RecomSlider1 />
         <div className="packages">
           <h3 className="section-title">원트립 최신 패키지</h3>
           <div className="package-wrap">

@@ -6,49 +6,7 @@ import { API_URL } from "./config/constants";
 import { SwapOutlined } from "@ant-design/icons";
 import { Link } from "react-router-dom";
 
-/* const recommend = [
-  {
-    ImgUrl: "/images/special.png",
-    start: "서울",
-    end: "푸켓",
-    price: 594000,
-    sdate: "4월 4일 (화)",
-    edate: "4월 10일 (수)",
-  },
-  {
-    ImgUrl: "/images/special2.png",
-    start: "인천",
-    end: "홍콩",
-    price: 10000,
-    sdate: "4월 4일 (화)",
-    edate: "4월 10일 (수)",
-  },
-  {
-    ImgUrl: "/images/special.png",
-    start: "서울",
-    end: "중국",
-    price: 1000000,
-    sdate: "4월 4일 (화)",
-    edate: "4월 10일 (수)",
-  },
-  {
-    ImgUrl: "/images/special2.png",
-    start: "부산",
-    end: "제주도",
-    price: 10000,
-    sdate: "4월 4일 (화)",
-    edate: "4월 10일 (수)",
-  },
-  {
-    ImgUrl: "/images/special.png",
-    start: "인천",
-    end: "일본",
-    price: 10000,
-    sdate: "4월 4일 (화)",
-    edate: "4월 10일 (수)",
-  },
-];
- */
+
 const SpecialsSlider = () => {
   const [products, setProducts] = useState([]);
   useEffect(() => {
