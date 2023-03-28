@@ -28,9 +28,9 @@ const Bnav = () => {
                 <SearchOutlined />
                 <p className="icontext">검색</p>
             </Link>
-        <Link to={'/Mypage'} className="bottom-nav-btn">
+        <Link to={'/review'} className="bottom-nav-btn">
                 <UserOutlined />
-                <p className="icontext">마이페이지</p>
+                <p className="icontext">리뷰</p>
             </Link>
         <Link to={'/Like'} className="bottom-nav-btn">
                 <HeartOutlined />

@@ -1,8 +1,6 @@
 @import "../common/mixin.scss";
 
 .review-wrap{
-  background: linear-gradient(0deg, #eeeeee 70%, #fff 20%);
-  padding: 0 2.5% 3%;
   margin-bottom: 60px;
   .review-container{
     @include positionRlt;
@@ -12,7 +10,7 @@
     > img{
       @include positionAbs;
       width: 100%;
-      height: 80%;
+      height: 55%;
       object-fit: cover;
     }
     .review-mark{
