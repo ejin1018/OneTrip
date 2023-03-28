@@ -2,7 +2,8 @@ import React, { useState, useEffect } from "react";
 import { Navigate, useNavigate, useParams, Link } from "react-router-dom";
 import axios from "axios";
 import { API_URL } from "./config/constants";
-import "./ProductPage.css";
+//import "./ProductPage.css";
+import "./Productt.css";
 
 function PareaPage() {
   const navigate = useNavigate();
