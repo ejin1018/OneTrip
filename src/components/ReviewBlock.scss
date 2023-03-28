@@ -1,0 +1,43 @@
+@import "../common/mixin.scss";
+
+.review-wrap{
+  background: linear-gradient(0deg, #eeeeee 70%, #fff 20%);
+  padding: 0 2.5% 3%;
+  margin-bottom: 60px;
+  .review-container{
+    @include positionRlt;
+    height: 350px;
+    border-radius: 15px;
+    overflow: hidden;
+    > img{
+      @include positionAbs;
+      width: 100%;
+      height: 80%;
+      object-fit: cover;
+    }
+    .review-mark{
+      position: absolute;
+      top: 5%;
+      right: 5%;
+      background: #fff;
+      padding: 3%;
+      border-radius: 5px;
+      >p{
+        margin: 0;
+      }
+      &-year{
+        font-size: 13px;
+      }
+      &-month{
+        font-size: 18px;
+        font-weight: 700;
+      }
+    }
+    .review-text{
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      // background: linear-gradient();
+    }
+  }
+}

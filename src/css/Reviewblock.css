@@ -1,0 +1,45 @@
+.review-wrap {
+  background: linear-gradient(0deg, #eeeeee 70%, #fff 20%);
+  padding: 0 2.5% 3%;
+  margin-bottom: 60px;
+}
+.review-wrap .review-container {
+  position: relative;
+  top: 0;
+  left: 0;
+  height: 350px;
+  border-radius: 15px;
+  overflow: hidden;
+}
+.review-wrap .review-container > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.review-wrap .review-container .review-mark {
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  background: #fff;
+  padding: 3%;
+  border-radius: 5px;
+}
+.review-wrap .review-container .review-mark > p {
+  margin: 0;
+}
+.review-wrap .review-container .review-mark-year {
+  font-size: 13px;
+}
+.review-wrap .review-container .review-mark-month {
+  font-size: 18px;
+  font-weight: 700;
+}
+.review-wrap .review-container .review-text {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}/*# sourceMappingURL=Reviewblock.css.map */

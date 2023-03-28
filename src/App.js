@@ -8,6 +8,7 @@ import Create from "./components/Create";
 import Packages from "./components/Packages";
 import SearchPage from "./components/SearchPage";
 import Login from './components/Login'
+import ReviewBlock from './components/ReviewBlock'
 import "./App.scss";
 import "antd/dist/reset.css";
 
@@ -27,7 +28,8 @@ function App() {
           <Route path="/create" element={<Create />} />
           <Route path="/searchpage" element={<SearchPage />} />
           <Route path="/Packages/:id" element={<Packages />} />
-          <Route path='/login' element={<Login />}></Route>
+          <Route path='/login' element={<Login />} />
+          <Route path='/notice' element={<ReviewBlock />} />
         </Routes>
         <Bnav />
         <Footer />
