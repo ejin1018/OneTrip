@@ -62,7 +62,7 @@ const Main = () => {
                   </div>
                 </div>
                 <div className="main-card-right">
-                  최저 <span>{products[3].price}</span>원
+                  최저 <span>{products[3].price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</span>원
                 </div>
               </div>
             </Link>
