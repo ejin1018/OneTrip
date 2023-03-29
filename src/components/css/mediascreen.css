@@ -27,7 +27,7 @@
   .nowadays, .packages, .banner, .specials, .countrys, .review-wrap, .themeTrip {
     margin-bottom: 150px;
   }
-  .header, .banner {
+  .header, .banner, div.bottom-nav {
     display: none;
   }
   .soldout p {
@@ -151,7 +151,7 @@
   .specials div.specials-wrap {
     position: relative;
     top: 30%;
-    left: 15%;
+    margin-left: 15%;
   }
   .specials div.specials-wrap .specials-box {
     height: 300px;

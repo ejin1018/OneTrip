@@ -1,20 +1,8 @@
-import React,{useEffect} from "react";
+import React from "react";
 import {HomeOutlined,UserOutlined,HeartOutlined,SearchOutlined} from "@ant-design/icons";
 import { Link } from "react-router-dom";
 
 const Bnav = () => {
-    
-    useEffect(()=>{
-        window.addEventListener('scroll',function(){
-            let nowScr = this.scrollY;
-            let start = 350;
-            if(nowScr >= start){
-                document.querySelector('.bottom-nav').style.bottom = '-80px';
-            }else if(nowScr < start){
-                document.querySelector('.bottom-nav').style.bottom = '0px';
-            }
-        })
-    },[])
 
     return (
         <div className="bottom-nav">
