@@ -6,4 +6,8 @@
 }
 .pointFont {
   font-family: "twayair";
+}
+
+.boldText {
+  font-weight: 600;
 }/*# sourceMappingURL=mixin.css.map */

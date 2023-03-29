@@ -33,9 +33,9 @@ export default function ReviewBlock(){
         </div>
         <div className="review-info">
           <h2 className="review-fix pointFont">&ldquo;<br/>이달의 리뷰</h2>
-          <h3 className="review-title">{review.r_title}</h3>
-          <p className="review-text">{review.r_text}</p>
-          <p className="review-user">작성자 <span>{review.user_name}</span></p>
+          {/* <h3 className="review-title">{review[0].r_title}</h3>
+          <p className="review-text">{review[0].r_text}</p>
+          <p className="review-user">작성자 <span>{review[0].user_name}</span></p> */}
         </div>
       </div>
     </div>
