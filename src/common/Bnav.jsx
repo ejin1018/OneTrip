@@ -1,8 +1,6 @@
-import React,{useEffect,useState} from "react";
+import React,{useEffect} from "react";
 import {HomeOutlined,UserOutlined,HeartOutlined,SearchOutlined} from "@ant-design/icons";
 import { Link } from "react-router-dom";
-import "./Bnav.scss"
-
 
 const Bnav = () => {
     

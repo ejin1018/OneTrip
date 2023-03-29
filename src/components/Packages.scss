@@ -1,7 +1,7 @@
-@import "../common/mixin";
-.check-package-wrap {
-  .packimg {
-    .packimg-swiper {
+@import '../sass/mixin';
+.check-package-wrap{
+  .packimg{
+    .packimg-swiper{
       height: 45vh;
       .swiper-slide {
         background: #eee;
@@ -48,12 +48,6 @@
         font-size: 21px;
         font-weight: 600;
       }
-    }
-    .packinfo-heart {
-      text-align: right;
-      position: absolute;
-      top: 17%;
-      right: 10%;
     }
     .packinfo-theme {
       margin-bottom: 30px;
@@ -116,8 +110,7 @@
     }
   }
 }
-.heart {
-  .button {
+.heart-button {
     cursor: pointer;
     transition: transform 300ms ease;
     position: absolute;
@@ -126,5 +119,4 @@
     &:hover{
       transform: scale(1.1);
     }
-  }
 }

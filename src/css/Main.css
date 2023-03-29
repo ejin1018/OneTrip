@@ -8,6 +8,10 @@
   font-family: "twayair";
 }
 
+.boldText {
+  font-weight: 600;
+}
+
 .recommends div.recom-wrap .recom-box .recom-img, .imgfit-wrap {
   width: 100%;
   margin-bottom: 8px;
@@ -46,7 +50,7 @@
 }
 .headerPc-nav {
   width: 90%;
-  margin: 0 auto;
+  margin: 10px auto 5px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -87,9 +91,9 @@
   display: flex;
 }
 .headerPc-nav .headerPc-menu > .ant-menu-item-group > .ant-menu-item-group-list > li {
-  padding: 0;
   margin: 0;
   width: auto;
+  padding-right: 24px;
 }
 
 .section-title {
