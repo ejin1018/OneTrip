@@ -53,7 +53,7 @@ function Packages() {
   };
   const onClickHeart = () => {
     setLikeAction(!LikeAction);
-    if (LikeAction === false) {
+    if (trip.heart === 0) {
       axios
         .post(`${API_URL}/heart/${id}`)
         .then((result) => {
@@ -65,7 +65,7 @@ function Packages() {
           console.danger(error);
         });
     } 
-    else {
+     if (trip.heart === 1){
       axios
         .post(`${API_URL}/heart2/${id}`)
         .then((result) => {
