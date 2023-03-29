@@ -1,10 +1,11 @@
+import { useState } from "react";
+import { useNavigate,Link } from "react-router-dom";
 import { API_URL } from "./config/constants";
 import { ArrowRightOutlined, PictureOutlined } from "@ant-design/icons";
 import { Button, Cascader, DatePicker, Form, Input, InputNumber, message, Radio, Upload } from "antd";
 import axios from "axios";
-import { useNavigate,Link } from "react-router-dom";
-import "./Create.scss";
-import { useState } from "react";
+import "./compStyle/Create.scss";
+
 const Create = () => {
   const [imageUrl, setImageUrl] = useState(null);
   const navigate = useNavigate();
