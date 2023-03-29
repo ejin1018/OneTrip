@@ -129,6 +129,8 @@
   width: 100%;
   height: 100%;
   pointer-events: 0 none;
+  border: 1px solid #65a1d1;
+  border-radius: 12px;
   background: rgba(255, 255, 255, 0.8);
   font-size: 18px;
   font-weight: 600;

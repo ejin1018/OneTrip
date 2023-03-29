@@ -108,35 +108,41 @@
   .select .select-want {
     font-size: 2em;
   }
+  .info-box .info-title {
+    font-size: 18px;
+  }
+  .info-box .info-price {
+    font-size: 16px;
+  }
   .recommends div.recom-wrap .recom-box .recom-img {
     height: 210px;
   }
-  .packages > .section-title {
+  div.packages > .section-title {
     width: 90%;
     margin: 0 auto 16px;
   }
-  .packages .package-wrap {
+  div.packages .package-wrap {
     width: 90%;
     margin: 0 auto;
     flex-wrap: nowrap;
   }
-  .packages .package-wrap .package-box {
+  div.packages .package-wrap .package-box {
     width: 23%;
     overflow: hidden;
   }
-  .packages .package-wrap .package-box .new-img {
+  div.packages .package-wrap .package-box .new-img {
     height: 210px;
     margin-bottom: 0;
   }
-  .packages .package-wrap .package-box .package-infos {
+  div.packages .package-wrap .package-box .package-infos {
     padding: 8% 5%;
   }
-  .packages .package-wrap .package-box .package-infos .info-title {
+  div.packages .package-wrap .package-box .package-infos .info-title {
     font-size: 18px;
     font-weight: 600;
     word-break: keep-all;
   }
-  .packages .package-wrap .package-box:first-child, .packages .package-wrap .package-box:nth-child(2) {
+  div.packages .package-wrap .package-box:first-child, div.packages .package-wrap .package-box:nth-child(2) {
     margin-bottom: 0;
   }
   .specials {
@@ -211,6 +217,62 @@
   div.search-wrap .countrys {
     width: 100%;
     margin-bottom: 80px;
+  }
+  .check-package-wrap .packimg .packimg-swiper {
+    height: 55vh;
+  }
+  .check-package-wrap div.packinfo {
+    padding: 8% 5%;
+    text-align: center;
+  }
+  .check-package-wrap div.packinfo-title {
+    text-align: center;
+  }
+  .check-package-wrap div.packinfo-title .packinfo-title-area {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  .check-package-wrap div.packinfo-title .packinfo-title-name {
+    font-size: 31px;
+  }
+  .check-package-wrap div.packinfo .packinfo-theme {
+    font-size: 18px;
+  }
+  .check-package-wrap div.packinfo .packinfo-airline-arrow {
+    font-size: 32px;
+  }
+  .check-package-wrap div.packinfo .packinfo-airline {
+    padding: 5%;
+    max-width: 75%;
+    margin: 0 auto 30px;
+  }
+  .check-package-wrap div.packinfo .packinfo-airline .packinfo-airline-box p {
+    margin-bottom: 8px;
+  }
+  .check-package-wrap div.packinfo .packinfo-airline .packinfo-airline-box .airline-state {
+    font-size: 18px;
+  }
+  .check-package-wrap div.packinfo .packinfo-airline .packinfo-airline-box .airline-date {
+    font-size: 28px;
+  }
+  .check-package-wrap div.packinfo .packinfo-airline .packinfo-airline-box .airline-time {
+    font-size: 21px;
+  }
+  .check-package-wrap div.packinfo .packinfo-airline .packinfo-airline-box .airline-trans {
+    font-size: 18px;
+  }
+  .check-package-wrap div.packinfo .packinfo-total {
+    width: 75%;
+    margin: 0 auto 30px;
+  }
+  .check-package-wrap div.packinfo .package-payment {
+    width: 75%;
+    margin: 0 auto 30px;
+  }
+  .packinfo-title .heart-button {
+    top: 5%;
+    right: 50%;
+    transform: translateX(50%);
   }
 }
 @media screen and (max-width: 768px) {
