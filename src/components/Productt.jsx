@@ -1,12 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { Navigate, useNavigate, useParams, Link } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import axios from "axios";
 import { API_URL } from "./config/constants";
-//import "./ProductPage.css";
-import "./Productt.css";
+import "./Productt.scss";
 
 function PareaPage() {
-  const navigate = useNavigate();
   const { p_area } = useParams();
   const [product, setProduct] = useState(null);
 
@@ -14,7 +12,6 @@ function PareaPage() {
     axios
       .get(`${API_URL}/productt/${p_area}`)
       .then((result) => {
-        // console.log(result);
         setProduct(result.data.product);
       })
       .catch((error) => {

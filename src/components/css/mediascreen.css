@@ -49,19 +49,16 @@
   .main {
     height: 100vh;
     margin-bottom: 100px;
-    background: url("../../../public/images/main-landscape01.png") no-repeat fixed;
+    background: url("../../../public/images/anywhere-jeonju.png") no-repeat fixed;
     background-size: cover;
     background-position: center bottom;
   }
   .main h3 {
     width: auto;
-    top: 17%;
+    top: 20%;
     left: 50%;
+    font-size: 2.5em;
     transform: translateX(-50%);
-    color: #333;
-  }
-  .main h3 > span {
-    color: #13608C;
   }
   .main-dim-pc {
     position: absolute;
@@ -69,7 +66,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.2);
   }
   .main-card {
     width: 45%;
@@ -79,8 +76,10 @@
     margin-bottom: 15px;
   }
   .main-card-pc {
-    margin-bottom: 25px;
     height: 180px;
+    margin-bottom: 25px;
+    border-radius: 15px;
+    overflow: hidden;
   }
   .main-card-pc img {
     width: 100%;
@@ -94,6 +93,10 @@
   .main-card-travel .main-card-left {
     width: 100%;
     margin-bottom: 15px;
+  }
+  .main-card-travel .main-card-left > span {
+    font-size: 2em;
+    color: #13608C;
   }
   .bottom-nav {
     display: none;
