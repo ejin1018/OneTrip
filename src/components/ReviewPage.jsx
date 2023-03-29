@@ -23,19 +23,30 @@ function ReviewPage() {
 
   return (
     <div className="review-wrap">
-      <div className="review-box">
-        {review.map((data, idx) => {
-          return (
-            <>
-              {data.r_area}
-              <img src={`${API_URL}/${data.r_imageUrl}`} alt="" />
-              {data.r_text}
-              {data.r_title}
-              {data.user_name}
-            </>
-          );
-        })}
-      </div>
+      {review.map((data, idx) => {
+        return (
+          <div className="review-box"  key={idx}>
+            <img src={`${API_URL}/${data.r_imageUrl}`} alt=""></img>
+            <div className="review-mark">
+              <p className="review-mark-year">2023</p>
+              <p className="review-mark-month">3월</p>
+            </div>
+            <div className="review-info">
+              <h2 className="review-fix pointFont">
+                &ldquo;
+                <br />
+                이달의 리뷰
+              </h2>
+
+              <h3 className="review-title">{data.r_title}</h3>
+              <p className="review-text">{data.r_text}</p>
+              <p className="review-user">
+                작성자 <span>{data.user_name}</span>
+              </p>
+            </div>
+          </div>
+        );
+      })}
     </div>
   );
 }

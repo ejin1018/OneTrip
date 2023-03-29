@@ -1,9 +1,10 @@
-@import "../sass/mixin.scss";
+@import "../common/mixin.scss";
+@import "./ReviewBlock.scss";
 
 .review-wrap {
   width: 95%;
   margin: 0 auto;
-  padding-top: 70px;
+  padding-top: 80px;
    .review-box {
     margin-bottom: 15px;
     border-radius: 12px;
