@@ -2,12 +2,16 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { API_URL } from "./config/constants";
 import "./ReviewPage.scss";
+import relativeTime from "dayjs/plugin/relativeTime";
+import dayjs from "dayjs";
+
+dayjs.extend(relativeTime);
 
 function ReviewPage() {
   const [review, setReview] = useState([]);
 
   useEffect(() => {
-    let url = `${API_URL}/review`;
+    let url = `${API_URL}/reviews`;
     console.log(review);
     axios
       .get(url)
@@ -22,31 +26,32 @@ function ReviewPage() {
   }, []);
 
   return (
-    <div className="review-wrap">
-      {review.map((data, idx) => {
-        return (
-          <div className="review-box"  key={idx}>
-            <img src={`${API_URL}/${data.r_imageUrl}`} alt=""></img>
-            <div className="review-mark">
-              <p className="review-mark-year">2023</p>
-              <p className="review-mark-month">3월</p>
+    <div className="reviewPage">
+      <h3>원트립 리뷰</h3>
+      <div className="reviewPage-wrap">
+        {review.map((data, idx) => {
+          return (
+            <div className="reviewPage-box" key={idx}>
+              <img src={`${API_URL}/${data.r_imageUrl}`} alt="" />
+              <div className="reviewPage-mark">
+                <p className="reviewPage-mark-year">{dayjs(data.p_sdate).format("YYYY")}</p>
+                <p className="reviewPage-mark-month">{dayjs(data.p_sdate).format("MM-DD")}</p>
+              </div>
+              <div className="reviewPage-info">
+                <h2 className="reviewPage-fix pointFont">
+                  &ldquo;
+                  <br />
+                  {data.r_title}
+                </h2>
+                <p className="reviewPage-text">{data.r_text}</p>
+                <p className="reviewPage-user">
+                  작성자 <span>{data.user_name}</span>
+                </p>
+              </div>
             </div>
-            <div className="review-info">
-              <h2 className="review-fix pointFont">
-                &ldquo;
-                <br />
-                이달의 리뷰
-              </h2>
-
-              <h3 className="review-title">{data.r_title}</h3>
-              <p className="review-text">{data.r_text}</p>
-              <p className="review-user">
-                작성자 <span>{data.user_name}</span>
-              </p>
-            </div>
-          </div>
-        );
-      })}
+          );
+        })}
+      </div>
     </div>
   );
 }
