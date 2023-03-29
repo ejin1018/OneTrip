@@ -9,6 +9,10 @@
   font-family: "twayair";
 }
 
+.boldText {
+  font-weight: 600;
+}
+
 * {
   font-family: "Pretendard Variable";
 }

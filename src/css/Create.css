@@ -8,6 +8,10 @@
   font-family: "twayair";
 }
 
+.boldText {
+  font-weight: 600;
+}
+
 .FormWrap {
   width: 90%;
   margin: 0 auto;

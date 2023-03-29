@@ -8,6 +8,10 @@
   font-family: "twayair";
 }
 
+.boldText {
+  font-weight: 600;
+}
+
 .search-wrap {
   width: 95%;
   margin: 0 auto;

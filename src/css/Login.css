@@ -8,6 +8,10 @@
   font-family: "twayair";
 }
 
+.boldText {
+  font-weight: 600;
+}
+
 .login-wrap {
   width: 85%;
   max-width: 500px;
