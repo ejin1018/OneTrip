@@ -32,7 +32,7 @@ const country = [
   },
   {
       ImgUrl:"/images/anywhere-america.png",
-      p_area:"아메리카"
+      p_area:"북아메리카"
   },
   {
       ImgUrl:"/images/anywhere-vacation.png",

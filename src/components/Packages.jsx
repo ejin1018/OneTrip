@@ -2,20 +2,22 @@ import React, { useState, useEffect } from "react";
 import { Navigate, useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 import { API_URL } from "./config/constants";
-import { Button, message } from "antd";
-import { ArrowRightOutlined, HeartOutlined } from "@ant-design/icons";
+import { Button, message, Tooltip } from "antd";
+import { ArrowRightOutlined, HeartOutlined, HeartFilled } from "@ant-design/icons";
 import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper";
 import "swiper/css/pagination";
 import "./Packages.scss";
+import LikeButton from "./LikeButton";
 
 dayjs.extend(relativeTime);
 
 function Packages() {
   const { id } = useParams();
   const [trip, setTrip] = useState(null);
+  const [LikeAction, setLikeAction] = useState('');
   const navigate = useNavigate();
 
   const getPackage = () => {
@@ -46,6 +48,30 @@ function Packages() {
         console.danger(error);
       });
   };
+  const onClickHeart = () => {
+    axios
+      .post(`${API_URL}/heart/${id}`)
+      .then((result) => {
+        message.info("찜하기가 완료되었습니다.");
+        getPackage();
+      })
+      .catch((error) => {
+        message.de("찜하기가 실패하였습니다.");
+        console.danger(error);
+      });
+  };
+  const onClickHeart2 = () => {
+    axios
+      .post(`${API_URL}/heart2/${id}`)
+      .then((result) => {
+        message.info("찜하기가 취소되었습니다.");
+        getPackage();
+      })
+      .catch((error) => {
+        message.de("취소가 실패하였습니다.");
+        console.danger(error);
+      });
+  };
 
   if (trip == null) {
     return <p>...</p>;
@@ -72,7 +98,15 @@ function Packages() {
       </div>
       <div className="packinfo">
         <div className="packinfo-title">
-          <p className="packinfo-title-area">&#91;{trip.p_area}&#93;<span className="packinfo-heart"><HeartOutlined /></span></p>
+          {/* <Tooltip title="Like">
+            {LikeAction === '' ?  <HeartOutlined onClick={onClickHeart}/>: <HeartFilled onClick={onClickHeart} />}
+          </Tooltip> */}
+ 
+
+          <span className="packinfo-heart d-block"><HeartOutlined style={{ fontSize: '2.5rem', color: '#ff0000' }} onClick={onClickHeart}/></span>
+          <span className="packinfo-heart d-none"><HeartFilled style={{ fontSize: '2.5rem', color: '#ff0000' }} onClick={onClickHeart2}/></span>
+
+          <p className="packinfo-title-area">&#91;{trip.p_area}&#93;</p>
           <p className="packinfo-title-name">{trip.p_name}</p>
         </div>
         <div className="packinfo-theme">{trip.theme}</div>
