@@ -3,17 +3,16 @@ import { Link } from 'react-router-dom';
 import { Menu } from 'antd';
 import '../components/Main.scss';
 
-function getItem(label, key, icon, children, type) {
+function getItem(label, key, children, type) {
   return {
-      key,
-      icon,
-      children,
       label,
+      key,
+      children,
       type,
   };
 }
 const items = [
-  getItem('국내여행지', 'sub1', null, [
+  getItem('국내여행지', 'sub1', [
       getItem(null, 'g1', null, [
           getItem('서울', '1'),
           getItem('경기', '2'),
@@ -24,7 +23,7 @@ const items = [
           getItem('제주', '7')
       ], 'group'),
   ]),
-  getItem('해외여행지', 'sub2', null, [
+  getItem('해외여행지', 'sub2', [
     getItem(null, 'g2', null,[
       getItem('동아시아', '8'),
       getItem('동남아시아', '9'),
@@ -35,7 +34,7 @@ const items = [
       getItem('휴양지', '14')
     ],'group')
   ]),
-  getItem(null, 'sub3', null, [
+  getItem(null, 'sub3', [
     getItem('검색', '15'), 
     getItem('리뷰', '16'), 
     getItem('찜', '17')
@@ -48,9 +47,9 @@ const HeaderPc = () => {
   const onOpenChange = (keys) => {
       const latestOpenKey = keys.find((key) => openKeys.indexOf(key) === -1);
       if (rootSubmenuKeys.indexOf(latestOpenKey) === -1) {
-          setOpenKeys(keys);
+        setOpenKeys(keys);
       } else {
-          setOpenKeys(latestOpenKey ? [latestOpenKey] : []);
+        setOpenKeys(latestOpenKey ? [latestOpenKey] : []);
       }
   };
   return (
