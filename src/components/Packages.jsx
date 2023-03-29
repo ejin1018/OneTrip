@@ -3,7 +3,7 @@ import { Navigate, useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 import { API_URL } from "./config/constants";
 import { Button, message } from "antd";
-import { ArrowRightOutlined } from "@ant-design/icons";
+import { ArrowRightOutlined, HeartOutlined } from "@ant-design/icons";
 import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -72,7 +72,7 @@ function Packages() {
       </div>
       <div className="packinfo">
         <div className="packinfo-title">
-          <p className="packinfo-title-area">&#91;{trip.p_area}&#93;</p>
+          <p className="packinfo-title-area">&#91;{trip.p_area}&#93;<span className="packinfo-heart"><HeartOutlined /></span></p>
           <p className="packinfo-title-name">{trip.p_name}</p>
         </div>
         <div className="packinfo-theme">{trip.theme}</div>

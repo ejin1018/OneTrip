@@ -14,7 +14,7 @@ function PareaPage() {
     axios
       .get(`${API_URL}/productt/${p_area}`)
       .then((result) => {
-        console.log(result);
+        // console.log(result);
         setProduct(result.data.product);
       })
       .catch((error) => {
@@ -33,7 +33,7 @@ function PareaPage() {
       <h3 className="section-title">원트립 지역별 패키지</h3>
       <div className="package-wrap">
         {product.map((data, idx) => {
-            console.log("data",data);
+            // console.log("data",data);
             return (
               <div className="package-box" key={idx}>
                 {data.soldout === 1 ? (
