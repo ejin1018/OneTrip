@@ -1,7 +1,28 @@
-import React from "react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
+import { API_URL } from "./config/constants";
 import "./ReviewBlock.scss"
 
 export default function ReviewBlock(){
+  const [review, setReview] = useState([]);
+
+
+  useEffect(() => {
+    let url = `${API_URL}/review`;
+    console.log(review);
+    axios
+      .get(url)
+      .then((result) => {
+        const review = result.data.review;
+        setReview(review);
+        console.log(review);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+
+
   return(
     <div className="review-wrap">
       <div className="review-container">
@@ -12,9 +33,9 @@ export default function ReviewBlock(){
         </div>
         <div className="review-info">
           <h2 className="review-fix pointFont">&ldquo;<br/>이달의 리뷰</h2>
-          <h3 className="review-title">봄 힐링 먹방 여행</h3>
-          <p className="review-text">봄 바람이 불기 시작하는 3월,<br />3월의 여행 소식을 들어보세요</p>
-          <p className="review-user">작성자 <span>김공주</span></p>
+          {/* <h3 className="review-title">{review[0].r_title}</h3>
+          <p className="review-text">{review[0].r_text}</p>
+          <p className="review-user">작성자 <span>{review[0].user_name}</span></p> */}
         </div>
       </div>
     </div>
