@@ -167,13 +167,13 @@
     font-size: 18px;
     margin-top: 15px;
   }
-  .review-wrap .review-container > img {
+  div.review-wrap .review-container > img {
     left: auto;
     right: 0;
     width: 60%;
     height: 100%;
   }
-  .review-wrap .review-container .review-info {
+  div.review-wrap .review-container .review-info {
     width: 60%;
     height: 100%;
     padding: 0 6%;
@@ -182,7 +182,7 @@
     flex-direction: column;
     justify-content: center;
   }
-  .review-wrap .review-container .review-info .review-title {
+  div.review-wrap .review-container .review-info .review-title {
     margin-bottom: 70px;
   }
   div.search-wrap {

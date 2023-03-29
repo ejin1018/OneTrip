@@ -3,16 +3,17 @@ import { Link } from 'react-router-dom';
 import { Menu } from 'antd';
 import '../components/Main.scss';
 
-function getItem(label, key, children, type) {
+function getItem(label, key, icon, children, type) {
   return {
-      label,
       key,
+      icon,
       children,
+      label,
       type,
   };
 }
 const items = [
-  getItem('국내여행지', 'sub1', [
+  getItem('국내여행지', 'sub1', null, [
       getItem(null, 'g1', null, [
           getItem('서울', '1'),
           getItem('경기', '2'),
@@ -23,7 +24,7 @@ const items = [
           getItem('제주', '7')
       ], 'group'),
   ]),
-  getItem('해외여행지', 'sub2', [
+  getItem('해외여행지', 'sub2', null, [
     getItem(null, 'g2', null,[
       getItem('동아시아', '8'),
       getItem('동남아시아', '9'),
@@ -34,11 +35,11 @@ const items = [
       getItem('휴양지', '14')
     ],'group')
   ]),
-  getItem(null, 'sub3', [
-    getItem('검색', '15'), 
-    getItem('리뷰', '16'), 
-    getItem('찜', '17')
-  ], 'group')
+  // getItem(null, 'sub3', null, [
+  //   getItem('검색', '15'), 
+  //   getItem('리뷰', '16'), 
+  //   getItem('찜', '17')
+  // ], 'group')
 ];
 const rootSubmenuKeys = ['sub1', 'sub2', 'sub3'];
 
@@ -75,6 +76,17 @@ const HeaderPc = () => {
           mode="inline"
           items={items}
         />
+        <ul className='headerPc-otherMenu'>
+          <li>
+            <Link to={'/searchpage'} className="otherMenu-btn">검색</Link>
+          </li>
+          <li>
+            <Link to={'/reviewpage'} className="otherMenu-btn">리뷰</Link>
+          </li>
+          <li>
+            <Link to={'/'} className="otherMenu-btn">찜</Link>
+          </li>
+        </ul>
       </div>
     </div>
   );

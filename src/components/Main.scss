@@ -47,6 +47,12 @@
       background: transparent;
       > .ant-menu-submenu{
         @include positionRlt;
+        > .ant-menu-submenu-title{
+          
+          > span{
+            font-size: 16px;
+          }
+        }
         > .ant-menu-sub{
           position: absolute;
           width: 100%;
@@ -64,17 +70,18 @@
           }
         }
       }
-      > .ant-menu-item-group{
-        > .ant-menu-item-group-title{
-          padding: 0;
-        }
-        > .ant-menu-item-group-list{
-          display: flex;
-          >li{
-            margin: 0;
-            width: auto;
-            padding-right: 24px;
-          }
+    }
+    .headerPc-otherMenu{
+      display: flex;
+      width: 15%;
+      justify-content: space-between;
+      align-items: center;
+      margin: 0;
+      li{
+        .otherMenu-btn{
+          display: block;
+          height: 48px;
+          line-height: 48px;
         }
       }
     }
