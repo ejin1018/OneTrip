@@ -25,7 +25,7 @@
   left: 0;
   width: 100%;
   padding-top: 15px;
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(255, 255, 255, 0.5);
   z-index: 999;
 }
 .headerPc-utility {
@@ -119,13 +119,13 @@
   position: absolute;
   top: 0;
   left: 0;
-  color: #13608C;
   width: 100%;
   height: 100%;
   pointer-events: 0 none;
   background: rgba(255, 255, 255, 0.8);
   font-size: 18px;
   font-weight: 600;
+  color: #13608C;
   z-index: 9;
 }
 .soldout > p {
@@ -140,7 +140,7 @@
   height: 90vh;
   overflow: hidden;
   margin-bottom: 60px;
-  background: url("../../public/images/main.png") no-repeat fixed;
+  background: url("../../public/images/anywhere-jeju.png") no-repeat fixed;
   background-size: 170%;
   background-position: top center;
 }
@@ -157,6 +157,7 @@
   line-height: 1.2;
 }
 .main h3 span {
+  color: #13608C;
   font-weight: 600;
 }
 .main-card {
@@ -167,7 +168,7 @@
   transform: translateX(-50%);
   padding: 3%;
   border-radius: 15px;
-  background: #fff;
+  background: rgba(255, 255, 255, 0.8);
 }
 .main-card-title {
   width: 100%;
@@ -190,10 +191,15 @@
   align-items: center;
   justify-content: space-between;
 }
+.main-card-travel .main-card-left > span {
+  font-size: 1.3em;
+  color: #13608C;
+}
 .main-card-travel .main-card-left .main-info-where {
   margin-bottom: 5px;
   font-size: 21px;
   font-weight: 600;
+  color: #13608C;
 }
 .main-card-travel .main-card-left .main-info-trans {
   margin-bottom: 3px;
@@ -212,6 +218,7 @@
   margin-left: 3px;
   font-size: 21px;
   font-weight: 600;
+  color: #13608C;
 }
 
 .main-contents {
@@ -226,21 +233,23 @@
   font-weight: 400;
   margin-bottom: 0;
 }
-.select .ant-select {
-  margin: 8px 0;
+.select .select-inline {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5px;
 }
-.select .ant-select .ant-select-selector {
-  border: none;
-  border-radius: 0;
+.select .select-inline > select {
+  margin-right: 10px;
+  padding: 5px;
+  border: 0 none;
   border-bottom: 2px solid #13608C;
+  font-size: 1.6em;
+  text-align: center;
+  color: #13608C;
 }
-.select .ant-select .ant-select-selector .ant-select-selection-item {
-  font-size: 32px;
-  overflow: visible;
-}
-.select .ant-select .ant-select-arrow {
-  color: #000;
-  font-size: 20px;
+.select .select-inline > select > option {
+  font-size: 16px;
 }
 
 .recommends {
@@ -252,10 +261,20 @@
 }
 .recommends div.recom-wrap .recom-box .recom-img {
   height: 130px;
+  margin-bottom: 10px;
 }
 
 .info-box {
   text-align: left;
+}
+.info-box .info-theme {
+  background: #13608C;
+  color: #fff;
+  display: inline-block;
+  border-radius: 13px;
+  padding: 4px 6px;
+  font-size: 15px;
+  margin-bottom: 8px;
 }
 .info-box .info-country {
   font-size: 15px;
@@ -354,6 +373,7 @@
   margin-bottom: 4px;
   font-size: 18px;
   font-weight: 500;
+  word-break: keep-all;
 }
 .specials div.specials-wrap .specials-box .specials-text .specials-area .specials-where span {
   margin: 0 3px;
