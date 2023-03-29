@@ -14,27 +14,33 @@ function getItem(label, key, icon, children, type) {
   };
 }
 const items = [
-    getItem('국내여행지', 'sub1', null, [
-        getItem(null, 'g1', null, [
-            getItem('서울', '1'),
-            getItem('경기', '2'),
-            getItem('강원', '3'),
-            getItem('충청', '4'),
-            getItem('전라', '5'),
-            getItem('경상', '6'),
-            getItem('제주', '7')
-        ], 'group'),
-    ]),
-    getItem('해외여행지', 'sub2', null, [
-        getItem('동아시아', '8'),
-        getItem('동남아시아', '9'),
-        getItem('서유럽', '10'),
-        getItem('동유럽', '11'),
-        getItem('아메리카', '12'),
-        getItem('라틴아메리카', '13'),
-        getItem('휴양지', '14'),
-    ]),
-    getItem(null, 'grp', null, [getItem('검색', '15'), getItem('리뷰', '16'), getItem('찜', '17')], 'group'),
+  getItem("국내여행지", "sub1", null, [
+    getItem(
+      null,
+      "g1",
+      null,
+      [
+        getItem(<Link to={"/productt/서울"}>서울</Link>, "1"),
+        getItem(<Link to={"/productt/경기"}>경기</Link>, "2"),
+        getItem(<Link to={"/productt/강원"}>강원</Link>, "3"),
+        getItem(<Link to={"/productt/충청"}>충청</Link>, "4"),
+        getItem(<Link to={"/productt/전라"}>전라</Link>, "5"),
+        getItem(<Link to={"/productt/경상"}>경상</Link>, "6"),
+        getItem(<Link to={"/productt/제주"}>제주</Link>, "7"),
+      ],
+      "group"
+    ),
+  ]),
+  getItem("해외여행지", "sub2", null, [
+    getItem(<Link to={"/productt/동아시아"}>동아시아</Link>, "8"),
+    getItem(<Link to={"/productt/동남아시아"}>동남아시아</Link>, "9"),
+    getItem(<Link to={"/productt/서유럽"}>서유럽</Link>, "10"),
+    getItem(<Link to={"/productt/동유럽"}>동유럽</Link>, "11"),
+    getItem(<Link to={"/productt/아메리카"}>아메리카</Link>, "12"),
+    getItem(<Link to={"/productt/라틴아메리카"}>라틴아메리카</Link>, "13"),
+    getItem(<Link to={"/productt/휴양지"}>휴양지</Link>, "14"),
+  ]),
+  getItem(null, "grp", null, [getItem("검색", "15"), getItem("리뷰", "16"), getItem("찜", "17")], "group"),
 ];
 const rootSubmenuKeys = ["sub1", "sub2", "sub4"];
 
@@ -58,36 +64,20 @@ const Header = () => {
           </h1>
         </div>
         <Layout className="sider-wrap">
-          <Sider
-            className="sider-container"
-            breakpoint="xxl"
-            collapsedWidth="0"
-            reverseArrow="true"
-            trigger={<MenuOutlined />}
-          >
+          <Sider className="sider-container" breakpoint="xxl" collapsedWidth="0" reverseArrow="true" trigger={<MenuOutlined />}>
             <div className="sider-top-menu">
               <Link to="/Login">로그인</Link>
             </div>
-            <Menu
-              openKeys={openKeys}
-              onOpenChange={onOpenChange}
-              className="sider-menu"
-              defaultSelectedKeys={["1"]}
-              mode="inline"
-              items={items}
-            />
+            <Menu openKeys={openKeys} onOpenChange={onOpenChange} className="sider-menu" defaultSelectedKeys={["1"]} mode="inline" items={items} />
             <ul className="sider-bottom-menu">
               <li>
                 <Link to="/create">관광상품업로드</Link>
               </li>
               <li>
+                <Link to="/review">리뷰</Link>
+              </li>
+              <li>
                 <Link>이벤트</Link>
-              </li>
-              <li>
-                <Link>리뷰</Link>
-              </li>
-              <li>
-                <Link>마이페이지</Link>
               </li>
               <li>
                 <Link>고객센터</Link>
