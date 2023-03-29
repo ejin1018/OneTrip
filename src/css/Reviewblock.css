@@ -8,6 +8,10 @@
   font-family: "twayair";
 }
 
+.boldText {
+  font-weight: 600;
+}
+
 .review-wrap {
   margin-bottom: 60px;
 }

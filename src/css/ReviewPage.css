@@ -1,0 +1,24 @@
+@font-face {
+  font-family: "twayair";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_tway@1.0/twayair.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+.pointFont {
+  font-family: "twayair";
+}
+
+.boldText {
+  font-weight: 600;
+}
+
+.review-wrap {
+  width: 95%;
+  margin: 0 auto;
+  padding-top: 70px;
+}
+.review-wrap .review-box {
+  margin-bottom: 15px;
+  border-radius: 12px;
+  background: #fafafa;
+}/*# sourceMappingURL=ReviewPage.css.map */

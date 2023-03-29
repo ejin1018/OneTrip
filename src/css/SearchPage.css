@@ -8,6 +8,10 @@
   font-family: "twayair";
 }
 
+.boldText {
+  font-weight: 600;
+}
+
 .search-wrap {
   width: 95%;
   margin: 0 auto;
@@ -32,7 +36,7 @@
   position: relative;
   top: 0;
   left: 0;
-  width: 100px;
+  width: 30%;
   height: 100px;
 }
 .search-box .search-box-inner .package-img-theme {

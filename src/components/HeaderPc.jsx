@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Menu } from 'antd';
-import { DownOutlined, MenuOutlined } from '@ant-design/icons';
 import './Main.scss';
 
 function getItem(label, key, icon, children, type) {
@@ -72,7 +71,6 @@ const HeaderPc = () => {
       <div className='headerPc-nav'>
         <Link to={'/'} className='headerPc-logo'>OneTrip</Link>
         <Menu
-          openKeys={openKeys}
           onOpenChange={onOpenChange}
           className='headerPc-menu'
           mode="inline"
