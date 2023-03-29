@@ -1,14 +1,14 @@
 import React from 'react';
 import {Route,Routes} from 'react-router-dom';
-import Main from "./components/Main";
-import Create from "./components/Create";
-import Packages from "./components/Packages";
-import SearchPage from "./components/SearchPage";
-import Login from "./components/Login";
-import ReviewBlock from "./components/ReviewBlock";
-import ReviewCreate from "./components/ReviewCreate";
-import ReviewPage from "./components/ReviewPage";
-import Productt from './components/Productt'
+import Main from "./Main";
+import Create from "./Create";
+import Packages from "./Packages";
+import SearchPage from "./SearchPage";
+import Login from "./Login";
+import ReviewBlock from "./ReviewBlock";
+import ReviewCreate from "./ReviewCreate";
+import ReviewPage from "./ReviewPage";
+import Productt from './Productt'
 
 function RoutesAll (){
  return(
