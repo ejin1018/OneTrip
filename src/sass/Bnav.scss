@@ -1,0 +1,21 @@
+.bottom-nav{
+    width: 100%;
+    display:flex;
+    justify-content: space-around;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background: #fff;
+    border-radius: 13px 13px 0 0;
+    z-index: 99;
+    transition: all .4s;
+    &-btn{
+        padding: 0.7rem 1rem 1.3rem;
+        font-size: 20px;
+        .icontext{
+            margin-top: 5px;
+            margin-bottom: 0;
+            font-size: 14px;
+        }
+    }
+}

@@ -3,7 +3,7 @@ import axios from "axios";
 import { Input } from 'antd';
 import Country from './Country';
 import { API_URL } from "./config/constants";
-import './SearchPage.scss';
+import './compStyle/SearchPage.scss';
 import './compStyle/mediascreen.scss';
 
 const { Search } = Input;
