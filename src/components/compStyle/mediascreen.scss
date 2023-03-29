@@ -1,137 +1,149 @@
-@import '../../sass/mixin.scss';
-
-@media screen and (min-width:769px) {
-  .main-contents{
+@import "../../sass/mixin.scss";
+@media screen and (min-width: 769px) {
+  .main-contents {
     padding: 0;
   }
-  .section-title{
+  .section-title {
     font-size: 26px;
     margin-bottom: 30px;
   }
-  .nowadays, .banner, .specials, .countrys, .review-wrap{
+  .nowadays,
+  .banner,
+  .specials,
+  .countrys,
+  .review-wrap {
     width: 90%;
     margin: 0 auto;
   }
-  .nowadays,.packages,.banner,.specials,.countrys,.review-wrap, .themeTrip{
+  .nowadays,
+  .packages,
+  .banner,
+  .specials,
+  .countrys,
+  .review-wrap,
+  .themeTrip {
     margin-bottom: 150px;
   }
-  .header, .banner{
+  .header,
+  .banner,
+  div.bottom-nav {
     display: none;
   }
-  .soldout{
-    p{
+  .soldout {
+    p {
       height: 210px;
       line-height: 210px;
     }
   }
-  .main{
+  .main {
     height: 100vh;
     margin-bottom: 100px;
-    background: url('../../../public/images/main-landscape01.png') no-repeat fixed;
+    background: url("../../../public/images/main-landscape01.png") no-repeat fixed;
     background-size: cover;
     background-position: center bottom;
-    h3{
+    h3 {
       width: auto;
       top: 17%;
       left: 50%;
       transform: translateX(-50%);
       color: #333;
-      > span{
+      > span {
         color: $pointColor;
       }
     }
-    &-dim-pc{
+    &-dim-pc {
       @include positionAbs;
       width: 100%;
       height: 100%;
-      background: rgba(255,255,255,0.3);
+      background: rgba(255, 255, 255, 0.3);
     }
   }
-  .main-card{
+  .main-card {
     width: 45%;
     bottom: 5%;
-    &-title{
+    &-title {
       margin-bottom: 15px;
     }
-    &-pc{
+    &-pc {
       margin-bottom: 25px;
       height: 180px;
-      img{
+      img {
         width: 100%;
         height: 100%;
         object-fit: cover;
       }
     }
-    &-travel{
+    &-travel {
       flex-direction: column;
-      .main-card-left{
+      .main-card-left {
         width: 100%;
         margin-bottom: 15px;
       }
     }
   }
-  .bottom-nav{
+  .bottom-nav {
     display: none;
   }
-  .select{
+  .select {
     margin-bottom: 60px;
-    h2,.select-want{
+    h2,
+    .select-want {
       font-size: 2em;
     }
   }
-  .recommends{
-    div.recom-wrap{
-      .recom-box{
-        .recom-img{
+  .recommends {
+    div.recom-wrap {
+      .recom-box {
+        .recom-img {
           height: 210px;
         }
-      } 
+      }
     }
-  } 
+  }
   .packages {
-    > .section-title{
+    > .section-title {
       width: 90%;
       margin: 0 auto 16px;
     }
-    .package-wrap{
+    .package-wrap {
       width: 90%;
       margin: 0 auto;
       flex-wrap: nowrap;
-      .package-box{
+      .package-box {
         width: 23%;
         overflow: hidden;
-        .new-img{
+        .new-img {
           height: 210px;
           // border-radius: 0;
           margin-bottom: 0;
         }
-        .package-infos{
+        .package-infos {
           padding: 8% 5%;
-          .info-title{
+          .info-title {
             font-size: 18px;
             font-weight: 600;
             word-break: keep-all;
           }
         }
         &:first-child,
-        &:nth-child(2){
+        &:nth-child(2) {
           margin-bottom: 0;
         }
-      } 
-    } 
+      }
+    }
   }
-  .specials{
+  .specials {
     @include positionRlt;
     height: 350px;
-    &-title-mb{
+    &-title-mb {
       display: none;
     }
-    &-pc{
+    &-pc {
       @include positionAbs;
       width: 30%;
       height: 100%;
       background: $pointColor;
-      .specials-title-pc{
+      .specials-title-pc {
         width: 100%;
         height: 100%;
         margin: 0;
@@ -140,101 +152,102 @@
         font-weight: lighter;
       }
     }
-    div.specials-wrap{
+    div.specials-wrap {
       position: relative;
       top: 30%;
-      left: 15%;
-      .specials-box{
+      margin-left: 15%;
+      .specials-box {
         height: 300px;
       }
     }
   }
-  .countrys{
-    .country-wrap{
-      .country{
+  .countrys {
+    .country-wrap {
+      .country {
         &:nth-child(1),
         &:nth-child(2),
         &:nth-child(3),
-        &:nth-child(4){
+        &:nth-child(4) {
           margin-bottom: 20px;
         }
-        .country-img{
+        .country-img {
           width: 130px;
           height: 130px;
         }
-        > p{
+        > p {
           font-size: 18px;
           margin-top: 15px;
         }
-      } 
-    } 
-  } 
+      }
+    }
+  }
   .review-wrap {
-    .review-container{
-      > img{
+    .review-container {
+      > img {
         left: auto;
         right: 0;
         width: 60%;
         height: 100%;
       }
-      .review-info{
+      .review-info {
         width: 60%;
         height: 100%;
         padding: 0 6%;
-        background: linear-gradient(90deg, #13608C 75%, transparent);
+        background: linear-gradient(90deg, #13608c 75%, transparent);
         display: flex;
         flex-direction: column;
         justify-content: center;
-        .review-title{
+        .review-title {
           margin-bottom: 70px;
         }
       }
-    } 
+    }
   }
-
   // searchPage
-  div.search-wrap{
+  div.search-wrap {
     width: 80%;
     padding-top: 120px;
-    .search-bar{
+    .search-bar {
       margin-bottom: 80px;
     }
-    .countrys{
+    .countrys {
       width: 100%;
       margin-bottom: 80px;
     }
   }
 }
-@media screen and (max-width:768px) {
-
-  .header{
-    .sider-wrap{
-      .sider-container{
-        .ant-layout-sider-children{
-          .sider-menu{
-            > li:last-child{
+@media screen and (max-width: 768px) {
+  .header {
+    .sider-wrap {
+      .sider-container {
+        .ant-layout-sider-children {
+          .sider-menu {
+            > li:last-child {
               display: none;
             }
           }
-        } 
-      } 
-    } 
+        }
+      }
+    }
   }
-  .main-card-pc, .main-dim-pc, .themeTrip, .headerPc{
+  .main-card-pc,
+  .main-dim-pc,
+  .themeTrip,
+  .headerPc {
     display: none;
   }
-  .main-card-travel{
-    .main-card-left{
-      .main-info-trans{
+  .main-card-travel {
+    .main-card-left {
+      .main-info-trans {
         display: none;
       }
-    } 
-  } 
-  .specials{
-    &-title-mb{
+    }
+  }
+  .specials {
+    &-title-mb {
       display: block;
     }
-    &-pc{
+    &-pc {
       display: none;
     }
   }
