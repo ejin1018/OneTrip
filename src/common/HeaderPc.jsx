@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Menu } from 'antd';
-import './Main.scss';
+import '../components/Main.scss';
 
 function getItem(label, key, icon, children, type) {
   return {
