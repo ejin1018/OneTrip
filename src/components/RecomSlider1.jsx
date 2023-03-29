@@ -2,12 +2,9 @@ import React, { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import axios from "axios";
 import { API_URL } from "./config/constants";
-import { Link } from "react-router-dom";
 import "swiper/css";
 const RecomSlider1 = () => {
   const [products, setProducts] = useState([]);
-  const [items, setItems] = React.useState(products);
-
   useEffect(() => {
     let url = `${API_URL}/producttheme`;
     axios
@@ -15,14 +12,10 @@ const RecomSlider1 = () => {
       .then((result) => {
         const products = result.data.product;
         setProducts(products);
-        setItems(products);
       })
       .catch((error) => {
         console.log(error);
       });
-    return()=>{
-      setProducts(products);
-    }
   }, []);
   const CatValues = [
     "아무거나",
@@ -33,9 +26,10 @@ const RecomSlider1 = () => {
     ),
   ];
   // const [products, setProducts] = useState([]);
+  const [items, setItems] = React.useState(products);
 
   // console.log(items);
-  // if(items.length==0){return};
+  if(items.length==0){return};
 
   // console.log(items);
   // if(products==null){return}
@@ -54,7 +48,7 @@ const RecomSlider1 = () => {
   };
 
   return (
-    <div className="main-contents" /* style={{ marginTop: 300 }} */>
+    <div className="nowadays" /* style={{ marginTop: 300 }} */>
       <div className="select">
         <h2>나는 요즘</h2>
         <select
@@ -62,10 +56,11 @@ const RecomSlider1 = () => {
           className="font-bold uppercase"
         >
           {CatValues.map((el, index) => {
+            // console.log(curCat);
             return (
               <option
                 key={el.id}
-                value={el} 
+                value={el} /*  defaultValue={curCat[0]} */
               >
                 {el}
               </option>
@@ -79,8 +74,6 @@ const RecomSlider1 = () => {
         <Swiper className="recom-wrap" spaceBetween={20} slidesPerView={2.5}>
           {items.map((data, idx) => (
               <SwiperSlide className="recom-box" key={idx}>
-              {data.soldout === 1?<div className="soldout">예약 마감</div>:null}
-              <Link className="specials-link" to={`/packages/${data.id}`}>
                 <div className="imgfit-wrap recom-img">
                   <img src={`${API_URL}/${data?.imageUrl}`} alt="" />
                 </div>
@@ -92,7 +85,6 @@ const RecomSlider1 = () => {
                     <span>{data?.price}</span> 원 ~
                   </p>
                 </div>
-                </Link>
               </SwiperSlide>
             ))}
         </Swiper>

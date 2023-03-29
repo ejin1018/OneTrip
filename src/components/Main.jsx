@@ -7,7 +7,9 @@ import { Link } from "react-router-dom";
 import RecomSlider1 from "./RecomSlider1";
 import SpecialsSlider from "./SpecialsSlider";
 import Country from './Country';
+import ReviewBlock from './ReviewBlock';
 import "./Main.scss";
+import "./compStyle/mediascreen.scss";
 
 // const tripTheme = [
 //   "🛍️ 쇼핑하고 ",
@@ -66,12 +68,14 @@ const Main = () => {
                 // console.log("data",data);
                 return (
                   <div className="package-box" key={idx}>
-                    {data.soldout === 1?<div className="soldout">예약 마감</div>:null}
+                    {data.soldout === 1?<div className="soldout"><p>예약 마감</p></div>:null}
                     <Link className="product-link" to={`/packages/${data.id}`}>
                       <div className="info-box">
-                      <div className="new-img imgfit-wrap" ><img src={`${API_URL}/${data.imageUrl}`} alt="" /></div>
-                        <p className="info-title">{data.p_name}</p>
-                        <p className="info-price"><span>{data.price}</span> 원 ~</p>
+                        <div className="new-img imgfit-wrap" ><img src={`${API_URL}/${data.imageUrl}`} alt="" /></div>
+                        <div className="package-infos">
+                          <p className="info-title">&#91;{data.p_name}&#93;</p>
+                          <p className="info-price">최저 <span>{data.price}</span> 원</p>
+                        </div>
                       </div>
                     </Link>
                   </div>
@@ -91,28 +95,8 @@ const Main = () => {
 
         <Country></Country>
 
-        <div className="review">
-          <h3 className="section-title">혼자라서 더 좋은, 원트립 후기</h3>
-          <div className="review-wrap">
-            <div className="review-user">
-              <div className="user">
-                <img src="/images/main.png" alt="" />
-                <p>사용자이름</p>
-              </div>
-              <div className="good">
-                <p><span><LikeOutlined /></span>60</p>
-                <p><span><EyeOutlined /></span>756+</p>
-              </div>
-            </div>
-            <div className="review-img">
-              {/* <img src="/images/review.png" alt="" /> */}
-            </div>
-            <div className="review-text">
-              <p className="title">나홀로 유유자적 바다와 물회</p>
-              <p>[특가] 제주도 3박 4일 월정리</p>
-            </div>
-          </div>
-        </div>
+        <ReviewBlock />
+
       </div>
 
     </>

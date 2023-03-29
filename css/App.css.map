@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 {"version":3,"sources":["../src/App.scss","../src/common/mixin.scss","App.css"],"names":[],"mappings":"AAAQ,gIAAA;ACAR;EACE,sBAAA;EACA,oGAAA;EACA,mBAAA;EACA,kBAAA;ACEF;ADCA;EACE,sBAAA;ACCF;;AFNA;EAAE,kCAAA;AEUF;;AFTA;EAAM,gBAAA;EAAkB,SAAA;EAAW,UAAA;AEenC;;AFdA;EC2BE,WAAA;EACA,qBAAA;ACTF;;AFjBA;EACE,kBAAA;EACA,WAAA;EACA,gBAAA;EACA,cAAA;AEoBF","file":"App.css"}
+=======
+{"version":3,"sources":["../src/App.scss","../src/common/mixin.scss","App.css"],"names":[],"mappings":"AAAQ,gIAAA;ACAR;EACE,sBAAA;EACA,oGAAA;EACA,mBAAA;EACA,kBAAA;ACEF;ADCA;EACE,sBAAA;ACCF;;AFNA;EAAE,kCAAA;AEUF;;AFTA;EAAM,gBAAA;EAAkB,SAAA;EAAW,UAAA;AEenC;;AFdA;EC2BE,WAAA;EACA,qBAAA;ACTF;;AFjBA;EACE,kBAAA;EACA,WAAA;EACA,cAAA;AEoBF","file":"App.css"}
+>>>>>>> 4edadb1e5a8f06a73010c6f75a95a9f2f81224d7

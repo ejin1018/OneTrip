@@ -9,8 +9,6 @@
 }
 
 .review-wrap {
-  background: linear-gradient(0deg, #eeeeee 70%, #fff 20%);
-  padding: 0 2.5% 3%;
   margin-bottom: 60px;
 }
 .review-wrap .review-container {
@@ -26,7 +24,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 80%;
+  height: 55%;
   -o-object-fit: cover;
      object-fit: cover;
 }

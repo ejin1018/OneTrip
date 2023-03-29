@@ -14,33 +14,27 @@ function getItem(label, key, icon, children, type) {
   };
 }
 const items = [
-  getItem("국내여행지", "sub1", null, [
-    getItem(
-      null,
-      "g1",
-      null,
-      [
-        getItem("서울", "1"),
-        getItem("경기", "2"),
-        getItem("강원", "3"),
-        getItem("충청", "4"),
-        getItem("전라", "5"),
-        getItem("경상", "6"),
-        getItem("제주", "7"),
-      ],
-      "group"
-    ),
-  ]),
-  getItem("해외여행지", "sub2", null, [
-    getItem("동아시아", "8"),
-    getItem("동남아시아", "9"),
-    getItem("서유럽", "10"),
-    getItem("동유럽", "11"),
-    getItem("아메리카", "12"),
-    getItem("라틴아메리카", "13"),
-    getItem("휴양지", "14"),
-  ]),
-  // getItem(null, 'grp', null, [getItem('이벤트', '15'), getItem('리뷰', '16'), getItem('마이페이지', '17'), getItem('고객센터', '18')], 'group'),
+    getItem('국내여행지', 'sub1', null, [
+        getItem(null, 'g1', null, [
+            getItem('서울', '1'),
+            getItem('경기', '2'),
+            getItem('강원', '3'),
+            getItem('충청', '4'),
+            getItem('전라', '5'),
+            getItem('경상', '6'),
+            getItem('제주', '7')
+        ], 'group'),
+    ]),
+    getItem('해외여행지', 'sub2', null, [
+        getItem('동아시아', '8'),
+        getItem('동남아시아', '9'),
+        getItem('서유럽', '10'),
+        getItem('동유럽', '11'),
+        getItem('아메리카', '12'),
+        getItem('라틴아메리카', '13'),
+        getItem('휴양지', '14'),
+    ]),
+    getItem(null, 'grp', null, [getItem('검색', '15'), getItem('리뷰', '16'), getItem('찜', '17')], 'group'),
 ];
 const rootSubmenuKeys = ["sub1", "sub2", "sub4"];
 
