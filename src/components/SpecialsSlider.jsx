@@ -38,7 +38,7 @@ const SpecialsSlider = () => {
                       </span>
                       {value.end}
                     </p>
-                    <p className="specials-price">최저 <span>{value.price} 원</span></p>
+                    <p className="specials-price">최저 <span>{value.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")} 원</span></p>
                   </div>
                   <div className="specials-date">
                     <p>{value.p_sdate}</p>

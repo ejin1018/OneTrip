@@ -43,7 +43,7 @@ function PareaPage() {
                     </div>
                     <p className="info-title">{data.p_name}</p>
                     <p className="info-price">
-                      <span>{data.price}</span> 원 ~
+                      <span>{data.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</span> 원 ~
                     </p>
                   </div>
                 </Link>

@@ -64,7 +64,8 @@ function Packages() {
           message.de("찜하기가 실패하였습니다.");
           console.danger(error);
         });
-    } else {
+    } 
+    else {
       axios
         .post(`${API_URL}/heart2/${id}`)
         .then((result) => {
@@ -139,7 +140,7 @@ function Packages() {
         <div className="packinfo-total">
           <p className="total-text">상품 가격</p>
           <p className="total-price">
-            <span>{trip.price}</span> 원
+            <span>{trip.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</span> 원
           </p>
         </div>
         <Button
