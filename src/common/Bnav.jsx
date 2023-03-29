@@ -18,7 +18,7 @@ const Bnav = () => {
                 <UserOutlined />
                 <p className="icontext">리뷰</p>
             </Link>
-        <Link to={'/Like'} className="bottom-nav-btn">
+        <Link to={'/likepage'} className="bottom-nav-btn">
                 <HeartOutlined />
                 <p className="icontext">찜</p>
             </Link>

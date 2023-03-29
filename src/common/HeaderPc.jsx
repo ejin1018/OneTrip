@@ -84,7 +84,7 @@ const HeaderPc = () => {
             <Link to={'/reviewpage'} className="otherMenu-btn">리뷰</Link>
           </li>
           <li>
-            <Link to={'/'} className="otherMenu-btn">찜</Link>
+            <Link to={'/likepage'} className="otherMenu-btn">찜</Link>
           </li>
         </ul>
       </div>

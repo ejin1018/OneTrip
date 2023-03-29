@@ -93,7 +93,7 @@ const Main = () => {
                         <div className="package-infos">
                           <p className="info-country">{data.p_country}</p>
                           <p className="info-title">&#91;{data.p_name}&#93;</p>
-                          <p className="info-price"><span>{data.price}</span> 원</p>
+                          <p className="info-price"><span>{data.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</span> 원</p>
                         </div>
                       </div>
                     </Link>

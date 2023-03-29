@@ -22,7 +22,7 @@ function RoutesAll (){
       <Route path="/login" element={<Login />} />
       <Route path="/notice" element={<ReviewBlock />} />
       <Route path='/productt/:p_area' element={<Productt />} />
-      <Route path="/like" element={<Like />} />
+      <Route path="/likepage" element={<Like />} />
       <Route path="/review" element={<ReviewPage />} />
       <Route path="/reviewcreate" element={<ReviewCreate />} />
     </Routes>
