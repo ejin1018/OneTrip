@@ -1,37 +1,36 @@
 @import "../sass/mixin.scss";
-
-.review-wrap{
+.review-wrap {
   margin-bottom: 60px;
-  .review-container{
+  .review-container {
     @include positionRlt;
     height: 350px;
     border-radius: 15px;
     overflow: hidden;
-    > img{
+    > img {
       @include positionAbs;
       width: 100%;
       height: 55%;
       object-fit: cover;
     }
-    .review-mark{
+    .review-mark {
       position: absolute;
       top: 8%;
       right: 8%;
       background: #fff;
       padding: 3%;
       border-radius: 5px;
-      >p{
+      > p {
         margin: 0;
       }
-      &-year{
+      &-year {
         font-size: 13px;
       }
-      &-month{
+      &-month {
         font-size: 18px;
         font-weight: 700;
       }
     }
-    .review-info{
+    .review-info {
       position: absolute;
       left: 0;
       bottom: 0;
@@ -39,26 +38,26 @@
       text-align: left;
       color: #fff;
       padding: 8%;
-      background: linear-gradient(0deg, #13608C 80%, transparent);
-      .review-fix{
+      background: linear-gradient(0deg, #13608c 80%, transparent);
+      .review-fix {
         font-size: 26px;
         margin-bottom: 15px;
         line-height: 0.7;
       }
-      .review-title{
+      .review-title {
         font-size: 21px;
         font-weight: 600;
         margin-bottom: 10px;
       }
-      .review-text{
+      .review-text {
         margin-bottom: 8px;
         font-size: 15px;
         line-height: 1.5;
         opacity: 0.8;
       }
-      .review-user{
+      .review-user {
         font-size: 14px;
-        > span{
+        > span {
           font-weight: 600;
         }
       }

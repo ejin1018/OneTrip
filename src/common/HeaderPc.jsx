@@ -35,11 +35,11 @@ const items = [
       getItem('휴양지', '14')
     ],'group')
   ]),
-  getItem(null, 'sub3', null, [
-    getItem('검색', '15'), 
-    getItem('리뷰', '16'), 
-    getItem('찜', '17')
-  ], 'group')
+  // getItem(null, 'sub3', null, [
+  //   getItem('검색', '15'), 
+  //   getItem('리뷰', '16'), 
+  //   getItem('찜', '17')
+  // ], 'group')
 ];
 const rootSubmenuKeys = ['sub1', 'sub2', 'sub3'];
 
@@ -48,9 +48,9 @@ const HeaderPc = () => {
   const onOpenChange = (keys) => {
       const latestOpenKey = keys.find((key) => openKeys.indexOf(key) === -1);
       if (rootSubmenuKeys.indexOf(latestOpenKey) === -1) {
-          setOpenKeys(keys);
+        setOpenKeys(keys);
       } else {
-          setOpenKeys(latestOpenKey ? [latestOpenKey] : []);
+        setOpenKeys(latestOpenKey ? [latestOpenKey] : []);
       }
   };
   return (
@@ -76,6 +76,17 @@ const HeaderPc = () => {
           mode="inline"
           items={items}
         />
+        <ul className='headerPc-otherMenu'>
+          <li>
+            <Link to={'/searchpage'} className="otherMenu-btn">검색</Link>
+          </li>
+          <li>
+            <Link to={'/reviewpage'} className="otherMenu-btn">리뷰</Link>
+          </li>
+          <li>
+            <Link to={'/'} className="otherMenu-btn">찜</Link>
+          </li>
+        </ul>
       </div>
     </div>
   );
