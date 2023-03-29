@@ -97,9 +97,7 @@ const HeaderPc = () => {
             </Link>
           </li>
           <li>
-            <Link to={"/"} className="otherMenu-btn">
-              찜
-            </Link>
+            <Link to={'/likepage'} className="otherMenu-btn">찜</Link>
           </li>
         </ul>
       </div>
