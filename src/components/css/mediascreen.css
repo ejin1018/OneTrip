@@ -20,14 +20,26 @@
     font-size: 26px;
     margin-bottom: 30px;
   }
-  .nowadays, .banner, .specials, .countrys, .review-wrap {
+  .nowadays,
+  .banner,
+  .specials,
+  .countrys,
+  .review-wrap {
     width: 90%;
     margin: 0 auto;
   }
-  .nowadays, .packages, .banner, .specials, .countrys, .review-wrap, .themeTrip {
+  .nowadays,
+  .packages,
+  .banner,
+  .specials,
+  .countrys,
+  .review-wrap,
+  .themeTrip {
     margin-bottom: 150px;
   }
-  .header, .banner, div.bottom-nav {
+  .header,
+  .banner,
+  div.bottom-nav {
     display: none;
   }
   .soldout p {
@@ -89,7 +101,8 @@
   .select {
     margin-bottom: 60px;
   }
-  .select h2, .select .select-want {
+  .select h2,
+  .select .select-want {
     font-size: 2em;
   }
   .recommends div.recom-wrap .recom-box .recom-img {
@@ -177,7 +190,7 @@
     width: 60%;
     height: 100%;
     padding: 0 6%;
-    background: linear-gradient(90deg, #13608C 75%, transparent);
+    background: linear-gradient(90deg, #13608c 75%, transparent);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -201,7 +214,10 @@
   .header .sider-wrap .sider-container .ant-layout-sider-children .sider-menu > li:last-child {
     display: none;
   }
-  .main-card-pc, .main-dim-pc, .themeTrip, .headerPc {
+  .main-card-pc,
+  .main-dim-pc,
+  .themeTrip,
+  .headerPc {
     display: none;
   }
   .main-card-travel .main-card-left .main-info-trans {

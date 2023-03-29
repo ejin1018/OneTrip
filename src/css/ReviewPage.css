@@ -12,20 +12,6 @@
   font-weight: 600;
 }
 
-@font-face {
-  font-family: "twayair";
-  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_tway@1.0/twayair.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-}
-.pointFont {
-  font-family: "twayair";
-}
-
-.boldText {
-  font-weight: 600;
-}
-
 .review-wrap {
   margin-bottom: 60px;
 }
@@ -72,7 +58,7 @@
   text-align: left;
   color: #fff;
   padding: 8%;
-  background: linear-gradient(0deg, #13608C 80%, transparent);
+  background: linear-gradient(0deg, #13608c 80%, transparent);
 }
 .review-wrap .review-container .review-info .review-fix {
   font-size: 26px;
