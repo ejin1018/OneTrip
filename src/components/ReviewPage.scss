@@ -1,12 +1,77 @@
-@import "./ReviewBlock.scss";
+@import "../sass/mixin.scss";
 
-.review-wrap {
-  width: 95%;
-  margin: 0 auto;
-  padding-top: 80px;
-  .review-box {
-    margin-bottom: 15px;
-    border-radius: 12px;
-    background: #fafafa;
+.reviewPage {
+  padding-top: 140px;
+  font-size: 30px;
+  .reviewPage-wrap {
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    padding-top: 30px;
+
+    .reviewPage-box {
+      @include positionRlt;
+      width: calc(100% / 4 - 20px);
+      margin: 0 10px;
+      height: 350px;
+      border-radius: 15px;
+      overflow: hidden;
+      margin-bottom: 15px;
+      border-radius: 12px;
+      background: #fafafa;
+      > img {
+        @include positionAbs;
+        width: 100%;
+        height: 60%;
+        object-fit: cover;
+      }
+      .reviewPage-mark {
+        position: absolute;
+        top: 8%;
+        right: 8%;
+        background: #fff;
+        padding: 3%;
+        border-radius: 5px;
+        > p {
+          margin: 0;
+        }
+        &-year {
+          font-size: 13px;
+        }
+        &-month {
+          font-size: 18px;
+          font-weight: 700;
+        }
+      }
+      .reviewPage-info {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        text-align: left;
+        color: #fff;
+        padding: 15% 8%;
+        background: linear-gradient(0deg, #13608c 60%, transparent);
+        .reviewPage-fix {
+          font-size: 26px;
+          margin-bottom: 15px;
+          line-height: 0.7;
+        }
+      
+        .reviewPage-text {
+          margin-bottom: 8px;
+          font-size: 16px;
+          line-height: 1.5;
+          opacity: 0.8;
+        }
+        .reviewPage-user {
+          font-size: 14px;
+          > span {
+            font-weight: 600;
+          }
+        }
+      }
+    }
   }
 }
