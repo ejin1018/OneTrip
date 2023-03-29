@@ -8,13 +8,13 @@ export default function ReviewBlock() {
 
   useEffect(() => {
     let url = `${API_URL}/review`;
-    console.log(review, "dsfdsfsfs");
+    // console.log(review);
     axios
       .get(url)
       .then((result) => {
         const review = result.data.review;
         setReview(review);
-        console.log(review);
+        // console.log(review);
       })
       .catch((error) => {
         console.log(error);

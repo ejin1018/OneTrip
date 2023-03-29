@@ -3,15 +3,15 @@
   .packimg{
     .packimg-swiper{
       height: 45vh;
-      .swiper-slide{
-        background:#eee;
-        img{
+      .swiper-slide {
+        background: #eee;
+        img {
           object-fit: cover;
           width: 100%;
           height: 100%;
         }
       }
-      .swiper-pagination{
+      .swiper-pagination {
         bottom: 50px;
         left: auto;
         right: 10px;
@@ -26,7 +26,7 @@
       }
     }
   }
-  .packinfo{
+  .packinfo {
     position: relative;
     padding: 12% 5%;
     margin-top: -30px;
@@ -34,79 +34,89 @@
     text-align: left;
     background-color: #fff;
     z-index: 9;
-    p{
+    p {
       margin-bottom: 0;
     }
-    .packinfo-title{
+    .packinfo-title {
       margin-bottom: 15px;
-      &-area{
+      &-area {
         font-size: 16px;
         font-weight: 600;
         margin-bottom: 8px;
       }
-      &-name{
+      &-name {
         font-size: 21px;
         font-weight: 600;
       }
     }
-    .packinfo-theme{
+    .packinfo-theme {
       margin-bottom: 30px;
       display: inline-block;
-      border: solid 1px #13608C;
+      border: solid 1px #13608c;
       border-radius: 15px;
       padding: 3px 10px;
       font-size: 15px;
       @include pointColorText;
     }
-    .packinfo-airline{
+    .packinfo-airline {
       @include flexCenter;
       border-radius: 15px;
       padding: 7%;
       margin-bottom: 30px;
-      background: #F1F6F9;
-      &-box{
+      background: #f1f6f9;
+      &-box {
         width: 35%;
-        .airline-state{
+        .airline-state {
           font-size: 13px;
           font-weight: 600;
           color: #b5b5b5;
-          margin-bottom: 5px ;
+          margin-bottom: 5px;
         }
-        .airline-date{
+        .airline-date {
           font-size: 18px;
           font-weight: 800;
           color: #000;
-          margin-bottom: 5px ;
+          margin-bottom: 5px;
         }
-        .airline-trans{
+        .airline-trans {
           font-size: 14px;
           color: #585858;
           margin-top: 5px;
         }
       }
-      &-arrow{
+      &-arrow {
         font-size: 25px;
         @include pointColorText;
       }
     }
-    .packinfo-total{
+    .packinfo-total {
       margin-bottom: 15px;
       @include flexCenter;
-      .total-price{
+      .total-price {
         font-size: 21px;
-        span{
+        span {
           font-weight: 800;
         }
       }
     }
   }
-  .package-payment{
+  .package-payment {
     width: 100%;
     height: auto;
     padding: 2% 0;
-    span{
+    span {
       font-size: 16px;
       font-weight: 500;
     }
   }
+}
+.heart-button {
+    cursor: pointer;
+    transition: transform 300ms ease;
+    position: absolute;
+    top: 18%;
+    right: 10%;
+    &:hover{
+      transform: scale(1.1);
+    }
 }

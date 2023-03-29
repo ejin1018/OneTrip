@@ -4,6 +4,7 @@ import axios from "axios";
 import { API_URL } from "./config/constants";
 import { Link } from "react-router-dom";
 import "swiper/css";
+
 const RecomSlider1 = () => {
   const [products, setProducts] = useState([]);
   const [items, setItems] = React.useState(products);
@@ -53,7 +54,7 @@ const RecomSlider1 = () => {
     setItems(updateItems);
   };
 
-  return (
+  return(
     <div className="nowadays" /* style={{ marginTop: 300 }} */>
       <div className="select">
         <h2>나는 요즘</h2>

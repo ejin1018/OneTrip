@@ -1,17 +1,17 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { Layout, Menu } from 'antd';
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import { Layout, Menu } from "antd";
 import { MenuOutlined } from "@ant-design/icons";
 // import "./Header.scss"
 
 function getItem(label, key, icon, children, type) {
-    return {
-        key,
-        icon,
-        children,
-        label,
-        type,
-    };
+  return {
+    key,
+    icon,
+    children,
+    label,
+    type,
+  };
 }
 const items = [
     getItem('국내여행지', 'sub1', null, [
@@ -36,70 +36,68 @@ const items = [
     ]),
     getItem(null, 'grp', null, [getItem('검색', '15'), getItem('리뷰', '16'), getItem('찜', '17')], 'group'),
 ];
-const rootSubmenuKeys = ['sub1', 'sub2', 'sub4'];
+const rootSubmenuKeys = ["sub1", "sub2", "sub4"];
 
 const { Sider } = Layout;
 const Header = () => {
-
-    const [openKeys, setOpenKeys] = useState(['sub1']);
-    const onOpenChange = (keys) => {
-        const latestOpenKey = keys.find((key) => openKeys.indexOf(key) === -1);
-        if (rootSubmenuKeys.indexOf(latestOpenKey) === -1) {
-            setOpenKeys(keys);
-        } else {
-            setOpenKeys(latestOpenKey ? [latestOpenKey] : []);
-        }
-    };
-    return (
-        <>
-            <div className="header">
-                <div className="header-inner">
-                    <h1 className="logo">
-                        <Link to='/'>OneTrip</Link>
-                    </h1>
-                </div>
-                <Layout className='sider-wrap'>
-                    <Sider
-                        className='sider-container'
-                        breakpoint="xxl"
-                        collapsedWidth="0"
-                        reverseArrow="true"
-                        trigger={<MenuOutlined />}
-                    >
-                        <div className='sider-top-menu'>
-                            <Link to='/Login'>로그인</Link>
-                        </div>
-
-                        <Menu
-                            openKeys={openKeys}
-                            onOpenChange={onOpenChange}
-                            className='sider-menu'
-                            defaultSelectedKeys={['1']}
-                            mode="inline"
-                            items={items}
-                        />
-                        <ul className='sider-bottom-menu'>
-                            <li>
-                                <Link to='/create'>관광상품업로드</Link>
-                            </li>
-                            <li>
-                                <Link>이벤트</Link>
-                            </li>
-                            <li>
-                                <Link>리뷰</Link>
-                            </li>
-                            <li>
-                                <Link>마이페이지</Link>
-                            </li>
-                            <li>
-                                <Link>고객센터</Link>
-                            </li>
-                        </ul>
-                    </Sider>
-                </Layout>
+  const [openKeys, setOpenKeys] = useState(["sub1"]);
+  const onOpenChange = (keys) => {
+    const latestOpenKey = keys.find((key) => openKeys.indexOf(key) === -1);
+    if (rootSubmenuKeys.indexOf(latestOpenKey) === -1) {
+      setOpenKeys(keys);
+    } else {
+      setOpenKeys(latestOpenKey ? [latestOpenKey] : []);
+    }
+  };
+  return (
+    <>
+      <div className="header">
+        <div className="header-inner">
+          <h1 className="logo">
+            <Link to="/">OneTrip</Link>
+          </h1>
+        </div>
+        <Layout className="sider-wrap">
+          <Sider
+            className="sider-container"
+            breakpoint="xxl"
+            collapsedWidth="0"
+            reverseArrow="true"
+            trigger={<MenuOutlined />}
+          >
+            <div className="sider-top-menu">
+              <Link to="/Login">로그인</Link>
             </div>
-        </>
-    )
-}
+            <Menu
+              openKeys={openKeys}
+              onOpenChange={onOpenChange}
+              className="sider-menu"
+              defaultSelectedKeys={["1"]}
+              mode="inline"
+              items={items}
+            />
+            <ul className="sider-bottom-menu">
+              <li>
+                <Link to="/create">관광상품업로드</Link>
+              </li>
+              <li>
+                <Link>이벤트</Link>
+              </li>
+              <li>
+                <Link>리뷰</Link>
+              </li>
+              <li>
+                <Link>마이페이지</Link>
+              </li>
+              <li>
+                <Link>고객센터</Link>
+              </li>
+            </ul>
+          </Sider>
+        </Layout>
+      </div>
+    </>
+  );
+};
 
 export default Header;

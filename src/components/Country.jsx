@@ -59,10 +59,10 @@ function Country(){
           <div className="country-wrap">
             {country &&
               country.map((value, idx) => {
-                console.log(value)
-                const countryBack = {background:`no-repeat center bottom /cover url(${country[idx].ImgUrl})`}
+                // console.log(value)
+                const countryBack = {background:`no-repeat center bottom /cover url(${country[idx].ImgUrl})` }
                 return (
-                  <Link className="country" to={`/productt/${value.p_area}`}>
+                  <Link className="country" key={idx} to={`/productt/${value.p_area}`}>
                     <div className='country-img' style={countryBack}></div>
                     <p>{country[idx].p_area}</p>
                   </Link>
