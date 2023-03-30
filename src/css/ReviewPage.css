@@ -12,13 +12,81 @@
   font-weight: 600;
 }
 
-.review-wrap {
-  width: 95%;
-  margin: 0 auto;
-  padding-top: 70px;
+.reviewPage {
+  padding-top: 140px;
+  font-size: 30px;
 }
-.review-wrap .review-box {
+.reviewPage .reviewPage-wrap {
+  width: 90%;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  padding-top: 30px;
+}
+.reviewPage .reviewPage-wrap .reviewPage-box {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: calc(25% - 20px);
+  margin: 0 10px;
+  height: 350px;
+  border-radius: 15px;
+  overflow: hidden;
   margin-bottom: 15px;
   border-radius: 12px;
   background: #fafafa;
+}
+.reviewPage .reviewPage-wrap .reviewPage-box > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.reviewPage .reviewPage-wrap .reviewPage-box .reviewPage-mark {
+  position: absolute;
+  top: 8%;
+  right: 8%;
+  background: #fff;
+  padding: 3%;
+  border-radius: 5px;
+}
+.reviewPage .reviewPage-wrap .reviewPage-box .reviewPage-mark > p {
+  margin: 0;
+}
+.reviewPage .reviewPage-wrap .reviewPage-box .reviewPage-mark-year {
+  font-size: 13px;
+}
+.reviewPage .reviewPage-wrap .reviewPage-box .reviewPage-mark-month {
+  font-size: 18px;
+  font-weight: 700;
+}
+.reviewPage .reviewPage-wrap .reviewPage-box .reviewPage-info {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: left;
+  color: #fff;
+  padding: 15% 8%;
+  background: linear-gradient(0deg, #13608c 60%, transparent);
+}
+.reviewPage .reviewPage-wrap .reviewPage-box .reviewPage-info .reviewPage-fix {
+  font-size: 26px;
+  margin-bottom: 15px;
+  line-height: 0.7;
+}
+.reviewPage .reviewPage-wrap .reviewPage-box .reviewPage-info .reviewPage-text {
+  margin-bottom: 8px;
+  font-size: 16px;
+  line-height: 1.5;
+  opacity: 0.8;
+}
+.reviewPage .reviewPage-wrap .reviewPage-box .reviewPage-info .reviewPage-user {
+  font-size: 14px;
+}
+.reviewPage .reviewPage-wrap .reviewPage-box .reviewPage-info .reviewPage-user > span {
+  font-weight: 600;
 }/*# sourceMappingURL=ReviewPage.css.map */

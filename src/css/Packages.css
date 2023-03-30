@@ -64,7 +64,7 @@
 .check-package-wrap .packinfo .packinfo-theme {
   margin-bottom: 30px;
   display: inline-block;
-  border: solid 1px #13608C;
+  border: solid 1px #13608c;
   border-radius: 15px;
   padding: 3px 10px;
   font-size: 15px;
@@ -77,7 +77,7 @@
   border-radius: 15px;
   padding: 7%;
   margin-bottom: 30px;
-  background: #F1F6F9;
+  background: #f1f6f9;
 }
 .check-package-wrap .packinfo .packinfo-airline-box {
   width: 35%;
@@ -123,4 +123,15 @@
 .check-package-wrap .package-payment span {
   font-size: 16px;
   font-weight: 500;
+}
+
+.heart-button {
+  cursor: pointer;
+  transition: transform 300ms ease;
+  position: absolute;
+  top: 18%;
+  right: 10%;
+}
+.heart-button:hover {
+  transform: scale(1.1);
 }/*# sourceMappingURL=Packages.css.map */

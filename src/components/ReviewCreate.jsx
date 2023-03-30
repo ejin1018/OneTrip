@@ -76,7 +76,7 @@ const ReviewCreate = () => {
               리뷰 등록하기
             </Button>
           </Form.Item>
-          <Link size="large" to={"/"} className="cancel">
+          <Link size="large" to={"/review"} className="cancel">
             취소
           </Link>
         </div>

@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { LikeOutlined, EyeOutlined, EnvironmentOutlined, SwapOutlined } from "@ant-design/icons";
-import { Select } from "antd";
+import { EnvironmentOutlined, SwapOutlined } from "@ant-design/icons";
 import { API_URL } from "./config/constants";
 import axios from "axios";
 import { Link } from "react-router-dom";
@@ -24,7 +23,6 @@ const Main = () => {
   useEffect(() => {
     let url = `${API_URL}/product`;
     axios.get(url).then((result) => {
-      // console.log(result);
       const products = result.data.product;
       setProducts(products);
     }).catch((error) => {
@@ -37,34 +35,37 @@ const Main = () => {
       <div className="main">
         <div className="main-dim-pc"></div>
         <h3 className="section-title"><span>혼자</span>라서<br />충분한 여행</h3>
-        
-        <Link className="main-card" to={'/'}>
-          <div className="main-card-title">
-            <EnvironmentOutlined /><span className="main-card-now">지금 떠나보세요!</span>
-          </div>
-          <div className="main-card-pc">
-            <img src="/images/special.png" alt=""/>
-          </div>
-          
-          <div className="main-card-travel">
-            <div className="main-card-left">
-              <div className="main-info">
-                <p className="main-info-where">인천</p>
-                <p className="main-info-trans">아시아나항공</p>
-                <p className="main-info-when">2023-03-19<br />05:00</p>
+        {products[3] && (
+          <>
+            <Link className="main-card" to={`/packages/${products[3].id}`}>
+              <div className="main-card-title">
+                <EnvironmentOutlined /><span className="main-card-now">지금 떠나보세요!</span>
               </div>
-              <SwapOutlined className="main-icon-switch" />
-              <div className="main-info">
-                <p className="main-info-where">홍콩</p>
-                <p className="main-info-trans">아시아나항공</p>
-                <p className="main-info-when">2023-03-26<br />18:00</p>
+              <div className="main-card-pc">
+                <img src={`${ API_URL }/${products[3].imageUrl}`} alt=""/>
               </div>
-            </div>
-            <div className="main-card-right">
-              최저<span>628,530</span>원
-            </div>
-          </div>
-        </Link>
+              
+              <div className="main-card-travel">
+                <div className="main-card-left">
+                  <div className="main-info">
+                    <p className="main-info-where">{products[3].start}</p>
+                    <p className="main-info-trans">{products[3].trans}</p>
+                    <p className="main-info-when">{products[3].p_sdate}<br />05:00</p>
+                  </div>
+                  <SwapOutlined className="main-icon-switch" />
+                  <div className="main-info">
+                    <p className="main-info-where">{products[3].end}</p>
+                    <p className="main-info-trans">{products[3].retrans}</p>
+                    <p className="main-info-when">{products[3].p_edate}<br />18:00</p>
+                  </div>
+                </div>
+                <div className="main-card-right">
+                  최저 <span>{products[3].price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</span>원
+                </div>
+              </div>
+            </Link>
+          </>
+        )}
       </div>
 
       <div className="main-contents">
@@ -83,7 +84,6 @@ const Main = () => {
           <div className="package-wrap">
             {products &&
               products.map((data, idx) => {
-                // console.log("data",data);
                 return (
                   <div className="package-box" key={idx}>
                     {data.soldout === 1?<div className="soldout"><p>예약 마감</p></div>:null}
@@ -93,7 +93,7 @@ const Main = () => {
                         <div className="package-infos">
                           <p className="info-country">{data.p_country}</p>
                           <p className="info-title">&#91;{data.p_name}&#93;</p>
-                          <p className="info-price"><span>{data.price}</span> 원</p>
+                          <p className="info-price"><span>{data.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</span> 원</p>
                         </div>
                       </div>
                     </Link>
