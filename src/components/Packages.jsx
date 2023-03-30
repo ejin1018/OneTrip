@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { Navigate, useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 import { API_URL } from "./config/constants";
-import { Button, message, Tooltip } from "antd";
+import { Button, message } from "antd";
 import {
   ArrowRightOutlined,
   HeartOutlined,
@@ -103,6 +103,10 @@ function Packages() {
       </div>
       <div className="packinfo">
         <div className="packinfo-title">
+          <div className="packinfo-title-text">
+            <p className="packinfo-title-area">&#91;{trip.p_area}&#93;</p>
+            <p className="packinfo-title-name">{trip.p_name}</p>
+          </div>
           <span onClick={onClickHeart} className="heart-button">
             {trip.heart ?  (
               <HeartFilled style={{ fontSize: "2.5rem", color: "#ff0000" }} />
@@ -110,8 +114,6 @@ function Packages() {
               <HeartOutlined style={{ fontSize: "2.5rem", color: "#ff0000" }} />
             )}
           </span>
-          <p className="packinfo-title-area">&#91;{trip.p_area}&#93;</p>
-          <p className="packinfo-title-name">{trip.p_name}</p>
         </div>
         <div className="packinfo-theme">{trip.theme}</div>
         <div className="packinfo-airline">

@@ -233,7 +233,7 @@
       }
     }
     div.packinfo{
-      padding: 8% 5%;
+      padding: 6% 5%;
       text-align: center;
       &-title{
         text-align: center;
@@ -284,10 +284,9 @@
     }
   }
   .packinfo-title{
+    flex-direction: column-reverse;
     .heart-button{
-      top: 5%;
-      right: 50%;
-      transform: translateX(50%);
+      margin-bottom: 15px;
     }
   }
 }
