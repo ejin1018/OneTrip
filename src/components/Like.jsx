@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import axios from "axios";
 import { API_URL } from "./config/constants";
-import "./Like.scss";
+import "./sass/Like.scss";
 
 function Like() {
   const { heart } = useParams();

@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { API_URL } from "./config/constants";
-import "./ReviewBlock.scss";
+import "./sass/ReviewBlock.scss";
 
 export default function ReviewBlock() {
   const [review, setReview] = useState([]);

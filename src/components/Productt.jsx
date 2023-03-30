@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import axios from "axios";
 import { API_URL } from "./config/constants";
-import "./Productt.scss";
+import "./sass/Productt.scss";
 
 function PareaPage() {
   const { p_area } = useParams();

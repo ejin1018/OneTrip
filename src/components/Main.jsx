@@ -7,8 +7,8 @@ import RecomSlider1 from "./RecomSlider1";
 import SpecialsSlider from "./SpecialsSlider";
 import Country from './Country';
 import ReviewBlock from './ReviewBlock';
-import "./Main.scss";
-import "./compStyle/mediascreen.scss";
+import "./sass/Main.scss";
+import "./sass/mediascreen.scss";
 
 // const tripTheme = [
 //   "🛍️ 쇼핑하고 ",
