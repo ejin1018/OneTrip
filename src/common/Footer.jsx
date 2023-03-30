@@ -1,7 +1,6 @@
 import {InstagramOutlined, FacebookOutlined, YoutubeOutlined,TwitterOutlined, GithubOutlined} from "@ant-design/icons";
 import { Button } from 'antd';
 import { Link} from 'react-router-dom';
-// import "./Footer.scss"
 
 const Footer = () => {
     return (

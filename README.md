@@ -9,21 +9,27 @@
 ### 🔗 [원트립 백앤드 URL 바로가기](https://onetrip-kimminjung96.vercel.app/)
 ### 🔗 [원트립 백앤드 깃허브 바로가기](https://onetrip-kimminjung96.vercel.app/)
 
+<br>
+
+-----
 
 <br>
 
-
+## 기술 소개
 > PWA 앱으로 제작한 풀스택 프로젝트입니다.     
-> 프론트는 React를 사용해 제작했으며, Node JS의 Express를 활용해 백엔드 서버를 구현하였고,     
-> Sequelize를 사용하여 데이터베이스 모델링을 진행했습니다.
+> 
+> 프론트는 React로 구현했고,     
+> 백엔드는 Node Js의 Express로 서버 구현을,     
+> 데이터 베이스는 Sequelize를 사용해 모델링했습니다    
 
 <br>
 
-![](./public/images/main-screenshot.png)
-혼자라서 충분한 여행, 원트립입니다.     
-원트립은 혼자 여행을 즐기는 사람들을 위한 여행 상품 판매 페이지입니다.     
+## 프로젝트 소개
+원트립은 여행을 혼자 즐기는 사람들을 위한 여행 상품 판매 앱입니다.     
 문화생활, 맛집탐방, 액티비티, 휴식, 쇼핑 다섯가지 테마에 맞는 여행을 제안하며,     
-상품 등록, 품절, 결제, 찜, 검색, 후기 작성 기능을 제공합니다.     
+상품 등록, 품절, 결제, 찜, 검색, 후기 작성 기능을 제공합니다. 
+
+![](./public/images/main-screenshot.png)    ****
 
 <br>
 
@@ -91,15 +97,6 @@
 
 <br>
 
-## 개발 환경 설정
-
-```sh
-npm i
-npm i create-react-app .
-npm i react-router-dom
-npm i axios
-npm i node-sass
-```
 
 
 <!-- Markdown link & img dfn's -->
