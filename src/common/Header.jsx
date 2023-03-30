@@ -30,10 +30,9 @@ const items = [
     getItem(<Link to={"/productt/아메리카"}>아메리카</Link>, "12"),
     getItem(<Link to={"/productt/라틴아메리카"}>라틴아메리카</Link>, "13"),
     getItem(<Link to={"/productt/휴양지"}>휴양지</Link>, "14"),
-  ]),
-  getItem(null, "others", null, [getItem("검색", "15"), getItem("리뷰", "16"), getItem("찜", "17")], "group"),
+  ])
 ];
-const rootSubmenuKeys = ["sub1", "sub2", "others"];
+const rootSubmenuKeys = ["sub1", "sub2"];
 
 const Header = () => {
   const [openKeys, setOpenKeys] = useState(["sub1"]);
@@ -62,35 +61,33 @@ const Header = () => {
           <h1 className="logo">
             <Link to="/">OneTrip</Link>
           </h1>
-        </div>
+          {/* drawer */}
+          <div className="header-drawer">
+            <Button type="primary" onClick={showDrawer}>
+              <MenuOutlined />
+            </Button>
+            <Drawer placement="right" onClose={onClose} open={open} className="drawer-menu">
+              <Menu onOpenChange={onOpenChange} className="sider-menu" mode="inline" items={items} />
 
-        {/* drawer */}
-        <div className="header-drawer">
-          <Button type="primary" onClick={showDrawer}>
-            <MenuOutlined />
-          </Button>
-          <Drawer placement="right" onClose={onClose} open={open}>
-            <div className="sider-top-menu">
-              <Link to="/Login">로그인</Link>
-            </div>
-
-            <Menu onOpenChange={onOpenChange} className="sider-menu" mode="inline" items={items} />
-
-            <ul className="sider-bottom-menu">
-              <li>
-                <Link to="/create">관광상품업로드</Link>
-              </li>
-              <li>
-                <Link to="/review">리뷰</Link>
-              </li>
-              <li>
-                <Link>이벤트</Link>
-              </li>
-              <li>
-                <Link>고객센터</Link>
-              </li>
-            </ul>
-          </Drawer>
+              <ul className="sider-bottom-menu">
+                <li>
+                  <Link to="/Login">로그인</Link>
+                </li>
+                <li>
+                  <Link to="/create">관광상품업로드</Link>
+                </li>
+                <li>
+                  <Link to="/review">리뷰</Link>
+                </li>
+                <li>
+                  <Link>이벤트</Link>
+                </li>
+                <li>
+                  <Link>고객센터</Link>
+                </li>
+              </ul>
+            </Drawer>
+          </div>
         </div>
       </div>
     </>
