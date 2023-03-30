@@ -33,22 +33,12 @@ const RecomSlider1 = () => {
       })
     ),
   ];
-  // const [products, setProducts] = useState([]);
-
-  // console.log(items);
-  // if(items.length==0){return};
-
-  // console.log(items);
-  // if(products==null){return}
-  // console.log(products);
   const filterItem = (catItem) => {
-    // console.log(catItem);
     if (catItem === "아무거나") {
       setItems(products);
       return;
     }
     const updateItems = products.filter((el) => {
-      // console.log(el);
       return el.theme === catItem;
     });
     setItems(updateItems);

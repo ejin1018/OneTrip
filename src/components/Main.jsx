@@ -24,7 +24,6 @@ const Main = () => {
   useEffect(() => {
     let url = `${API_URL}/product`;
     axios.get(url).then((result) => {
-      console.log(result);
       const products = result.data.product;
       setProducts(products);
     }).catch((error) => {
