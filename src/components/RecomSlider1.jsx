@@ -79,7 +79,7 @@ const RecomSlider1 = () => {
                 <div className="info-box">
                   <p className="info-theme">{data?.theme}</p>
                   <p className="info-title">
-                    &#91; {data?.hotel}	&#93;{data?.p_name}
+                    &#91;{data?.p_area}&#93;&nbsp;{data?.p_name}
                   </p>
                   <p className="info-price">
                     <span>{data?.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</span> 원 ~
