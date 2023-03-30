@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { LikeOutlined, EyeOutlined, EnvironmentOutlined, SwapOutlined } from "@ant-design/icons";
-import { Select } from "antd";
+import { EnvironmentOutlined, SwapOutlined } from "@ant-design/icons";
 import { API_URL } from "./config/constants";
 import axios from "axios";
 import { Link } from "react-router-dom";
@@ -8,8 +7,8 @@ import RecomSlider1 from "./RecomSlider1";
 import SpecialsSlider from "./SpecialsSlider";
 import Country from './Country';
 import ReviewBlock from './ReviewBlock';
-import "./Main.scss";
-import "./compStyle/mediascreen.scss";
+import "./sass/Main.scss";
+import "./sass/mediascreen.scss";
 
 // const tripTheme = [
 //   "🛍️ 쇼핑하고 ",
@@ -38,7 +37,7 @@ const Main = () => {
         <h3 className="section-title"><span>혼자</span>라서<br />충분한 여행</h3>
         {products[3] && (
           <>
-            <Link className="main-card" to={'/'}>
+            <Link className="main-card" to={`/packages/${products[3].id}`}>
               <div className="main-card-title">
                 <EnvironmentOutlined /><span className="main-card-now">지금 떠나보세요!</span>
               </div>
@@ -85,7 +84,6 @@ const Main = () => {
           <div className="package-wrap">
             {products &&
               products.map((data, idx) => {
-                // console.log("data",data);
                 return (
                   <div className="package-box" key={idx}>
                     {data.soldout === 1?<div className="soldout"><p>예약 마감</p></div>:null}

@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { API_URL } from "./config/constants";
-import "./ReviewPage.scss";
 import relativeTime from "dayjs/plugin/relativeTime";
 import dayjs from "dayjs";
+import { Button } from "antd";
+import { Link } from "react-router-dom";
+import "./sass/ReviewPage.scss";
 
 dayjs.extend(relativeTime);
 
@@ -52,6 +54,9 @@ function ReviewPage() {
           );
         })}
       </div>
+      <Link to={"/reviewcreate"}>
+        <Button>리뷰작성하기</Button>
+      </Link>
     </div>
   );
 }
