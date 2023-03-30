@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { Layout, Menu } from "antd";
+import { Menu, Button, Drawer } from "antd";
 import { MenuOutlined } from "@ant-design/icons";
-// import "./Header.scss"
 
 function getItem(label, key, icon, children, type) {
   return {
@@ -15,21 +14,13 @@ function getItem(label, key, icon, children, type) {
 }
 const items = [
   getItem("국내여행지", "sub1", null, [
-    getItem(
-      null,
-      "g1",
-      null,
-      [
-        getItem(<Link to={"/productt/서울"}>서울</Link>, "1"),
-        getItem(<Link to={"/productt/경기"}>경기</Link>, "2"),
-        getItem(<Link to={"/productt/강원"}>강원</Link>, "3"),
-        getItem(<Link to={"/productt/충청"}>충청</Link>, "4"),
-        getItem(<Link to={"/productt/전라"}>전라</Link>, "5"),
-        getItem(<Link to={"/productt/경상"}>경상</Link>, "6"),
-        getItem(<Link to={"/productt/제주"}>제주</Link>, "7"),
-      ],
-      "group"
-    ),
+    getItem(<Link to={"/productt/서울"}>서울</Link>, "1"),
+    getItem(<Link to={"/productt/경기"}>경기</Link>, "2"),
+    getItem(<Link to={"/productt/강원"}>강원</Link>, "3"),
+    getItem(<Link to={"/productt/충청"}>충청</Link>, "4"),
+    getItem(<Link to={"/productt/전라"}>전라</Link>, "5"),
+    getItem(<Link to={"/productt/경상"}>경상</Link>, "6"),
+    getItem(<Link to={"/productt/제주"}>제주</Link>, "7"),
   ]),
   getItem("해외여행지", "sub2", null, [
     getItem(<Link to={"/productt/동아시아"}>동아시아</Link>, "8"),
@@ -40,11 +31,10 @@ const items = [
     getItem(<Link to={"/productt/라틴아메리카"}>라틴아메리카</Link>, "13"),
     getItem(<Link to={"/productt/휴양지"}>휴양지</Link>, "14"),
   ]),
-  getItem(null, "grp", null, [getItem("검색", "15"), getItem("리뷰", "16"), getItem("찜", "17")], "group"),
+  getItem(null, "others", null, [getItem("검색", "15"), getItem("리뷰", "16"), getItem("찜", "17")], "group"),
 ];
-const rootSubmenuKeys = ["sub1", "sub2", "sub4"];
+const rootSubmenuKeys = ["sub1", "sub2", "others"];
 
-const { Sider } = Layout;
 const Header = () => {
   const [openKeys, setOpenKeys] = useState(["sub1"]);
   const onOpenChange = (keys) => {
@@ -55,6 +45,16 @@ const Header = () => {
       setOpenKeys(latestOpenKey ? [latestOpenKey] : []);
     }
   };
+
+  // drawer
+  const [open, setOpen] = useState(false);
+  const showDrawer = () => {
+    setOpen(true);
+  };
+  const onClose = () => {
+    setOpen(false);
+  };
+
   return (
     <>
       <div className="header">
@@ -63,12 +63,19 @@ const Header = () => {
             <Link to="/">OneTrip</Link>
           </h1>
         </div>
-        <Layout className="sider-wrap">
-          <Sider className="sider-container" breakpoint="xxl" collapsedWidth="0" reverseArrow="true" trigger={<MenuOutlined />}>
+
+        {/* drawer */}
+        <div className="header-drawer">
+          <Button type="primary" onClick={showDrawer}>
+            <MenuOutlined />
+          </Button>
+          <Drawer placement="right" onClose={onClose} open={open}>
             <div className="sider-top-menu">
               <Link to="/Login">로그인</Link>
             </div>
-            <Menu openKeys={openKeys} onOpenChange={onOpenChange} className="sider-menu" defaultSelectedKeys={["1"]} mode="inline" items={items} />
+
+            <Menu onOpenChange={onOpenChange} className="sider-menu" mode="inline" items={items} />
+
             <ul className="sider-bottom-menu">
               <li>
                 <Link to="/create">관광상품업로드</Link>
@@ -83,8 +90,8 @@ const Header = () => {
                 <Link>고객센터</Link>
               </li>
             </ul>
-          </Sider>
-        </Layout>
+          </Drawer>
+        </div>
       </div>
     </>
   );
