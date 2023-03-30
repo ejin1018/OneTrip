@@ -1,68 +1,67 @@
-@import '../../sass/mixin';
+@import "../../sass/mixin";
 
-.headerPc{
+.headerPc {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   padding-top: 15px;
-  background-color: rgba(255,255,255,0.5);
+  background-color: rgba(255, 255, 255, 0.5);
   z-index: 999;
-  &-utility{
+  &-utility {
     width: 90%;
     margin: 0 auto;
-    &-list{
+    &-list {
       display: flex;
       justify-content: flex-end;
       align-items: center;
       margin: 0;
-      > li{
+      > li {
         margin-right: 10px;
-        &:last-child{
+        &:last-child {
           margin-right: 0px;
         }
-        > a{
+        > a {
           font-size: 13px;
           color: #666;
         }
       }
     }
   }
-  &-nav{
+  &-nav {
     width: 90%;
     margin: 10px auto 8px;
     display: flex;
     align-items: center;
-    .headerPc-logo{
+    .headerPc-logo {
       font-size: 21px;
       font-weight: 600;
       color: $pointColor;
     }
-    .headerPc-menu{
+    .headerPc-menu {
       display: flex;
       justify-content: flex-end;
       align-items: center;
       border: none !important;
       background: transparent;
-      > .ant-menu-submenu{
+      > .ant-menu-submenu {
         @include positionRlt;
-        > .ant-menu-submenu-title{
-          
-          > span{
+        > .ant-menu-submenu-title {
+          > span {
             font-size: 16px;
           }
         }
-        > .ant-menu-sub{
+        > .ant-menu-sub {
           position: absolute;
           width: 100%;
           border-radius: 15px;
           background: #fff;
-          .ant-menu-item-group{
-            .ant-menu-item-group-title{
+          .ant-menu-item-group {
+            .ant-menu-item-group-title {
               padding: 0;
             }
-            .ant-menu-item-group-list{
-              .ant-menu-item{
+            .ant-menu-item-group-list {
+              .ant-menu-item {
                 padding: 0 !important;
               }
             }
@@ -70,24 +69,24 @@
         }
       }
     }
-    .headerPc-otherMenu{
+    .headerPc-otherMenu {
       display: flex;
       width: 15%;
       justify-content: space-between;
       align-items: center;
       margin: 0 0 0 5px;
-      li{
-        .otherMenu-btn{
+      li {
+        .otherMenu-btn {
           display: block;
           width: 60px;
           height: 40px;
           line-height: 40px;
-          transition: all .4s;
+          transition: all 0.4s;
           border-radius: 8px;
-          &:hover{
+          &:hover {
             font-weight: 600;
             color: $pointColor;
-            background: rgba(0,0,0,0.06);
+            background: rgba(0, 0, 0, 0.06);
           }
         }
       }
@@ -101,25 +100,25 @@
   text-align: left;
   margin-bottom: 16px;
 }
-.imgfit-wrap{
+.imgfit-wrap {
   @extend %imgBackUrl;
-  & img{
+  & img {
     @include imgFit;
   }
 }
-.soldout{
+.soldout {
   @include positionAbs;
   width: 100%;
   height: 100%;
   pointer-events: 0 none;
   border: 1px solid #65a1d1;
   border-radius: 12px;
-  background: rgba(255,255,255,0.8);
+  background: rgba(255, 255, 255, 0.8);
   font-size: 18px;
   font-weight: 600;
   color: $pointColor;
   z-index: 9;
-  > p{
+  > p {
     width: 100%;
     height: 120px;
     border-radius: 12px;
@@ -131,7 +130,7 @@
   height: 90vh;
   overflow: hidden;
   margin-bottom: 60px;
-  background: url('../../../public/images/anywhere-jeju.png') no-repeat fixed;
+  background: url("../../../public/images/anywhere-jeju.png") no-repeat fixed;
   background-size: 170%;
   background-position: top center;
   & h3 {
@@ -150,58 +149,58 @@
       font-weight: 600;
     }
   }
-  &-card{
+  &-card {
     position: absolute;
     bottom: 3%;
     left: 50%;
     width: 95%;
-    transform: translateX(-50%) ;
+    transform: translateX(-50%);
     padding: 3%;
     border-radius: 15px;
-    background: rgba(255,255,255,0.8);
-    &-title{
+    background: rgba(255, 255, 255, 0.8);
+    &-title {
       width: 100%;
       text-align: left;
       margin-bottom: 12px;
       @include pointColorText;
-      .main-card-now{
+      .main-card-now {
         font-size: 14px;
         margin-left: 5px;
       }
     }
-    &-travel{
+    &-travel {
       display: flex;
       align-items: flex-end;
       justify-content: space-between;
-      .main-card-left{
+      .main-card-left {
         min-width: 56%;
         @include flexCenter;
-        >span{
+        > span {
           font-size: 1.3em;
           color: $pointColor;
         }
-        .main-info{
-          &-where{
+        .main-info {
+          &-where {
             margin-bottom: 5px;
             font-size: 21px;
             font-weight: 600;
             color: $pointColor;
           }
-          &-trans{
+          &-trans {
             margin-bottom: 3px;
             font-size: 13px;
           }
-          &-when{
+          &-when {
             margin-bottom: 0;
             font-size: 13px;
             line-height: 1.3;
           }
         }
       }
-      .main-card-right{
+      .main-card-right {
         max-width: 40%;
         font-size: 14px;
-        > span{
+        > span {
           margin-left: 3px;
           font-size: 21px;
           font-weight: 600;
@@ -212,32 +211,34 @@
   }
 }
 
-.main-contents{
+.main-contents {
   padding: 0 5%;
 }
 
 .select {
   margin-bottom: 40px;
 
-  & h2, &-want{
+  & h2,
+  &-want {
     font-size: 1.8em;
     font-weight: 400;
     margin-bottom: 0;
   }
-  .select-inline{
+  .select-inline {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 5px;
-    > select{
+    > select {
       margin-right: 10px;
+      cursor: pointer;
       padding: 5px;
       border: 0 none;
       border-bottom: 2px solid $pointColor;
       font-size: 1.6em;
       text-align: center;
       color: $pointColor;
-      > option{
+      > option {
         font-size: 16px;
       }
     }
@@ -251,7 +252,7 @@
     display: flex;
     align-items: flex-start;
     & .recom-box {
-      .recom-img{
+      .recom-img {
         @extend %imgBackUrl;
         height: 130px;
         margin-bottom: 10px;
@@ -259,9 +260,9 @@
     }
   }
 }
-.info-box{
+.info-box {
   text-align: left;
-  .info-theme{
+  .info-theme {
     background: $pointColor;
     color: #fff;
     display: inline-block;
@@ -270,20 +271,20 @@
     font-size: 15px;
     margin-bottom: 8px;
   }
-  .info-country{
+  .info-country {
     font-size: 15px;
     color: #bbb;
     margin-bottom: 5px;
   }
-  .info-title{
+  .info-title {
     margin: 0;
     margin-bottom: 10px;
   }
-  .info-price{
+  .info-price {
     margin-bottom: 0;
     font-size: 14px;
     font-weight: 400;
-    span{
+    span {
       font-weight: 600;
     }
   }
@@ -303,10 +304,11 @@
       &:nth-child(2n) {
         margin-right: 0;
       }
-      &:first-child ,&:nth-child(2){
+      &:first-child,
+      &:nth-child(2) {
         margin-bottom: 20px;
       }
-      .new-img{
+      .new-img {
         height: 120px;
       }
     }
@@ -335,12 +337,12 @@
       height: 210px;
       border-radius: 12px;
       overflow: hidden;
-      & .soldout{
+      & .soldout {
         display: flex;
         flex-direction: column;
         justify-content: center;
       }
-      & .specials-img{
+      & .specials-img {
         position: absolute;
         top: 0;
         left: 0;
@@ -357,27 +359,27 @@
         height: 100%;
         padding: 12px;
         color: #fff;
-        background: rgba(0,0,0,0.4);
+        background: rgba(0, 0, 0, 0.4);
         & .specials-area {
-          .specials-where{
+          .specials-where {
             margin-bottom: 4px;
             font-size: 18px;
             font-weight: 500;
             word-break: keep-all;
-            span{
+            span {
               margin: 0 3px;
             }
           }
-          .specials-price{
+          .specials-price {
             font-size: 14px;
-            span{
+            span {
               font-size: 16px;
               font-weight: 600;
             }
           }
         }
-        & .specials-date{
-          p{
+        & .specials-date {
+          p {
             font-size: 16px;
             margin-bottom: 3px;
           }
@@ -387,14 +389,14 @@
   }
 }
 
-.themeTrip{
+.themeTrip {
   display: inline-block;
   width: 100%;
   height: 550px;
   padding: 3% 5%;
   background: #f0f2df;
   background: $pointColor;
-  &-left{
+  &-left {
     width: 45%;
     height: 100%;
     float: left;
@@ -402,31 +404,31 @@
     background-position: center;
     background-size: cover;
   }
-  &-right{
+  &-right {
     width: 50%;
     float: left;
     margin-left: 5%;
     text-align: left;
-    p { 
+    p {
       margin: 0;
     }
-    .themeTrip-slogan{
+    .themeTrip-slogan {
       font-size: 15px;
       font-weight: 400;
       color: $pointColor;
       color: #fefff4;
       margin-bottom: 12px;
     }
-    .themeTrip-logo{
+    .themeTrip-logo {
       @include positionRlt;
       font-size: 30px;
       font-weight: 700;
       color: $pointColor;
       color: #fefff4;
       margin-bottom: 35px;
-      &::after{
-        content: '';
-        position:absolute;
+      &::after {
+        content: "";
+        position: absolute;
         width: 100%;
         height: 3px;
         background: #fefff4;
@@ -434,17 +436,17 @@
         left: 0;
       }
     }
-    .themeTrip-sort{
+    .themeTrip-sort {
       font-size: 15px;
       color: #666;
       color: #f0f2df;
       p {
-      } 
-      &-title{
+      }
+      &-title {
         font-weight: 500;
         margin-bottom: 10px;
       }
-      &-text{
+      &-text {
         font-weight: 200;
         margin-bottom: 8px;
       }
@@ -464,7 +466,7 @@
 
     & .country {
       width: calc(100% / 4);
-      .country-img{
+      .country-img {
         width: 70px;
         height: 70px;
         border-radius: 50%;
@@ -482,7 +484,7 @@
   margin-bottom: 60px;
   & .review-wrap {
     width: 100%;
-    background-color: #ECF6FC;
+    background-color: #ecf6fc;
     border-radius: 10px;
     padding: 20px 26px 25px;
 
@@ -518,7 +520,7 @@
         }
       }
     }
-    & .review-img{
+    & .review-img {
       width: 100%;
       height: 180px;
       background: #fff;
