@@ -3,7 +3,6 @@ import { PictureOutlined } from "@ant-design/icons";
 import { Button, Form, Input, message, Upload } from "antd";
 import axios from "axios";
 import { useNavigate, Link } from "react-router-dom";
-import "./ReviewCreate.scss";
 import { useState } from "react";
 import TextArea from "antd/es/input/TextArea";
 

@@ -250,6 +250,7 @@
 }
 .select .select-inline > select {
   margin-right: 10px;
+  cursor: pointer;
   padding: 5px;
   border: 0 none;
   border-bottom: 2px solid #13608C;
@@ -493,7 +494,7 @@
 }
 .review .review-wrap {
   width: 100%;
-  background-color: #ECF6FC;
+  background-color: #ecf6fc;
   border-radius: 10px;
   padding: 20px 26px 25px;
 }

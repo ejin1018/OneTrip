@@ -55,7 +55,7 @@ function ReviewPage() {
         })}
       </div>
       <Link to={"/reviewcreate"}>
-        <Button>리뷰작성하기</Button>
+        <Button size="large">리뷰작성하기</Button>
       </Link>
     </div>
   );
