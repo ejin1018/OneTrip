@@ -3,6 +3,8 @@ import { EnvironmentOutlined, SwapOutlined } from "@ant-design/icons";
 import { API_URL } from "./config/constants";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import RecomSlider1 from "./RecomSlider1";
 import SpecialsSlider from "./SpecialsSlider";
 import Country from './Country';
@@ -17,7 +19,7 @@ import "./sass/mediascreen.scss";
 //   "🏄‍♂️ 액티비티를 즐기고 ",
 //   "🌿 조용히 휴식하고 ",
 // ]
-
+AOS.init();
 const Main = () => {
   const [products, setProducts] = useState([]);
   useEffect(() => {
@@ -79,16 +81,17 @@ const Main = () => {
           <SpecialsSlider />
         </div>
         
-        <div className="packages">
+        <div className="packages" data-aos="fade-in" data-aos-delay="300">
           <h3 className="section-title">원트립 최신 패키지</h3>
           <div className="package-wrap">
             {products &&
               products.map((data, idx) => {
+                console.log(idx);
                 return (
-                  <div className="package-box" key={idx}>
+                  <div className="package-box" key={idx} data-aos="fade-in" >
                     {data.soldout === 1?<div className="soldout"><p>예약 마감</p></div>:null}
                     <Link className="product-link" to={`/packages/${data.id}`}>
-                      <div className="info-box">
+                      <div className="info-box" >
                         <div className="new-img imgfit-wrap" ><img src={`${API_URL}/${data.imageUrl}`} alt="" /></div>
                         <div className="package-infos">
                           <p className="info-country">{data.p_country}</p>

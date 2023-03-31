@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Menu, Button, Drawer } from "antd";
 import { MenuOutlined } from "@ant-design/icons";
@@ -58,7 +58,7 @@ const Header = () => {
 
   return (
     <>
-      {width < 768 ? (
+      {width <= 768 ? (
         <div className="header">
           <div className="header-inner">
             <h1 className="logo">
@@ -127,6 +127,11 @@ const Header = () => {
               <li>
                 <Link to={"/likepage"} className="otherMenu-btn">
                   찜
+                </Link>
+              </li>
+              <li>
+                <Link to={"/likepage"} className="otherMenu-btn">
+                  상품 업로드
                 </Link>
               </li>
             </ul>

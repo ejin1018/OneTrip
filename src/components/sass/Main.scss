@@ -71,14 +71,13 @@
     }
     .headerPc-otherMenu {
       display: flex;
-      width: 15%;
       justify-content: space-between;
       align-items: center;
       margin: 0 0 0 5px;
       li {
         .otherMenu-btn {
           display: block;
-          width: 60px;
+          min-width: 80px;
           height: 40px;
           line-height: 40px;
           transition: all 0.4s;
@@ -115,8 +114,8 @@
   border-radius: 12px;
   background: rgba(255, 255, 255, 0.8);
   font-size: 18px;
-  font-weight: 600;
-  color: $pointColor;
+  font-weight: 700;
+    color: #d93333;
   z-index: 9;
   > p {
     width: 100%;
