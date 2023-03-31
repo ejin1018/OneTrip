@@ -38,6 +38,7 @@
       margin-bottom: 0;
     }
     .packinfo-title {
+      @include flexCenter;
       margin-bottom: 15px;
       &-area {
         font-size: 16px;
@@ -113,10 +114,8 @@
 .heart-button {
     cursor: pointer;
     transition: transform 300ms ease;
-    position: absolute;
-    top: 18%;
-    right: 10%;
     &:hover{
       transform: scale(1.1);
+      transform-origin: center;
     }
 }
