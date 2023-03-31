@@ -35,19 +35,6 @@ const items = [
 const rootSubmenuKeys = ["sub1", "sub2"];
 
 const Header = () => {
-  const [products, setProducts] = useState([]);
-  useEffect(() => {
-    let url = `${API_URL}/products`;
-    axios
-      .get(url)
-      .then((result) => {
-        const products = result.data.product;
-        setProducts(products);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }, []);
   const [openKeys, setOpenKeys] = useState(["sub1"]);
   const onOpenChange = (keys) => {
     const latestOpenKey = keys.find((key) => openKeys.indexOf(key) === -1);

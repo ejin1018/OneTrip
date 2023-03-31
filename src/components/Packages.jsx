@@ -39,7 +39,8 @@ function Packages() {
   }, []);
 
   const onClickPurchase = () => {
-    axios
+    if(trip.count === 1){
+      axios
       .post(`${API_URL}/purchase/${id}`)
       .then((result) => {
         message.info("결제가 완료되었습니다.");
@@ -50,6 +51,19 @@ function Packages() {
         message.de("결제가 실패하였습니다.");
         console.danger(error);
       });
+    }else if(trip.count > 1){
+      axios
+      .post(`${API_URL}/purchase2/${id}`)
+      .then((result) => {
+        message.info("결제가 완료되었습니다.");
+        getPackage();
+        navigate("/", { replace: true });
+      })
+      .catch((error) => {
+        message.de("결제가 실패하였습니다.");
+        console.danger(error);
+      });
+    }
   };
   const onClickHeart = () => {
     setLikeAction(!LikeAction);
@@ -114,6 +128,9 @@ function Packages() {
           <p className="packinfo-title-name">{trip.p_name}</p>
         </div>
         <div className="packinfo-theme">{trip.theme}</div>
+
+        <span> 남은수량: {trip.count}</span>
+
         <div className="packinfo-airline">
           <div className="packinfo-airline-box">
             <p className="airline-state">출발</p>
