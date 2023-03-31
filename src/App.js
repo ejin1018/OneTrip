@@ -6,6 +6,7 @@ import Header from "./common/Header";
 import Bnav from "./common/Bnav";
 import Footer from "./common/Footer";
 
+
 function App() {
   return (
     <div className="App">
@@ -16,6 +17,7 @@ function App() {
           },
         }}
       >
+        
         <Header />
         <Bnav />
         <RoutesAll />
