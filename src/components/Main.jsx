@@ -72,9 +72,9 @@ const Main = () => {
         <RecomSlider1 />
 
         <div className="specials">
-          <h3 className="section-title specials-title-mb">원트립 특가</h3>
+          <h3 className="section-title specials-title-mb">원트립 마감임박</h3>
           <div className="specials-pc">
-            <h3 className="section-title specials-title-pc">원트립에서<br/><span className="boldText">특가</span>로 즐기는<br/>혼자만의<br/>낭만</h3>
+            <h3 className="section-title specials-title-pc">원트립에서<br/><span className="boldText">곧 사라지는</span><br/>혼자만의<br/>낭만</h3>
           </div>
           <SpecialsSlider />
         </div>

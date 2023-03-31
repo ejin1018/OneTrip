@@ -1,10 +1,17 @@
 import { useState } from "react";
 import { useNavigate,Link } from "react-router-dom";
+import dayjs from "dayjs";
+import customParseFormat from 'dayjs/plugin/customParseFormat';
 import { API_URL } from "./config/constants";
 import { ArrowRightOutlined, PictureOutlined } from "@ant-design/icons";
 import { Button, Cascader, DatePicker, Form, Input, InputNumber, message, Radio, Upload } from "antd";
 import axios from "axios";
 import "./sass/Create.scss";
+
+dayjs.extend(customParseFormat);
+const disabledDate = (current) => {
+  return current && current < dayjs().endOf('day');
+};
 
 const Create = () => {
   const [imageUrl, setImageUrl] = useState(null);
@@ -104,6 +111,10 @@ const Create = () => {
                     label: "인천",
                   },
                   {
+                    value: "강원",
+                    label: "강원",
+                  },
+                  {
                     value: "경상",
                     label: "경상",
                   },
@@ -198,6 +209,7 @@ const Create = () => {
                   format: "HH:mm",
                 }}
                 format="YYYY-MM-DD HH:mm"
+                disabledDate={disabledDate}
                 size="large"
                 bordered={false}
                 placeholder="출발일"
@@ -209,6 +221,7 @@ const Create = () => {
                   format: "HH:mm",
                 }}
                 format="YYYY-MM-DD HH:mm"
+                disabledDate={disabledDate}
                 size="large"
                 bordered={false}
                 placeholder="도착일"

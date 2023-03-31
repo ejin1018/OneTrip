@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import axios from "axios";
+import dayjs from "dayjs";
 import "swiper/css";
 import { API_URL } from "./config/constants";
 import { SwapOutlined } from "@ant-design/icons";
@@ -39,10 +40,11 @@ const SpecialsSlider = () => {
                       {value.end}
                     </p>
                     <p className="specials-price">최저 <span>{value.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")} 원</span></p>
+                    <p>잔여 수량: {value.count}</p>
                   </div>
                   <div className="specials-date">
-                    <p>{value.p_sdate}</p>
-                    <p>{value.p_edate}</p>
+                    <p>{dayjs(value.p_sdate).format("YYYY-MM-DD")}</p>
+                    <p>{dayjs(value.p_edate).format("YYYY-MM-DD")}</p>
                   </div>
                 </div>
               </Link>
