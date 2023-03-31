@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Menu, Button, Drawer } from "antd";
 import { MenuOutlined } from "@ant-design/icons";
+import useWidth from "./useWidth";
 
 function getItem(label, key, icon, children, type) {
   return {
@@ -30,11 +31,12 @@ const items = [
     getItem(<Link to={"/productt/북아메리카"}>북아메리카</Link>, "12"),
     getItem(<Link to={"/productt/남아메리카"}>남아메리카</Link>, "13"),
     getItem(<Link to={"/productt/휴양지"}>휴양지</Link>, "14"),
-  ])
+  ]),
 ];
 const rootSubmenuKeys = ["sub1", "sub2"];
 
 const Header = () => {
+  const width = useWidth();
   const [openKeys, setOpenKeys] = useState(["sub1"]);
   const onOpenChange = (keys) => {
     const latestOpenKey = keys.find((key) => openKeys.indexOf(key) === -1);
@@ -56,40 +58,81 @@ const Header = () => {
 
   return (
     <>
-      <div className="header">
-        <div className="header-inner">
-          <h1 className="logo">
-            <Link to="/">OneTrip</Link>
-          </h1>
-          {/* drawer */}
-          <div className="header-drawer">
-            <Button type="primary" onClick={showDrawer}>
-              <MenuOutlined />
-            </Button>
-            <Drawer placement="right" onClose={onClose} open={open} className="drawer-menu">
-              <Menu onOpenChange={onOpenChange} className="sider-menu" mode="inline" items={items} />
+      {width < 768 ? (
+        <div className="header">
+          <div className="header-inner">
+            <h1 className="logo">
+              <Link to="/">OneTrip</Link>
+            </h1>
+            {/* drawer */}
+            <div className="header-drawer">
+              <Button type="primary" onClick={showDrawer}>
+                <MenuOutlined />
+              </Button>
+              <Drawer placement="right" onClose={onClose} open={open} className="drawer-menu">
+                <Menu onOpenChange={onOpenChange} className="sider-menu" mode="inline" items={items} />
 
-              <ul className="sider-bottom-menu">
-                <li>
-                  <Link to="/Login">로그인</Link>
-                </li>
-                <li>
-                  <Link to="/create">관광상품업로드</Link>
-                </li>
-                <li>
-                  <Link to="/review">리뷰</Link>
-                </li>
-                <li>
-                  <Link>이벤트</Link>
-                </li>
-                <li>
-                  <Link>고객센터</Link>
-                </li>
-              </ul>
-            </Drawer>
+                <ul className="sider-bottom-menu">
+                  <li>
+                    <Link to="/Login">로그인</Link>
+                  </li>
+                  <li>
+                    <Link to="/create">관광상품업로드</Link>
+                  </li>
+                  <li>
+                    <Link to="/review">리뷰</Link>
+                  </li>
+                  <li>
+                    <Link>이벤트</Link>
+                  </li>
+                  <li>
+                    <Link>고객센터</Link>
+                  </li>
+                </ul>
+              </Drawer>
+            </div>
           </div>
         </div>
-      </div>
+      ) : (
+        <div className="headerPc">
+          <div className="headerPc-utility">
+            <ul className="headerPc-utility-list">
+              <li>
+                <Link to={"/Login"}>로그인</Link>
+              </li>
+              <li>
+                <Link to={"/"}>이벤트</Link>
+              </li>
+              <li>
+                <Link to={"/"}>고객센터</Link>
+              </li>
+            </ul>
+          </div>
+          <div className="headerPc-nav">
+            <Link to={"/"} className="headerPc-logo">
+              OneTrip
+            </Link>
+            <Menu onOpenChange={onOpenChange} className="headerPc-menu" mode="inline" items={items} />
+            <ul className="headerPc-otherMenu">
+              <li>
+                <Link to={"/searchpage"} className="otherMenu-btn">
+                  검색
+                </Link>
+              </li>
+              <li>
+                <Link to={"/review"} className="otherMenu-btn">
+                  리뷰
+                </Link>
+              </li>
+              <li>
+                <Link to={"/likepage"} className="otherMenu-btn">
+                  찜
+                </Link>
+              </li>
+            </ul>
+          </div>
+        </div>
+      )}
     </>
   );
 };
