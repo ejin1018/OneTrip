@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Menu, Button, Drawer } from "antd";
 import { MenuOutlined } from "@ant-design/icons";
-import useWidth from "./useWidth";
+import useWidth from "../hook/useWidth";
 
 function getItem(label, key, icon, children, type) {
   return {
@@ -38,6 +38,8 @@ const rootSubmenuKeys = ["sub1", "sub2"];
 const Header = () => {
   const width = useWidth();
   const [openKeys, setOpenKeys] = useState(["sub1"]);
+  const [open, setOpen] = useState(false);
+
   const onOpenChange = (keys) => {
     const latestOpenKey = keys.find((key) => openKeys.indexOf(key) === -1);
     if (rootSubmenuKeys.indexOf(latestOpenKey) === -1) {
@@ -48,16 +50,16 @@ const Header = () => {
   };
 
   // drawer
-  const [open, setOpen] = useState(false);
   const showDrawer = () => {
     setOpen(true);
   };
   const onClose = () => {
     setOpen(false);
   };
-  const goTop = ()=>{
-    window.scrollTo(0,0)
-  }
+  const goTop = () => {
+    window.scrollTo(0, 0);
+    onClose();
+  };
 
   return (
     <>
@@ -65,7 +67,9 @@ const Header = () => {
         <div className="header">
           <div className="header-inner">
             <h1 className="logo">
-              <Link to="/" onClick={goTop}>OneTrip</Link>
+              <Link to="/" onClick={goTop}>
+                OneTrip
+              </Link>
             </h1>
             {/* drawer */}
             <div className="header-drawer">
@@ -73,23 +77,32 @@ const Header = () => {
                 <MenuOutlined />
               </Button>
               <Drawer placement="right" onClose={onClose} open={open} className="drawer-menu">
-                <Menu onOpenChange={onOpenChange} className="sider-menu" mode="inline" items={items} />
+                <Menu onOpenChange={onOpenChange} onClick={onClose} className="sider-menu" mode="inline" items={items} />
 
                 <ul className="sider-bottom-menu">
                   <li>
-                    <Link to="/Login">로그인</Link>
+                    <Link to="/Login" onClick={onClose}>
+                      로그인
+                    </Link>
                   </li>
                   <li>
-                    <Link to="/create" onClick={goTop}>관광상품업로드</Link>
+                    <Link to="/create" onClick={()=>{
+                      onClose();
+                      goTop();
+                    }}>
+                      관광상품업로드
+                    </Link>
                   </li>
                   <li>
-                    <Link to="/review">리뷰</Link>
+                    <Link to="/review" onClick={onClose}>
+                      리뷰
+                    </Link>
                   </li>
                   <li>
-                    <Link>이벤트</Link>
+                    <Link onClick={onClose}>이벤트</Link>
                   </li>
                   <li>
-                    <Link>고객센터</Link>
+                    <Link onClick={onClose}>고객센터</Link>
                   </li>
                 </ul>
               </Drawer>
@@ -115,7 +128,7 @@ const Header = () => {
             <Link to={"/"} className="headerPc-logo">
               OneTrip
             </Link>
-            <Menu onOpenChange={onOpenChange} className="headerPc-menu" mode="inline" items={items} />
+            <Menu onOpenChange={onOpenChange} onClick={goTop} className="headerPc-menu" mode="inline" items={items} />
             <ul className="headerPc-otherMenu">
               <li>
                 <Link to={"/searchpage"} className="otherMenu-btn">
