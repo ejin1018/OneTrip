@@ -58,6 +58,9 @@ const Create = () => {
     //   alert("파일 전송에 실패했습니다.");
     // }
   };
+  const goTop = ()=>{
+    window.scrollTo(0,0)
+  }
   return (
     <>
       <Form className="FormWrap" onFinish={onFinish}>
@@ -260,11 +263,11 @@ const Create = () => {
         <div className="submit">
           <Form.Item>
             {/* {contextHolder} */}
-            <Button type="primary" size="large" htmlType="submit">
+            <Button type="primary" size="large" htmlType="submit" onClick={goTop}>
               패키지 등록하기
             </Button>
           </Form.Item>
-          <Link size="large" to={"/"} className="cancel">취소</Link>
+          <Link size="large" to={"/"} className="cancel" onClick={goTop}>취소</Link>
         </div>
       </Form>
     </>
