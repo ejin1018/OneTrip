@@ -25,7 +25,9 @@
   left: 0;
   width: 100%;
   padding-top: 15px;
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.8);
+  -webkit-backdrop-filter: blur(4px);
+          backdrop-filter: blur(4px);
   z-index: 999;
 }
 .headerPc-utility {
@@ -79,6 +81,9 @@
   width: 100%;
   border-radius: 15px;
   background: #fff;
+}
+.headerPc-nav .headerPc-menu > .ant-menu-submenu > .ant-menu-sub .ant-menu-item {
+  padding: 0 !important;
 }
 .headerPc-nav .headerPc-menu > .ant-menu-submenu > .ant-menu-sub .ant-menu-item-group .ant-menu-item-group-title {
   padding: 0;
@@ -192,9 +197,11 @@
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
+  flex-direction: column;
 }
 .main-card-travel .main-card-left {
-  min-width: 56%;
+  width: 100%;
+  margin-bottom: 5px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -219,7 +226,6 @@
   line-height: 1.3;
 }
 .main-card-travel .main-card-right {
-  max-width: 40%;
   font-size: 14px;
 }
 .main-card-travel .main-card-right > span {
@@ -342,6 +348,10 @@
 }
 .banner img {
   width: 100%;
+}
+.banner > a {
+  display: block;
+  margin-top: 15px;
 }
 
 .specials {
@@ -483,7 +493,6 @@
 .countrys .country-wrap {
   display: flex;
   flex-wrap: wrap;
-  overflow: hidden;
   align-items: center;
   justify-content: space-between;
 }
@@ -495,10 +504,18 @@
   height: 70px;
   border-radius: 50%;
   margin: 0 auto 8px;
+  transition: all 0.4s;
 }
 .countrys .country-wrap .country p {
   font-size: 15px;
   margin-bottom: 10px;
+}
+.countrys .country-wrap .country:hover .country-img {
+  transform: scale(1.11);
+}
+.countrys .country-wrap .country:hover p {
+  font-weight: 600;
+  color: #13608C;
 }
 
 .review {

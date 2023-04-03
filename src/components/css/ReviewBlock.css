@@ -22,6 +22,7 @@
   height: 350px;
   border-radius: 15px;
   overflow: hidden;
+  display: block;
 }
 .review-wrap .review-container > img {
   position: absolute;

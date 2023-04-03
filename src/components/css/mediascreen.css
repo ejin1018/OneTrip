@@ -66,35 +66,32 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(212, 235, 255, 0.2);
   }
   .main-card {
     width: 45%;
     bottom: 5%;
   }
-  .main-card-title {
+  .main-card .main-card-title {
     margin-bottom: 15px;
   }
-  .main-card-pc {
+  .main-card .main-card-pc {
     height: 180px;
     margin-bottom: 25px;
     border-radius: 15px;
     overflow: hidden;
   }
-  .main-card-pc img {
+  .main-card .main-card-pc img {
     width: 100%;
     height: 100%;
     -o-object-fit: cover;
        object-fit: cover;
   }
-  .main-card-travel {
-    flex-direction: column;
-  }
-  .main-card-travel .main-card-left {
+  .main-card .main-card-travel .main-card-left {
     width: 100%;
     margin-bottom: 15px;
   }
-  .main-card-travel .main-card-left > span {
+  .main-card .main-card-travel .main-card-left > span {
     font-size: 2em;
     color: #13608C;
   }
@@ -305,5 +302,14 @@
   div.reviewPage .reviewPage-wrap .reviewPage-box {
     width: 100%;
     height: 300px;
+  }
+  .ant-picker-dropdown .ant-picker-panel-layout {
+    justify-content: center;
+  }
+  .ant-picker-dropdown .ant-picker-panel-layout .ant-picker-datetime-panel {
+    flex-direction: column;
+  }
+  .ant-picker-dropdown .ant-picker-panel-layout .ant-picker-datetime-panel .ant-picker-time-panel {
+    border-left: 0;
   }
 }/*# sourceMappingURL=mediascreen.css.map */
