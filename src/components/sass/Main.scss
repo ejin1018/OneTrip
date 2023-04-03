@@ -251,6 +251,7 @@
     display: flex;
     align-items: flex-start;
     & .recom-box {
+      padding: 5px 5px;
       .recom-img {
         @extend %imgBackUrl;
         height: 130px;
@@ -261,6 +262,13 @@
 }
 .info-box {
   text-align: left;
+  padding: 5px 5px;
+  &:hover{
+    .info-title{
+      color: $pointColor;
+      font-weight: bold;
+    }
+  }
   .info-theme {
     background: $pointColor;
     color: #fff;
@@ -336,6 +344,11 @@
       height: 210px;
       border-radius: 12px;
       overflow: hidden;
+      &:hover{
+        .specials-img{
+          transform: scale(1.1);
+        }
+      }
       & .soldout {
         display: flex;
         flex-direction: column;
@@ -345,6 +358,7 @@
         position: absolute;
         top: 0;
         left: 0;
+        transition: all .4s;
         @include imgFit;
       }
       & .specials-text {
@@ -371,6 +385,7 @@
           }
           .specials-price {
             font-size: 14px;
+            margin-bottom: 6px;
             span {
               font-size: 16px;
               font-weight: 600;

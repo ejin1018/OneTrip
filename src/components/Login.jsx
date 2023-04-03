@@ -27,10 +27,6 @@ const Login = () => {
                         로그인
                     </Button>
                 </Form.Item>
-                <div className="login-data">            
-                    <p>임시 아이디: user</p>
-                    <p>임시 비밀번호: test</p>
-                </div>
             </Form>
         </div>
     )

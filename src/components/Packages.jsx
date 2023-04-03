@@ -99,21 +99,7 @@ function Packages() {
   return (
     <div className="check-package-wrap">
       <div className="packimg">
-        <Swiper
-          pagination={{
-            type: "fraction",
-          }}
-          modules={[Pagination]}
-          className="packimg-swiper"
-        >
-          <SwiperSlide>
-            <img src={`${API_URL}/${trip.imageUrl}`} alt="관광상품이미지" />
-          </SwiperSlide>
-          <SwiperSlide>Slide 2</SwiperSlide>
-          <SwiperSlide>Slide 3</SwiperSlide>
-          <SwiperSlide>Slide 4</SwiperSlide>
-          <SwiperSlide>Slide 5</SwiperSlide>
-        </Swiper>
+        <img src={`${API_URL}/${trip.imageUrl}`} alt="관광상품이미지" />
       </div>
       <div className="packinfo">
         <div className="packinfo-title">
@@ -131,7 +117,7 @@ function Packages() {
         </div>
         <div className="packinfo-theme">{trip.theme}</div>
 
-        <span> 남은수량: {trip.count}</span>
+        <span> 잔여 수량 {trip.count}</span>
 
         <div className="packinfo-airline">
           <div className="packinfo-airline-box">
