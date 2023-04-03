@@ -45,6 +45,7 @@ function Packages() {
       .then((result) => {
         message.info("결제가 완료되었습니다.");
         getPackage();
+        window.scrollTo(0, 0);
         navigate("/", { replace: true });
       })
       .catch((error) => {
@@ -57,6 +58,7 @@ function Packages() {
       .then((result) => {
         message.info("결제가 완료되었습니다.");
         getPackage();
+        window.scrollTo(0, 0);
         navigate("/", { replace: true });
       })
       .catch((error) => {
