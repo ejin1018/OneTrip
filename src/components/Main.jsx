@@ -118,9 +118,6 @@ const Main = () => {
               <p className="themeTrip-sort-text">#액티비티 - 지루한 일상을 잊을 수 있는 유쾌한 여행</p>
               <p className="themeTrip-sort-text">#휴식 - 지친 일상에서 잠시 멀어져 충전을 위한 여행</p>
               <p className="themeTrip-sort-text">#쇼핑 - 나를 위한 보상, 양손 가득한 여행</p>
-              {/* {products &&products.map((data)=>{
-                console.log(data)
-              })} */}
             </div>
           </div>
         </div>
