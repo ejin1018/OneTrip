@@ -20,7 +20,7 @@ const ReviewCreate = () => {
       })
       .then((result) => {
         console.log(result);
-        navigate("/", { replace: true });
+        navigate("/review", { replace: true });
       })
       .catch((error) => {
         console.error(error);

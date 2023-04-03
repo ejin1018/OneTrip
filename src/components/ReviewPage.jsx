@@ -36,8 +36,8 @@ function ReviewPage() {
             <div className="reviewPage-box" key={idx}>
               <img src={`${API_URL}/${data.r_imageUrl}`} alt="" />
               <div className="reviewPage-mark">
-                <p className="reviewPage-mark-year">{dayjs(data.p_sdate).format("YYYY")}</p>
-                <p className="reviewPage-mark-month">{dayjs(data.p_sdate).format("MM-DD")}</p>
+                <p className="reviewPage-mark-year">{dayjs(data.createdAt).format("YYYY")}</p>
+                <p className="reviewPage-mark-month">{dayjs(data.createdAt).format("MM-DD")}</p>
               </div>
               <div className="reviewPage-info">
                 <h2 className="reviewPage-fix pointFont">
