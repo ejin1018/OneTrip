@@ -58,7 +58,6 @@ const Header = () => {
   };
   const goTop = () => {
     window.scrollTo(0, 0);
-    onClose();
   };
 
   return (
@@ -129,7 +128,7 @@ const Header = () => {
             </ul>
           </div>
           <div className="headerPc-nav">
-            <Link to={"/"} className="headerPc-logo">
+            <Link to={"/"} onClick={()=>{window.scrollTo({top:0,left:0,behavior:'smooth'})}} className="headerPc-logo">
               OneTrip
             </Link>
             <Menu onOpenChange={onOpenChange} onClick={goTop} className="headerPc-menu" mode="inline" items={items} />
