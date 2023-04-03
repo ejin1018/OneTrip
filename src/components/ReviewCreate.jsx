@@ -20,6 +20,7 @@ const ReviewCreate = () => {
       })
       .then((result) => {
         console.log(result);
+        window.scrollTo(0, 0);
         navigate("/review", { replace: true });
       })
       .catch((error) => {
