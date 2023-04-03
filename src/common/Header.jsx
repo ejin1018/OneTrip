@@ -56,9 +56,10 @@ const Header = () => {
   const onClose = () => {
     setOpen(false);
   };
-  const goTop = ()=>{
-    window.scrollTo(0,0)
-  }
+  const goTop = () => {
+    window.scrollTo(0, 0);
+    onClose();
+  };
 
   return (
     <>
@@ -66,7 +67,9 @@ const Header = () => {
         <div className="header">
           <div className="header-inner">
             <h1 className="logo">
-              <Link to="/" onClick={goTop}>OneTrip</Link>
+              <Link to="/" onClick={goTop}>
+                OneTrip
+              </Link>
             </h1>
             {/* drawer */}
             <div className="header-drawer">
@@ -83,7 +86,7 @@ const Header = () => {
                     </Link>
                   </li>
                   <li>
-                    <Link to="/create" onClick={goTop} onClick={onClose}>
+                    <Link to="/create" onClick={goTop}>
                       관광상품업로드
                     </Link>
                   </li>
@@ -122,7 +125,7 @@ const Header = () => {
             <Link to={"/"} className="headerPc-logo">
               OneTrip
             </Link>
-            <Menu onOpenChange={onOpenChange} className="headerPc-menu" mode="inline" items={items} />
+            <Menu onOpenChange={onOpenChange} onClick={goTop} className="headerPc-menu" mode="inline" items={items} />
             <ul className="headerPc-otherMenu">
               <li>
                 <Link to={"/searchpage"} className="otherMenu-btn">
