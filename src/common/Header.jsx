@@ -130,7 +130,7 @@ const Header = () => {
                 </Link>
               </li>
               <li>
-                <Link to={"/likepage"} className="otherMenu-btn">
+                <Link to={"/create"} className="otherMenu-btn">
                   상품 업로드
                 </Link>
               </li>

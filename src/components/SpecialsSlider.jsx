@@ -40,7 +40,7 @@ const SpecialsSlider = () => {
                       {value.end}
                     </p>
                     <p className="specials-price">최저 <span>{value.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")} 원</span></p>
-                    <p>잔여 수량: {value.count}</p>
+                    <p className="specials-price">잔여 수량 {value.count}</p>
                   </div>
                   <div className="specials-date">
                     <p>{dayjs(value.p_sdate).format("YYYY-MM-DD")}</p>

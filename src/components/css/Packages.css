@@ -12,30 +12,14 @@
   font-weight: 600;
 }
 
-.check-package-wrap .packimg .packimg-swiper {
+.check-package-wrap .packimg {
   height: 45vh;
 }
-.check-package-wrap .packimg .packimg-swiper .swiper-slide {
-  background: #eee;
-}
-.check-package-wrap .packimg .packimg-swiper .swiper-slide img {
-  -o-object-fit: cover;
-     object-fit: cover;
+.check-package-wrap .packimg img {
   width: 100%;
   height: 100%;
-}
-.check-package-wrap .packimg .packimg-swiper .swiper-pagination {
-  bottom: 50px;
-  left: auto;
-  right: 10px;
-  width: 70px;
-  height: 25px;
-  line-height: 25px;
-  border-radius: 15px;
-  font-size: 14px;
-  font-weight: 400;
-  color: #fff;
-  background: rgba(19, 96, 140, 0.5882352941);
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .check-package-wrap .packinfo {
   position: relative;

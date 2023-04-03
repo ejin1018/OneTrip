@@ -35,7 +35,7 @@ function Like() {
             return (
               <div className="package-box" key={idx}>
                 {data.soldout === 1 ? (
-                  <div className="soldout">예약 마감</div>
+                  <div className="soldout"><p>예약 마감</p></div>
                 ) : null}
                 <Link className="product-link" to={`/packages/${data.id}`}>
                   <div className="info-box">

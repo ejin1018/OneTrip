@@ -86,7 +86,6 @@ const Main = () => {
           <div className="package-wrap">
             {products &&
               products.map((data, idx) => {
-                console.log(idx);
                 return (
                   <div className="package-box" key={idx} data-aos="fade-in" >
                     {data.soldout === 1?<div className="soldout"><p>예약 마감</p></div>:null}

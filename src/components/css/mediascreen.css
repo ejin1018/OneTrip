@@ -275,6 +275,10 @@
   .packinfo-title .heart-button {
     margin-bottom: 15px;
   }
+  .FormWrap {
+    max-width: 45%;
+    min-width: 610px;
+  }
 }
 @media screen and (max-width: 768px) {
   .header .sider-wrap .sider-container .ant-layout-sider-children .sider-menu > li:last-child {
