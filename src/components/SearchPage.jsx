@@ -1,34 +1,31 @@
-import React,{useEffect,useState} from 'react';
+import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { Input } from 'antd';
-import Country from './Country';
+import { Input } from "antd";
+import Country from "./Country";
 import dayjs from "dayjs";
 import { API_URL } from "./config/constants";
-import './sass/SearchPage.scss';
-import './sass/mediascreen.scss';
+import "./sass/SearchPage.scss";
+import "./sass/mediascreen.scss";
 
 const { Search } = Input;
 
-function SearchPage(){
+function SearchPage() {
   const [trip, setTrip] = useState([]);
 
   const getPackage = () => {
     axios
       .get(`${API_URL}/products`)
       .then((result) => {
-        // console.log('get')
         setTrip(result.data.product);
       })
       .catch((error) => {
         console.error(error);
       });
   };
-  
-  function showPackage(){
-    // console.log(trip)
-    const resultHere = document.querySelector('.search-result');
-    trip.forEach((item)=>{
-      // console.log(item);
+
+  function showPackage() {
+    const resultHere = document.querySelector(".search-result");
+    trip.forEach((item) => {
       resultHere.innerHTML += `
         <div class='search-box'>
           <a href="/packages/${item.id}" class='search-box-inner'>
@@ -41,54 +38,47 @@ function SearchPage(){
               <p class='package-where'>[${item.p_area}]</p>
               <p class='package-title'>${item.p_name}</p>
               <p class='package-hotel'>${item.hotel}</p>
-              <p class='package-date'>${dayjs(item.p_sdate).format('YYYY-MM-DD')} ~ ${dayjs(item.p_edate).format('YYYY-MM-DD')}</p>
+              <p class='package-date'>${dayjs(item.p_sdate).format("YYYY-MM-DD")} ~ ${dayjs(item.p_edate).format("YYYY-MM-DD")}</p>
             </div>
 
           </a>
         </div>
       `;
-    })
+    });
   }
 
-  function searchPackage(e){
+  function searchPackage(e) {
     let keywords = e.target.value;
-    let boxes = document.querySelectorAll('.search-box');
-    let country = document.querySelector('.countrys');
-    country.style.display = 'none';
-    boxes.forEach((box)=>{
-      const where = box.querySelector('.package-where').innerText;
-      const title = box.querySelector('.package-title').innerText;
-      if(where.indexOf(keywords) > -1 || title.indexOf(keywords) > -1){
-        box.style.display = 'block';
-      }else{
-        box.style.display = 'none';
+    let boxes = document.querySelectorAll(".search-box");
+    let country = document.querySelector(".countrys");
+    country.style.display = "none";
+    boxes.forEach((box) => {
+      const where = box.querySelector(".package-where").innerText;
+      const title = box.querySelector(".package-title").innerText;
+      if (where.indexOf(keywords) > -1 || title.indexOf(keywords) > -1) {
+        box.style.display = "block";
+      } else {
+        box.style.display = "none";
       }
-    })
+    });
   }
-  
-  useEffect(()=>{
-    getPackage();
-    const searchBar = document.querySelector('.search-bar');
-    searchBar.addEventListener('input',searchPackage);
-  },[]);
-  useEffect(()=>{
-    showPackage();
-  })
 
-  return(
-    <div className='search-wrap'>
-      <Search
-        placeholder="input search text"
-        allowClear
-        enterButton="Search"
-        size="large"
-        className='search-bar'
-      />
+  useEffect(() => {
+    getPackage();
+    const searchBar = document.querySelector(".search-bar");
+    searchBar.addEventListener("input", searchPackage);
+  }, []);
+  useEffect(() => {
+    showPackage();
+  });
+
+  return (
+    <div className="search-wrap">
+      <Search placeholder="input search text" allowClear enterButton="Search" size="large" className="search-bar" />
       <Country />
-      <div className='search-result'>
-      </div>
+      <div className="search-result"></div>
     </div>
-  )
+  );
 }
 
 export default SearchPage;

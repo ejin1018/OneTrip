@@ -87,15 +87,19 @@ const Main = () => {
           </div>
           <SpecialsSlider />
         </div>
-        
+
         <div className="packages" data-aos="fade-up" data-aos-delay="400">
           <h3 className="section-title">원트립 최신 패키지</h3>
           <div className="package-wrap">
             {products &&
               products.map((data, idx) => {
                 return (
-                  <div className="package-box" key={idx} data-aos="fade-up" data-aos-delay={idx*400} data-aos-duration="800">
-                    {data.soldout === 1?<div className="soldout"><p>예약 마감</p></div>:null}
+                  <div className="package-box" key={idx} data-aos="fade-up" data-aos-delay={idx * 400} data-aos-duration="800">
+                    {data.soldout === 1 ? (
+                      <div className="soldout">
+                        <p>예약 마감</p>
+                      </div>
+                    ) : null}
                     <Link className="product-link" to={`/packages/${data.id}`}>
                       <div className="info-box">
                         <div className="new-img imgfit-wrap">

@@ -1,25 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
-import { API_URL } from "./config/constants";
-import axios from "axios";
 import dayjs from "dayjs";
 import "./sass/ReviewBlock.scss";
+import { useGet } from "../hook/useGet";
 
 export default function ReviewBlock() {
-  const [review, setReview] = useState([]);
-
-  useEffect(() => {
-    let url = `${API_URL}/review`;
-    axios
-      .get(url)
-      .then((result) => {
-        const review = result.data.review;
-        setReview(review);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }, []);
+  const { data } = useGet("review");
+  const review = data.review;
 
   return (
     <div className="review-wrap">
@@ -35,7 +22,7 @@ export default function ReviewBlock() {
             <br />
             이달의 리뷰
           </h2>
-          {review[0] && (
+          {review && review[0] && (
             <>
               <h3 className="review-title">{review[0].r_title}</h3>
               <p className="review-text">{review[0].r_text}</p>

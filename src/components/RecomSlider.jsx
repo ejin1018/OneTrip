@@ -45,7 +45,7 @@ const RecomSlider1 = () => {
   };
 
   return (
-    <div className="nowadays" /* style={{ marginTop: 300 }} */>
+    <div className="nowadays">
       <div className="select">
         <h2>나는 요즘</h2>
         <div className="select-inline">

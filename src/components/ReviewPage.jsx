@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
+import React from "react";
 import { API_URL } from "./config/constants";
 import relativeTime from "dayjs/plugin/relativeTime";
 import dayjs from "dayjs";
