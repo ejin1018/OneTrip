@@ -2,6 +2,7 @@ import React,{useEffect,useState} from 'react';
 import axios from "axios";
 import { Input } from 'antd';
 import Country from './Country';
+import dayjs from "dayjs";
 import { API_URL } from "./config/constants";
 import './sass/SearchPage.scss';
 import './sass/mediascreen.scss';
@@ -15,7 +16,7 @@ function SearchPage(){
     axios
       .get(`${API_URL}/products`)
       .then((result) => {
-        console.log('get')
+        // console.log('get')
         setTrip(result.data.product);
       })
       .catch((error) => {
@@ -24,10 +25,10 @@ function SearchPage(){
   };
   
   function showPackage(){
-    console.log(trip)
+    // console.log(trip)
     const resultHere = document.querySelector('.search-result');
     trip.forEach((item)=>{
-      console.log(item);
+      // console.log(item);
       resultHere.innerHTML += `
         <div class='search-box'>
           <a href="/packages/${item.id}" class='search-box-inner'>
@@ -40,7 +41,7 @@ function SearchPage(){
               <p class='package-where'>[${item.p_area}]</p>
               <p class='package-title'>${item.p_name}</p>
               <p class='package-hotel'>${item.hotel}</p>
-              <p class='package-date'>${item.p_sdate} ~ ${item.p_edate}</p>
+              <p class='package-date'>${dayjs(item.p_sdate).format('YYYY-MM-DD')} ~ ${dayjs(item.p_edate).format('YYYY-MM-DD')}</p>
             </div>
 
           </a>
