@@ -12,13 +12,7 @@ import ReviewBlock from './ReviewBlock';
 import "./sass/Main.scss";
 import "./sass/mediascreen.scss";
 
-// const tripTheme = [
-//   "🛍️ 쇼핑하고 ",
-//   "🍽️ 맛있는걸 먹고 ",
-//   "🖼 문화 생활을 즐기고 ",
-//   "🏄‍♂️ 액티비티를 즐기고 ",
-//   "🌿 조용히 휴식하고 ",
-// ]
+
 AOS.init();
 const Main = () => {
   const [products, setProducts] = useState([]);
