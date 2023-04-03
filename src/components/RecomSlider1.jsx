@@ -68,7 +68,7 @@ const RecomSlider1 = () => {
         </div>
       </div>
       <div className="recommends">
-        <Swiper className="recom-wrap" spaceBetween={20} breakpoints={{578:{slidesPerView:2.5},769:{slidesPerView:3.5}}}>
+        <Swiper className="recom-wrap" spaceBetween={20} breakpoints={{578:{slidesPerView:3.5}}} slidesPerView={1.8}>
           {items.map((data, idx) => (
               <SwiperSlide className="recom-box" key={idx}>
               {data.soldout === 1?<div className="soldout"><p>예약 마감</p></div>:null}

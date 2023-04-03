@@ -58,10 +58,10 @@
   .main-card {
     width: 45%;
     bottom: 5%;
-    &-title {
+    .main-card-title {
       margin-bottom: 15px;
     }
-    &-pc {
+    .main-card-pc {
       height: 180px;
       margin-bottom: 25px;
       border-radius: 15px;
@@ -72,8 +72,7 @@
         object-fit: cover;
       }
     }
-    &-travel {
-      flex-direction: column;
+    .main-card-travel {
       .main-card-left {
         width: 100%;
         margin-bottom: 15px;
@@ -342,6 +341,20 @@
       .reviewPage-box {
         width: calc(100%);
         height: 300px;
+      }
+    }
+  }
+
+  // create
+  .ant-picker-dropdown{
+    // width: 100%;
+    .ant-picker-panel-layout{
+      justify-content: center;
+      .ant-picker-datetime-panel{
+        flex-direction: column;
+        .ant-picker-time-panel{
+          border-left: 0;
+        }
       }
     }
   }
