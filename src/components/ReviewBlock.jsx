@@ -1,6 +1,7 @@
-import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { API_URL } from "./config/constants";
+import axios from "axios";
 import dayjs from "dayjs";
 import "./sass/ReviewBlock.scss";
 
@@ -9,13 +10,11 @@ export default function ReviewBlock() {
 
   useEffect(() => {
     let url = `${API_URL}/review`;
-    // console.log(review);
     axios
       .get(url)
       .then((result) => {
         const review = result.data.review;
         setReview(review);
-        // console.log(review);
       })
       .catch((error) => {
         console.log(error);
@@ -24,7 +23,7 @@ export default function ReviewBlock() {
 
   return (
     <div className="review-wrap">
-      <div className="review-container">
+      <Link to={"/review"} className="review-container">
         <img src="./images/review.png" alt=""></img>
         <div className="review-mark">
           <p className="review-mark-year">{dayjs(review.createdAt).format("YYYY")}</p>
@@ -46,7 +45,7 @@ export default function ReviewBlock() {
             </>
           )}
         </div>
-      </div>
+      </Link>
     </div>
   );
 }
