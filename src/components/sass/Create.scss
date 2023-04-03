@@ -118,7 +118,11 @@
     padding: 7px 11px 7px 0px;
     .ant-input-prefix{
       margin-inline-end: 8px;
+      color: $pointColor;
     }
+  }
+  .ant-input-number-prefix{
+    color: $pointColor;
   }
 
 .ant-form-item{
