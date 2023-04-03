@@ -1,64 +1,62 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { EnvironmentOutlined, SwapOutlined } from "@ant-design/icons";
 import { API_URL } from "./config/constants";
-import axios from "axios";
 import { Link } from "react-router-dom";
-import AOS from 'aos';
-import 'aos/dist/aos.css';
-import RecomSlider1 from "./RecomSlider1";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import RecomSlider from "./RecomSlider";
 import SpecialsSlider from "./SpecialsSlider";
-import Country from './Country';
-import ReviewBlock from './ReviewBlock';
+import Country from "./Country";
+import ReviewBlock from "./ReviewBlock";
 import "./sass/Main.scss";
 import "./sass/mediascreen.scss";
+import { useGet } from "../hook/useGet";
 
-// const tripTheme = [
-//   "🛍️ 쇼핑하고 ",
-//   "🍽️ 맛있는걸 먹고 ",
-//   "🖼 문화 생활을 즐기고 ",
-//   "🏄‍♂️ 액티비티를 즐기고 ",
-//   "🌿 조용히 휴식하고 ",
-// ]
 AOS.init();
 const Main = () => {
-  const [products, setProducts] = useState([]);
-  useEffect(() => {
-    let url = `${API_URL}/product`;
-    axios.get(url).then((result) => {
-      const products = result.data.product;
-      setProducts(products);
-    }).catch((error) => {
-      console.log(error);
-    });
-  }, []);
+  const { data } = useGet("product");
+  const products = data.product;
 
   return (
     <>
       <div className="main">
         <div className="main-dim-pc"></div>
-        <h3 className="section-title"><span>혼자</span>라서<br />충분한 여행</h3>
-        {products[3] && (
+        <h3 className="section-title">
+          <span>혼자</span>라서
+          <br />
+          충분한 여행
+        </h3>
+        {products && (
           <>
             <Link className="main-card" to={`/packages/${products[3].id}`}>
               <div className="main-card-title">
-                <EnvironmentOutlined /><span className="main-card-now">지금 떠나보세요!</span>
+                <EnvironmentOutlined />
+                <span className="main-card-now">지금 떠나보세요!</span>
               </div>
               <div className="main-card-pc">
-                <img src={`${ API_URL }/${products[3].imageUrl}`} alt=""/>
+                <img src={`${API_URL}/${products[3].imageUrl}`} alt="" />
               </div>
-              
+
               <div className="main-card-travel">
                 <div className="main-card-left">
                   <div className="main-info">
                     <p className="main-info-where">{products[3].start}</p>
                     <p className="main-info-trans">{products[3].trans}</p>
-                    <p className="main-info-when">{products[3].p_sdate}<br />05:00</p>
+                    <p className="main-info-when">
+                      {products[3].p_sdate}
+                      <br />
+                      05:00
+                    </p>
                   </div>
                   <SwapOutlined className="main-icon-switch" />
                   <div className="main-info">
                     <p className="main-info-where">{products[3].end}</p>
                     <p className="main-info-trans">{products[3].retrans}</p>
-                    <p className="main-info-when">{products[3].p_edate}<br />18:00</p>
+                    <p className="main-info-when">
+                      {products[3].p_edate}
+                      <br />
+                      18:00
+                    </p>
                   </div>
                 </div>
                 <div className="main-card-right">
@@ -71,31 +69,47 @@ const Main = () => {
       </div>
 
       <div className="main-contents">
-        <RecomSlider1 />
+        <RecomSlider />
 
         <div className="specials">
           <h3 className="section-title specials-title-mb">원트립 마감임박</h3>
           <div className="specials-pc">
-            <h3 className="section-title specials-title-pc">원트립에서<br/><span className="boldText">곧 사라지는</span><br/>혼자만의<br/>낭만</h3>
+            <h3 className="section-title specials-title-pc">
+              원트립에서
+              <br />
+              <span className="boldText">곧 사라지는</span>
+              <br />
+              혼자만의
+              <br />
+              낭만
+            </h3>
           </div>
           <SpecialsSlider />
         </div>
-        
+
         <div className="packages" data-aos="fade-in" data-aos-delay="300">
           <h3 className="section-title">원트립 최신 패키지</h3>
           <div className="package-wrap">
             {products &&
               products.map((data, idx) => {
                 return (
-                  <div className="package-box" key={idx} data-aos="fade-in" >
-                    {data.soldout === 1?<div className="soldout"><p>예약 마감</p></div>:null}
+                  <div className="package-box" key={idx} data-aos="fade-in">
+                    {data.soldout === 1 ? (
+                      <div className="soldout">
+                        <p>예약 마감</p>
+                      </div>
+                    ) : null}
                     <Link className="product-link" to={`/packages/${data.id}`}>
-                      <div className="info-box" >
-                        <div className="new-img imgfit-wrap" ><img src={`${API_URL}/${data.imageUrl}`} alt="" /></div>
+                      <div className="info-box">
+                        <div className="new-img imgfit-wrap">
+                          <img src={`${API_URL}/${data.imageUrl}`} alt="" />
+                        </div>
                         <div className="package-infos">
                           <p className="info-country">{data.p_country}</p>
                           <p className="info-title">&#91;{data.p_name}&#93;</p>
-                          <p className="info-price"><span>{data.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</span> 원</p>
+                          <p className="info-price">
+                            <span>{data.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</span> 원
+                          </p>
                         </div>
                       </div>
                     </Link>
@@ -117,9 +131,6 @@ const Main = () => {
               <p className="themeTrip-sort-text">#액티비티 - 지루한 일상을 잊을 수 있는 유쾌한 여행</p>
               <p className="themeTrip-sort-text">#휴식 - 지친 일상에서 잠시 멀어져 충전을 위한 여행</p>
               <p className="themeTrip-sort-text">#쇼핑 - 나를 위한 보상, 양손 가득한 여행</p>
-              {/* {products &&products.map((data)=>{
-                console.log(data)
-              })} */}
             </div>
           </div>
         </div>
@@ -131,9 +142,7 @@ const Main = () => {
         <Country></Country>
 
         <ReviewBlock />
-
       </div>
-
     </>
   );
 };
