@@ -77,27 +77,31 @@ const Header = () => {
                 <MenuOutlined />
               </Button>
               <Drawer placement="right" onClose={onClose} open={open} className="drawer-menu">
-                <Menu onOpenChange={onOpenChange} onClick={onClose} className="sider-menu" mode="inline" items={items} />
-
+                <div className="sider-top-wrap">
+                  <ul className="sider-top-menu">
+                    <li>
+                      <Link to="/create" onClick={()=>{
+                        onClose();
+                        goTop();
+                      }}>
+                        관광상품업로드
+                      </Link>
+                    </li>
+                    <li>
+                      <Link to="/review" onClick={onClose}>
+                        리뷰
+                      </Link>
+                    </li>
+                  </ul>
+                  <Menu onOpenChange={onOpenChange} onClick={onClose} className="sider-menu" mode="inline" items={items} />
+                </div>
                 <ul className="sider-bottom-menu">
                   <li>
                     <Link to="/Login" onClick={onClose}>
                       로그인
                     </Link>
                   </li>
-                  <li>
-                    <Link to="/create" onClick={()=>{
-                      onClose();
-                      goTop();
-                    }}>
-                      관광상품업로드
-                    </Link>
-                  </li>
-                  <li>
-                    <Link to="/review" onClick={onClose}>
-                      리뷰
-                    </Link>
-                  </li>
+                  
                   <li>
                     <Link onClick={onClose}>이벤트</Link>
                   </li>

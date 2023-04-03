@@ -42,11 +42,13 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            .sider-top-wrap{
+                max-height: 80%;
+                overflow-y: scroll;
+            }
             .sider-menu{
                 border: 0 none;
                 text-align: left;
-                overflow-y: scroll;
-                max-height: 80%;
                 > li > .ant-menu-submenu-title{
                     width: 100%;
                     margin: 0 ;
@@ -55,6 +57,15 @@
             }
             .sider-bottom-menu{
                 margin: 15px 0 0;
+                text-align: left;
+                > li > a{
+                    display: inline-block;
+                    font-weight: 400;
+                    padding: 8px 0;
+                }
+            }
+            .sider-top-menu{
+                margin: 0;
                 text-align: left;
                 > li > a{
                     display: inline-block;

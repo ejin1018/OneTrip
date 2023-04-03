@@ -138,6 +138,9 @@ const Main = () => {
 
         <div className="banner">
           <img src="/images/mainbanner.png" alt="마일리지 사용하고 항공권으로 돌려받자! 2023년 03월 01일 부터 31일까지 항공 포함 패키지 결제 고객대상 배너이미지" />
+          <Link to={"/reviewcreate"} onClick={()=>{window.scrollTo(0,0)}}>
+            <img src="/images/reviewbanner.png" alt="마일리지 사용하고 항공권으로 돌려받자! 2023년 03월 01일 부터 31일까지 항공 포함 패키지 결제 고객대상 배너이미지" />
+          </Link>
         </div>
 
         <Country></Country>
