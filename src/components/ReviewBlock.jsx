@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { API_URL } from "./config/constants";
+import dayjs from "dayjs";
 import "./sass/ReviewBlock.scss";
 
 export default function ReviewBlock() {
@@ -26,8 +27,8 @@ export default function ReviewBlock() {
       <div className="review-container">
         <img src="./images/review.png" alt=""></img>
         <div className="review-mark">
-          <p className="review-mark-year">2023</p>
-          <p className="review-mark-month">3월</p>
+          <p className="review-mark-year">{dayjs(review.createdAt).format("YYYY")}</p>
+          <p className="review-mark-month">{dayjs(review.createdAt).format("M")}월</p>
         </div>
         <div className="review-info">
           <h2 className="review-fix pointFont">
