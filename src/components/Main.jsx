@@ -3,6 +3,7 @@ import { EnvironmentOutlined, SwapOutlined } from "@ant-design/icons";
 import { API_URL } from "./config/constants";
 import { Link } from "react-router-dom";
 import AOS from "aos";
+import dayjs from "dayjs";
 import "aos/dist/aos.css";
 import RecomSlider from "./RecomSlider";
 import SpecialsSlider from "./SpecialsSlider";
@@ -43,9 +44,9 @@ const Main = () => {
                     <p className="main-info-where">{products[3].start}</p>
                     <p className="main-info-trans">{products[3].trans}</p>
                     <p className="main-info-when">
-                      {products[3].p_sdate}
+                      {dayjs(products[3].p_sdate).format("YYYY.MM.DD")}
                       <br />
-                      05:00
+                      {dayjs(products[3].p_sdate).format("hh:mm")}
                     </p>
                   </div>
                   <SwapOutlined className="main-icon-switch" />
@@ -53,9 +54,9 @@ const Main = () => {
                     <p className="main-info-where">{products[3].end}</p>
                     <p className="main-info-trans">{products[3].retrans}</p>
                     <p className="main-info-when">
-                      {products[3].p_edate}
+                      {dayjs(products[3].p_edate).format("YYYY.MM.DD")}
                       <br />
-                      18:00
+                      {dayjs(products[3].p_edate).format("hh:mm")}
                     </p>
                   </div>
                 </div>

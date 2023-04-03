@@ -56,6 +56,9 @@ const Header = () => {
   const onClose = () => {
     setOpen(false);
   };
+  const goTop = ()=>{
+    window.scrollTo(0,0)
+  }
 
   return (
     <>
@@ -63,7 +66,7 @@ const Header = () => {
         <div className="header">
           <div className="header-inner">
             <h1 className="logo">
-              <Link to="/">OneTrip</Link>
+              <Link to="/" onClick={goTop}>OneTrip</Link>
             </h1>
             {/* drawer */}
             <div className="header-drawer">
@@ -80,7 +83,7 @@ const Header = () => {
                     </Link>
                   </li>
                   <li>
-                    <Link to="/create" onClick={onClose}>
+                    <Link to="/create" onClick={goTop} onClick={onClose}>
                       관광상품업로드
                     </Link>
                   </li>
