@@ -10,9 +10,6 @@ import {
 } from "@ant-design/icons";
 import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination } from "swiper";
-import "swiper/css/pagination";
 import "./sass/Packages.scss";
 
 dayjs.extend(relativeTime);

@@ -6,6 +6,7 @@
     height: 350px;
     border-radius: 15px;
     overflow: hidden;
+    display: block;
     > img {
       @include positionAbs;
       width: 100%;

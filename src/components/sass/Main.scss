@@ -6,7 +6,8 @@
   left: 0;
   width: 100%;
   padding-top: 15px;
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(4px);
   z-index: 999;
   &-utility {
     width: 90%;
@@ -56,6 +57,9 @@
           width: 100%;
           border-radius: 15px;
           background: #fff;
+          .ant-menu-item {
+            padding: 0 !important;
+          }
           .ant-menu-item-group {
             .ant-menu-item-group-title {
               padding: 0;
@@ -475,7 +479,6 @@
   & .country-wrap {
     display: flex;
     flex-wrap: wrap;
-    overflow: hidden;
     align-items: center;
     justify-content: space-between;
 
@@ -486,10 +489,20 @@
         height: 70px;
         border-radius: 50%;
         margin: 0 auto 8px;
+        transition: all .4s;
       }
       & p {
         font-size: 15px;
         margin-bottom: 10px;
+      }
+      &:hover{
+        .country-img{
+          transform: scale(1.11);
+        }
+        p{
+          font-weight: 600;
+          color: $pointColor;
+        }
       }
     }
   }

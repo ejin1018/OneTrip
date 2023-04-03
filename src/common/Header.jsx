@@ -86,7 +86,10 @@ const Header = () => {
                     </Link>
                   </li>
                   <li>
-                    <Link to="/create" onClick={goTop}>
+                    <Link to="/create" onClick={()=>{
+                      onClose();
+                      goTop();
+                    }}>
                       관광상품업로드
                     </Link>
                   </li>
