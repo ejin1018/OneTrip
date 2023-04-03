@@ -56,7 +56,7 @@ const RecomSlider1 = () => {
             {CatValues.map((el, index) => {
               return (
                 <option
-                  key={el.id}
+                  key={index}
                   value={el} 
                 >
                   {el}
