@@ -21,9 +21,9 @@ const RecomSlider1 = () => {
       .catch((error) => {
         console.log(error);
       });
-    return()=>{
+    return () => {
       setProducts(products);
-    }
+    };
   }, []);
   const CatValues = [
     "아무거나",
@@ -44,21 +44,15 @@ const RecomSlider1 = () => {
     setItems(updateItems);
   };
 
-  return(
-    <div className="nowadays" /* style={{ marginTop: 300 }} */>
+  return (
+    <div className="nowadays">
       <div className="select">
         <h2>나는 요즘</h2>
         <div className="select-inline">
-          <select
-            onChange={(e) => filterItem(e.target.value)}
-            className="font-bold uppercase pointFont"
-          >
+          <select onChange={(e) => filterItem(e.target.value)} className="font-bold uppercase pointFont">
             {CatValues.map((el, index) => {
               return (
-                <option
-                  key={index}
-                  value={el} 
-                >
+                <option key={index} value={el}>
                   {el}
                 </option>
               );
@@ -68,10 +62,14 @@ const RecomSlider1 = () => {
         </div>
       </div>
       <div className="recommends">
-        <Swiper className="recom-wrap" spaceBetween={20} breakpoints={{578:{slidesPerView:3.5}}} slidesPerView={1.8}>
+        <Swiper className="recom-wrap" spaceBetween={20} breakpoints={{ 578: { slidesPerView: 3.5 } }} slidesPerView={1.8}>
           {items.map((data, idx) => (
-              <SwiperSlide className="recom-box" key={idx}>
-              {data.soldout === 1?<div className="soldout"><p>예약 마감</p></div>:null}
+            <SwiperSlide className="recom-box" key={idx}>
+              {data.soldout === 1 ? (
+                <div className="soldout">
+                  <p>예약 마감</p>
+                </div>
+              ) : null}
               <Link className="specials-link" to={`/packages/${data.id}`}>
                 <div className="imgfit-wrap recom-img">
                   <img src={`${API_URL}/${data?.imageUrl}`} alt="" />
@@ -85,9 +83,9 @@ const RecomSlider1 = () => {
                     <span>{data?.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</span> 원 ~
                   </p>
                 </div>
-                </Link>
-              </SwiperSlide>
-            ))}
+              </Link>
+            </SwiperSlide>
+          ))}
         </Swiper>
       </div>
     </div>

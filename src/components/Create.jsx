@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { useNavigate,Link } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import dayjs from "dayjs";
-import customParseFormat from 'dayjs/plugin/customParseFormat';
+import customParseFormat from "dayjs/plugin/customParseFormat";
 import { API_URL } from "./config/constants";
 import { ArrowRightOutlined, PictureOutlined } from "@ant-design/icons";
 import { Button, Cascader, DatePicker, Form, Input, InputNumber, message, Radio, Upload } from "antd";
@@ -10,7 +10,7 @@ import "./sass/Create.scss";
 
 dayjs.extend(customParseFormat);
 const disabledDate = (current) => {
-  return current && current < dayjs().endOf('day');
+  return current && current < dayjs().endOf("day");
 };
 
 const Create = () => {
@@ -54,13 +54,10 @@ const Create = () => {
       const imageUrl = response.imageUrl;
       setImageUrl(imageUrl);
     }
-    // else if (info.file.status === "error") {
-    //   alert("파일 전송에 실패했습니다.");
-    // }
   };
-  const goTop = ()=>{
-    window.scrollTo(0,0)
-  }
+  const goTop = () => {
+    window.scrollTo(0, 0);
+  };
   return (
     <>
       <Form className="FormWrap" onFinish={onFinish}>
@@ -81,13 +78,7 @@ const Create = () => {
         <Form.Item name="p_name" rules={[{ required: true, message: "패키지명은 필수 입력 사항입니다." }]}>
           <Input size="large" bordered={false} prefix="패키지명" placeholder="등록하실 패키지명을 입력하세요" />
         </Form.Item>
-        <Form.Item
-          name="price"
-          rules={[
-            { required: true, message: "가격은 필수 입력 사항입니다." },
-          ]}
-          className="upload-price"
-         >
+        <Form.Item name="price" rules={[{ required: true, message: "가격은 필수 입력 사항입니다." }]} className="upload-price">
           <InputNumber size="large" bordered={false} prefix="￦" placeholder="가격을 입력하세요" min={0} />
         </Form.Item>
         <Form.Item name="p_area" rules={[{ required: true, message: "여행지는 필수 입력 사항입니다." }]}>
@@ -216,7 +207,7 @@ const Create = () => {
                 size="large"
                 bordered={false}
                 placeholder="출발일"
-                />
+              />
             </Form.Item>
             <Form.Item name="p_edate" rules={[{ required: true, message: "도착 날짜는 필수 입력 사항입니다." }]}>
               <DatePicker
@@ -233,12 +224,7 @@ const Create = () => {
           </div>
         </div>
 
-        <Form.Item
-          name="count"
-          rules={[
-            { required: true, message: "수량은 필수 입력 사항입니다." },
-          ]}
-        >
+        <Form.Item name="count" rules={[{ required: true, message: "수량은 필수 입력 사항입니다." }]}>
           <InputNumber size="large" bordered={false} min={0} max={100} prefix="수량" placeholder="총 판매 수량을 입력하세요" />
         </Form.Item>
         <Form.Item name="theme" className="borderNone" rules={[{ required: true, message: "테마는 필수 선택 사항입니다." }]}>
@@ -262,12 +248,13 @@ const Create = () => {
         </Form.Item>
         <div className="submit">
           <Form.Item>
-            {/* {contextHolder} */}
             <Button type="primary" size="large" htmlType="submit" onClick={goTop}>
               패키지 등록하기
             </Button>
           </Form.Item>
-          <Link size="large" to={"/"} className="cancel" onClick={goTop}>취소</Link>
+          <Link size="large" to={"/"} className="cancel" onClick={goTop}>
+            취소
+          </Link>
         </div>
       </Form>
     </>

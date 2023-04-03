@@ -12,7 +12,6 @@ function Like() {
     axios
       .get(`${API_URL}/likepage/${heart}`)
       .then((result) => {
-        // console.log(result);
         setProduct(result.data.product);
       })
       .catch((error) => {
@@ -23,19 +22,19 @@ function Like() {
   useEffect(() => {
     getParea();
   }, []);
-  if (product == null) {
-    return <h1>상품정보를 받고 있습니다.</h1>;
-  }
+
   return (
     <div className="packages">
       <h3 className="section-title">찜한 상품</h3>
       <div className="package-wrap">
-        {product.map((data, idx) => {
-            // console.log("data",data);
+        {product &&
+          product.map((data, idx) => {
             return (
               <div className="package-box" key={idx}>
                 {data.soldout === 1 ? (
-                  <div className="soldout"><p>예약 마감</p></div>
+                  <div className="soldout">
+                    <p>예약 마감</p>
+                  </div>
                 ) : null}
                 <Link className="product-link" to={`/packages/${data.id}`}>
                   <div className="info-box">
