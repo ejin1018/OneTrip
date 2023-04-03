@@ -24,8 +24,10 @@ export default function ReviewBlock() {
 
   return (
     <div className="review-wrap">
-      <div className="review-container">
-        <img src="./images/review.png" alt=""></img>
+      {review.map((review, idx) => {
+        return(
+      <div className="review-container" key={idx}> 
+        <img src={`${API_URL}/${review.r_imageUrl}`} alt=""></img>
         <div className="review-mark">
           <p className="review-mark-year">{dayjs(review.createdAt).format("YYYY")}</p>
           <p className="review-mark-month">{dayjs(review.createdAt).format("M")}월</p>
@@ -36,17 +38,18 @@ export default function ReviewBlock() {
             <br />
             이달의 리뷰
           </h2>
-          {review[0] && (
             <>
-              <h3 className="review-title">{review[0].r_title}</h3>
-              <p className="review-text">{review[0].r_text}</p>
+              <h3 className="review-title">{review.r_title}</h3>
+              <p className="review-text">{review.r_text}</p>
               <p className="review-user">
-                작성자 <span>{review[0].user_name}</span>
+                작성자 <span>{review.user_name}</span>
               </p>
             </>
-          )}
         </div>
       </div>
-    </div>
   );
 }
+)}
+</div>
+      
+      )}

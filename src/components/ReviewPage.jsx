@@ -14,7 +14,7 @@ function ReviewPage() {
 
   useEffect(() => {
     let url = `${API_URL}/reviews`;
-    console.log(review);
+    // console.log(review);
     axios
       .get(url)
       .then((result) => {
