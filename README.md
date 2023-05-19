@@ -7,7 +7,7 @@
 
 ### 🔗 [원트립 바로가기](https://onetrip-kimminjung96.vercel.app/)
 ### 🔗 [원트립 백앤드 URL 바로가기](https://onetrip-kimminjung96.vercel.app/)
-### 🔗 [원트립 백앤드 깃허브 바로가기](https://onetrip-kimminjung96.vercel.app/)
+### 🔗 [원트립 백앤드 깃허브 바로가기](https://github.com/Youngjung3/onetrip_server)
 
 <br>
 
